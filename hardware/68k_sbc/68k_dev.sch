@@ -5,8 +5,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 6
 Title "68000 SBC"
-Date "2020-11-12"
-Rev "1.2"
+Date "2021-01-05"
+Rev "1.3"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -206,7 +206,7 @@ AR Path="/5F8E786F/6009B3C1" Ref="C?"  Part="1"
 AR Path="/6009B3C1" Ref="C2"  Part="1" 
 F 0 "C2" H 1865 6496 50  0000 L CNN
 F 1 "100nF" H 1865 6405 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 1788 6300 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1788 6300 50  0001 C CNN
 F 3 "~" H 1750 6450 50  0001 C CNN
 	1    1750 6450
 	1    0    0    -1  
@@ -219,7 +219,7 @@ AR Path="/5F8E786F/6009B3C7" Ref="C?"  Part="1"
 AR Path="/6009B3C7" Ref="C3"  Part="1" 
 F 0 "C3" H 2315 6496 50  0000 L CNN
 F 1 "100nF" H 2315 6405 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 2238 6300 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2238 6300 50  0001 C CNN
 F 3 "~" H 2200 6450 50  0001 C CNN
 	1    2200 6450
 	1    0    0    -1  
@@ -321,7 +321,7 @@ AR Path="/5F8E786F/606917EA" Ref="C?"  Part="1"
 AR Path="/606917EA" Ref="C1"  Part="1" 
 F 0 "C1" H 1315 6496 50  0000 L CNN
 F 1 "100nF" H 1315 6405 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 1238 6300 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1238 6300 50  0001 C CNN
 F 3 "~" H 1200 6450 50  0001 C CNN
 	1    1200 6450
 	1    0    0    -1  
@@ -383,7 +383,7 @@ Wire Wire Line
 Wire Wire Line
 	4200 2450 4850 2450
 Wire Wire Line
-	3000 2250 4850 2250
+	3000 2250 4550 2250
 Wire Wire Line
 	3000 2350 4850 2350
 Wire Wire Line
@@ -402,7 +402,7 @@ Wire Wire Line
 Wire Wire Line
 	3000 3350 4850 3350
 Wire Wire Line
-	3000 3250 4850 3250
+	3000 3250 4650 3250
 Wire Wire Line
 	4850 1550 3000 1550
 Wire Wire Line
@@ -635,7 +635,7 @@ Wire Wire Line
 	3450 1400 3450 2050
 Connection ~ 3450 2050
 Wire Wire Line
-	4200 1000 5850 1000
+	4200 1000 4550 1000
 Wire Wire Line
 	3250 1850 4850 1850
 Wire Wire Line
@@ -644,4 +644,39 @@ Wire Wire Line
 	3450 2050 4850 2050
 Wire Wire Line
 	2650 6700 2650 6600
+$Comp
+L Device:R_Pack04 RN8
+U 1 1 5FF5229B
+P 4750 1200
+F 0 "RN8" H 4938 1246 50  0000 L CNN
+F 1 "470" H 4938 1155 50  0000 L CNN
+F 2 "Resistor_SMD:R_Array_Convex_4x0603" V 5025 1200 50  0001 C CNN
+F 3 "~" H 4750 1200 50  0001 C CNN
+	1    4750 1200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4850 1000 5850 1000
+Wire Wire Line
+	4550 1000 4650 1000
+Connection ~ 4550 1000
+Connection ~ 4850 1000
+Connection ~ 4650 1000
+Wire Wire Line
+	4650 1000 4750 1000
+Connection ~ 4750 1000
+Wire Wire Line
+	4750 1000 4850 1000
+Wire Wire Line
+	4550 1400 4550 2250
+Connection ~ 4550 2250
+Wire Wire Line
+	4550 2250 4850 2250
+Wire Wire Line
+	4650 1400 4650 3250
+Connection ~ 4650 3250
+Wire Wire Line
+	4650 3250 4850 3250
+NoConn ~ 4750 1400
+NoConn ~ 4850 1400
 $EndSCHEMATC

@@ -63,19 +63,6 @@ F 11 "https://www.mouser.co.uk/ProductDetail/Maxim-Integrated/DS1813-10%2bTR?qs=
 	1    0    0    -1  
 $EndComp
 $Comp
-L Switch:SW_DPST_x2 SW?
-U 1 1 5FA8E215
-P 4750 2000
-AR Path="/5FA8E215" Ref="SW?"  Part="1" 
-AR Path="/5F9C489E/5FA8E215" Ref="SW1"  Part="1" 
-F 0 "SW1" H 4750 2235 50  0000 C CNN
-F 1 "SW_DPST_x2" H 4750 2144 50  0000 C CNN
-F 2 "digikey-footprints:Switch_Tactile_THT_6x6mm" H 4750 2000 50  0001 C CNN
-F 3 "~" H 4750 2000 50  0001 C CNN
-	1    4750 2000
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:VCC #PWR?
 U 1 1 5FA8E226
 P 5200 1050
@@ -91,14 +78,14 @@ $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 5FA8E22C
-P 4350 2150
+P 4350 2300
 AR Path="/5FA8E22C" Ref="#PWR?"  Part="1" 
 AR Path="/5F9C489E/5FA8E22C" Ref="#PWR029"  Part="1" 
-F 0 "#PWR029" H 4350 1900 50  0001 C CNN
-F 1 "GND" H 4355 1977 50  0000 C CNN
-F 2 "" H 4350 2150 50  0001 C CNN
-F 3 "" H 4350 2150 50  0001 C CNN
-	1    4350 2150
+F 0 "#PWR029" H 4350 2050 50  0001 C CNN
+F 1 "GND" H 4355 2127 50  0000 C CNN
+F 2 "" H 4350 2300 50  0001 C CNN
+F 3 "" H 4350 2300 50  0001 C CNN
+	1    4350 2300
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -177,7 +164,7 @@ AR Path="/5FAB0468" Ref="C?"  Part="1"
 AR Path="/5F9C489E/5FAB0468" Ref="C13"  Part="1" 
 F 0 "C13" H 4268 4046 50  0000 L CNN
 F 1 "22uF" H 4268 3955 50  0000 L CNN
-F 2 "Capacitor_SMD:CP_Elec_5x5.4" H 4188 3850 50  0001 C CNN
+F 2 "Capacitor_SMD:CP_Elec_6.3x7.7" H 4188 3850 50  0001 C CNN
 F 3 "~" H 4150 4000 50  0001 C CNN
 	1    4150 4000
 	1    0    0    -1  
@@ -209,7 +196,7 @@ AR Path="/5FAFD745" Ref="C?"  Part="1"
 AR Path="/5F9C489E/5FAFD745" Ref="C12"  Part="1" 
 F 0 "C12" H 2818 4046 50  0000 L CNN
 F 1 "22uF" H 2818 3955 50  0000 L CNN
-F 2 "Capacitor_SMD:CP_Elec_5x5.4" H 2738 3850 50  0001 C CNN
+F 2 "Capacitor_SMD:CP_Elec_6.3x7.7" H 2738 3850 50  0001 C CNN
 F 3 "~" H 2700 4000 50  0001 C CNN
 	1    2700 4000
 	1    0    0    -1  
@@ -280,8 +267,6 @@ Wire Wire Line
 	4550 2000 4350 2000
 Connection ~ 4350 2000
 Wire Wire Line
-	4350 2000 4350 2150
-Wire Wire Line
 	4950 2000 5100 2000
 Wire Wire Line
 	5100 2000 5100 1450
@@ -294,4 +279,36 @@ Wire Wire Line
 	1400 4250 2700 4250
 Wire Wire Line
 	1400 3850 2700 3850
+$Comp
+L dk_Tactile-Switches:1825910-6 S1
+U 1 1 5FF76D99
+P 4750 2100
+F 0 "S1" H 4750 2447 60  0000 C CNN
+F 1 "1825910-6" H 4750 2341 60  0000 C CNN
+F 2 "digikey-footprints:Switch_Tactile_THT_6x6mm" H 4950 2300 60  0001 L CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1825910&DocType=Customer+Drawing&DocLang=English" H 4950 2400 60  0001 L CNN
+F 4 "450-1650-ND" H 4950 2500 60  0001 L CNN "Digi-Key_PN"
+F 5 "1825910-6" H 4950 2600 60  0001 L CNN "MPN"
+F 6 "Switches" H 4950 2700 60  0001 L CNN "Category"
+F 7 "Tactile Switches" H 4950 2800 60  0001 L CNN "Family"
+F 8 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1825910&DocType=Customer+Drawing&DocLang=English" H 4950 2900 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/te-connectivity-alcoswitch-switches/1825910-6/450-1650-ND/1632536" H 4950 3000 60  0001 L CNN "DK_Detail_Page"
+F 10 "SWITCH TACTILE SPST-NO 0.05A 24V" H 4950 3100 60  0001 L CNN "Description"
+F 11 "TE Connectivity ALCOSWITCH Switches" H 4950 3200 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 4950 3300 60  0001 L CNN "Status"
+	1    4750 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4350 2000 4350 2200
+Wire Wire Line
+	4550 2200 4350 2200
+Connection ~ 4350 2200
+Wire Wire Line
+	4350 2200 4350 2300
+Wire Wire Line
+	4950 2200 5100 2200
+Wire Wire Line
+	5100 2200 5100 2000
+Connection ~ 5100 2000
 $EndSCHEMATC

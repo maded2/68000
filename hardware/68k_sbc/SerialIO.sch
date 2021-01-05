@@ -206,7 +206,7 @@ AR Path="/6071447C" Ref="C?"  Part="1"
 AR Path="/606CB633/6071447C" Ref="C22"  Part="1" 
 F 0 "C22" H 2865 6746 50  0000 L CNN
 F 1 "100nF" H 2865 6655 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 2788 6550 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2788 6550 50  0001 C CNN
 F 3 "~" H 2750 6700 50  0001 C CNN
 	1    2750 6700
 	1    0    0    -1  
