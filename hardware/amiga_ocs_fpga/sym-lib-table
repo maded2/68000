@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name 68k_dev)(type Legacy)(uri /home/eddie/work/68k_dev/hardware/68k_dev/68k_dev.lib)(options "")(descr ""))
+)

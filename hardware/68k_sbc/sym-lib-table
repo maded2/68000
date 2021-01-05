@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name 68k_dev)(type Legacy)(uri ${KIPRJMOD}/68k_dev.lib)(options "")(descr ""))
+)

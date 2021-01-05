@@ -1,0 +1,15 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP Conn_02x64_Odd_Even
+D Generic connector, double row, 02x40, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)
+K connector
+F ~
+$ENDCMP
+#
+$CMP Passive_Bus_ISA_16bit
+D 16-bit ISA-AT bus connector
+K ISA
+F https://en.wikipedia.org/wiki/Industry_Standard_Architecture
+$ENDCMP
+#
+#End Doc Library

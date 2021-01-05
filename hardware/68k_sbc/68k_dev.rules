@@ -1,0 +1,111 @@
+
+(rules PCB 68k_dev
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (eu.mihosoft.freerouting.autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 2557)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.3)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.8)
+    )
+  )
+  (rule
+    (width 250.0)
+    (clear 200.2)
+    (clear 125.0 (type smd_to_turn_gap))
+    (clear 50.0 (type smd_smd))
+  )
+  (padstack "Via[0-1]_800:400_um"
+    (shape
+      (circle F.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 800.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_800:400_um" "Via[0-1]_800:400_um" default
+  )
+  (via 
+    "Via[0-1]_800:400_um-kicad_default" "Via[0-1]_800:400_um" "kicad_default"
+  )
+  (via_rule
+    default "Via[0-1]_800:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_800:400_um-kicad_default"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    GND "Net-(D1-Pad1)" "Net-(D1-Pad2)" "Net-(D2-Pad2)" "Net-(D2-Pad1)" "Net-(D3-Pad2)" "Net-(D4-Pad2)" "Net-(D5-Pad2)"
+    "Net-(D6-Pad2)" "Net-(D7-Pad2)" "Net-(D8-Pad2)" "Net-(D9-Pad2)" "Net-(D10-Pad2)" "Net-(D11-Pad2)" "Net-(D12-Pad2)" "Net-(D13-Pad2)"
+    A18 "Net-(J1-Pad2)" RST "RST_H" "Net-(J2-Pad6)" "Net-(J2-Pad8)" "Net-(J2-Pad11)" "Net-(J2-Pad12)"
+    "IO_SEL1" "IO_SEL2" "RAM1_SEL" "RAM2_SEL" "RAM3_SEL" "RAM4_SEL" "ROM_SEL" "CPU_CLK"
+    "Net-(J2-Pad21)" "Net-(J2-Pad22)" FC0 FC1 FC2 BGACK BG BR
+    "Net-(J2-Pad30)" "Net-(J2-Pad32)" D7 D6 D5 D4 D3 D2
+    D1 D0 "Net-(J2-Pad41)" AS "Net-(J2-Pad43)" "Net-(J2-Pad44)" "Net-(J2-Pad45)" A16
+    A15 A14 A13 A12 A11 A10 A9 A8
+    A7 A6 A5 A4 A3 A2 A1 "Net-(J2-Pad62)"
+    "Net-(J2-Pad63)" VMA E VPA IPL0 IPL1 IPL2 DTACK
+    BERR RDL RDU WRL WRU IRQ1 IRQ2 "Net-(J2-Pad79)"
+    RW A23 A22 A21 A20 A19 A17 UDS
+    LDS D8 D9 D10 D11 D12 D13 D14
+    D15 TCK TDO TMS "Net-(J4-Pad6)" "Net-(J4-Pad7)" "Net-(J4-Pad8)" TDI
+    "Net-(J3-Pad18)" "Net-(RN1-Pad4)" "Net-(RN3-Pad1)" "Net-(RN3-Pad3)" "Net-(RN3-Pad2)" "Net-(RN3-Pad4)" "Net-(RN4-Pad6)" "Net-(RN4-Pad5)"
+    "Net-(RN7-Pad5)" "Net-(RN7-Pad4)" "Net-(U2-Pad1)" "Net-(U6-Pad19)" "Net-(U6-Pad36)" "Net-(U7-Pad36)" "Net-(U7-Pad19)" "Net-(U8-Pad36)"
+    "Net-(U8-Pad19)" "Net-(U9-Pad19)" "Net-(U9-Pad36)" "Net-(U10-Pad36)" "Net-(U10-Pad19)" "Net-(U11-Pad19)" "Net-(U11-Pad36)" "Net-(U12-Pad36)"
+    "Net-(U12-Pad19)" "Net-(U13-Pad19)" "Net-(U13-Pad36)" "Net-(U14-Pad23)" "Net-(U14-Pad24)" "Net-(U14-Pad15)" "Net-(U14-Pad29)" TX
+    RX CTS "Net-(U14-Pad33)" "Net-(U14-Pad36)" "Net-(U14-Pad17)" "Net-(X1-Pad1)" "Net-(X2-Pad1)" SS1
+    MOSI SCLK "Net-(J3-Pad14)" "Net-(J3-Pad21)" "Net-(J3-Pad22)" "Net-(J3-Pad23)" "Net-(J3-Pad24)" "Net-(J3-Pad25)"
+    "Net-(J3-Pad26)" "Net-(J3-Pad27)" "Net-(J3-Pad28)" "Net-(J3-Pad29)" "Net-(J3-Pad30)" "Net-(J3-Pad32)" "Net-(J3-Pad34)" SS2
+    MISO "Net-(J3-Pad16)" "Net-(J3-Pad17)" "Net-(J3-Pad19)" "Net-(J3-Pad20)" "Net-(J3-Pad35)" "Net-(J3-Pad36)" "Net-(J3-Pad38)"
+    "Net-(J3-Pad40)" "Net-(J3-Pad1)" "Net-(J3-Pad2)" "Net-(J3-Pad3)" "Net-(J3-Pad4)" "Net-(J3-Pad5)" "Net-(J3-Pad6)" "Net-(J3-Pad7)"
+    "Net-(J3-Pad8)" "Net-(J3-Pad9)" "Net-(J3-Pad10)" "Net-(J3-Pad11)" "Net-(J3-Pad12)" DC "Net-(U15-Pad13)" "Net-(U15-Pad12)"
+    "Net-(U15-Pad9)" "Net-(U15-Pad8)"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class pwr1
+    VCC +3V3
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 400.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)

@@ -1,0 +1,127 @@
+Flow report for 68k_cpld
+Wed Oct 14 00:34:43 2020
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; Flow Summary                                                                ;
++---------------------------+-------------------------------------------------+
+; Flow Status               ; Successful - Wed Oct 14 00:34:43 2020           ;
+; Quartus II 64-Bit Version ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name             ; 68k_cpld                                        ;
+; Top-level Entity Name     ; top                                             ;
+; Family                    ; MAX7000S                                        ;
+; Device                    ; EPM7128SLC84-15                                 ;
+; Timing Models             ; Final                                           ;
+; Total macrocells          ; 5 / 128 ( 4 % )                                 ;
+; Total pins                ; 42 / 68 ( 62 % )                                ;
++---------------------------+-------------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 10/14/2020 00:34:36 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; 68k_cpld            ;
++-------------------+---------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                    ;
++---------------------------------+---------------------------+---------------+-------------+-------------------------+
+; Assignment Name                 ; Value                     ; Default Value ; Entity Name ; Section Id              ;
++---------------------------------+---------------------------+---------------+-------------+-------------------------+
+; COMPILER_SIGNATURE_ID           ; 0.160260687612311         ; --            ; --          ; --                      ;
+; EDA_BOARD_DESIGN_TIMING_TOOL    ; Stamp (Timing)            ; <None>        ; --          ; --                      ;
+; EDA_DESIGN_ENTRY_SYNTHESIS_TOOL ; Design Compiler           ; <None>        ; --          ; --                      ;
+; EDA_INPUT_DATA_FORMAT           ; Edif                      ; --            ; --          ; eda_design_synthesis    ;
+; EDA_INPUT_VCC_NAME              ; Vdd                       ; --            ; --          ; eda_design_synthesis    ;
+; EDA_LMF_FILE                    ; altsyn.lmf                ; --            ; --          ; eda_design_synthesis    ;
+; EDA_OUTPUT_DATA_FORMAT          ; Verilog Hdl               ; --            ; --          ; eda_simulation          ;
+; EDA_OUTPUT_DATA_FORMAT          ; Stamp                     ; --            ; --          ; eda_board_design_timing ;
+; EDA_RUN_TOOL_AUTOMATICALLY      ; Off                       ; --            ; --          ; eda_simulation          ;
+; EDA_SIMULATION_TOOL             ; ModelSim-Altera (Verilog) ; <None>        ; --          ; --                      ;
+; EDA_TIME_SCALE                  ; 1 ps                      ; --            ; --          ; eda_simulation          ;
+; FITTER_EFFORT                   ; Standard Fit              ; Auto Fit      ; --          ; --                      ;
+; FLOW_ENABLE_RTL_VIEWER          ; On                        ; Off           ; --          ; --                      ;
+; OPTIMIZE_HOLD_TIMING            ; Off                       ; --            ; --          ; --                      ;
+; PROJECT_OUTPUT_DIRECTORY        ; output_files              ; --            ; --          ; --                      ;
+; TOP_LEVEL_ENTITY                ; top                       ; 68k_cpld      ; --          ; --                      ;
++---------------------------------+---------------------------+---------------+-------------+-------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:01     ; 1.0                     ; 561 MB              ; 00:00:00                           ;
+; Fitter                    ; 00:00:01     ; 1.0                     ; 445 MB              ; 00:00:00                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 483 MB              ; 00:00:00                           ;
+; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 449 MB              ; 00:00:00                           ;
+; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 741 MB              ; 00:00:00                           ;
+; Total                     ; 00:00:04     ; --                      ; --                  ; 00:00:00                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++---------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                             ;
++---------------------------+------------------+----------------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
++---------------------------+------------------+----------------+------------+----------------+
+; Analysis & Synthesis      ; desktop1         ; Ubuntu 20.04.1 ; 20         ; x86_64         ;
+; Fitter                    ; desktop1         ; Ubuntu 20.04.1 ; 20         ; x86_64         ;
+; Assembler                 ; desktop1         ; Ubuntu 20.04.1 ; 20         ; x86_64         ;
+; TimeQuest Timing Analyzer ; desktop1         ; Ubuntu 20.04.1 ; 20         ; x86_64         ;
+; EDA Netlist Writer        ; desktop1         ; Ubuntu 20.04.1 ; 20         ; x86_64         ;
++---------------------------+------------------+----------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off 68k_cpld -c 68k_cpld
+quartus_fit --read_settings_files=off --write_settings_files=off 68k_cpld -c 68k_cpld
+quartus_asm --read_settings_files=off --write_settings_files=off 68k_cpld -c 68k_cpld
+quartus_sta 68k_cpld -c 68k_cpld
+quartus_eda --read_settings_files=off --write_settings_files=off 68k_cpld -c 68k_cpld
+
+
+

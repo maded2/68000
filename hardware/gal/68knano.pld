@@ -1,0 +1,22 @@
+GAL22V10
+ATF22V10C
+
+AS  RW  LDS UDS A17 A18  A19  A20  A21 A22 A23 GND
+A16 WRL WRU RDL RDU ROM1 RAM1 RAM2 IO1 IO2 IO3 VCC
+
+; Memory map
+
+/ROM1 = /A23 * /A22 * /A21 * /A20 * RW   ; 0x000000
+/IO2  =  A23 * /A22 * /A21 *  A20        ; 0x900000  CF
+/IO1  =  A23 * /A22 *  A21 * /A20        ; 0xA00000  UART
+/IO3  =  A23 * /A22 *  A21 *  A20        ; 0xB00000
+/RAM1 =  A23 *  A22 * /A21 * /A20        ; 0xC00000
+/RAM2 =  A23 *  A22 *  A21 * /A20        ; 0xE00000
+
+/WRL = /AS * /RW * /LDS
+/RDL = /AS * RW  * /LDS
+/WRU = /AS * /RW * /UDS
+/RDU = /AS * RW  * /UDS
+
+DESCRIPTION
+68k address decoding

@@ -1,0 +1,227 @@
+Analysis & Synthesis report for 68k_cpld
+Wed Oct 14 00:34:37 2020
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++-----------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Wed Oct 14 00:34:37 2020           ;
+; Quartus II 64-Bit Version   ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name               ; 68k_cpld                                        ;
+; Top-level Entity Name       ; top                                             ;
+; Family                      ; MAX7000S                                        ;
+; Total macrocells            ; 5                                               ;
+; Total pins                  ; 38                                              ;
++-----------------------------+-------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                ;
++----------------------------------------------------------------------------+-----------------+---------------+
+; Option                                                                     ; Setting         ; Default Value ;
++----------------------------------------------------------------------------+-----------------+---------------+
+; Device                                                                     ; EPM7128SLC84-15 ;               ;
+; Top-level entity name                                                      ; top             ; 68k_cpld      ;
+; Family name                                                                ; MAX7000S        ; Cyclone IV GX ;
+; Type of Retiming Performed During Resynthesis                              ; Full            ;               ;
+; Resynthesis Optimization Effort                                            ; Normal          ;               ;
+; Physical Synthesis Level for Resynthesis                                   ; Normal          ;               ;
+; Use Generated Physical Constraints File                                    ; On              ;               ;
+; Use smart compilation                                                      ; Off             ; Off           ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On              ; On            ;
+; Enable compact report table                                                ; Off             ; Off           ;
+; Create Debugging Nodes for IP Cores                                        ; Off             ; Off           ;
+; Preserve fewer node names                                                  ; On              ; On            ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off             ; Off           ;
+; Verilog Version                                                            ; Verilog_2001    ; Verilog_2001  ;
+; VHDL Version                                                               ; VHDL_1993       ; VHDL_1993     ;
+; State Machine Processing                                                   ; Auto            ; Auto          ;
+; Safe State Machine                                                         ; Off             ; Off           ;
+; Extract Verilog State Machines                                             ; On              ; On            ;
+; Extract VHDL State Machines                                                ; On              ; On            ;
+; Ignore Verilog initial constructs                                          ; Off             ; Off           ;
+; Iteration limit for constant Verilog loops                                 ; 5000            ; 5000          ;
+; Iteration limit for non-constant Verilog loops                             ; 250             ; 250           ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On              ; On            ;
+; Infer RAMs from Raw Logic                                                  ; On              ; On            ;
+; Parallel Synthesis                                                         ; On              ; On            ;
+; NOT Gate Push-Back                                                         ; On              ; On            ;
+; Power-Up Don't Care                                                        ; On              ; On            ;
+; Remove Duplicate Registers                                                 ; On              ; On            ;
+; Ignore CARRY Buffers                                                       ; Off             ; Off           ;
+; Ignore CASCADE Buffers                                                     ; Off             ; Off           ;
+; Ignore GLOBAL Buffers                                                      ; Off             ; Off           ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off             ; Off           ;
+; Ignore LCELL Buffers                                                       ; Auto            ; Auto          ;
+; Ignore SOFT Buffers                                                        ; Off             ; Off           ;
+; Limit AHDL Integers to 32 Bits                                             ; Off             ; Off           ;
+; Optimization Technique                                                     ; Speed           ; Speed         ;
+; Allow XOR Gate Usage                                                       ; On              ; On            ;
+; Auto Logic Cell Insertion                                                  ; On              ; On            ;
+; Parallel Expander Chain Length                                             ; 4               ; 4             ;
+; Auto Parallel Expanders                                                    ; On              ; On            ;
+; Auto Open-Drain Pins                                                       ; On              ; On            ;
+; Auto Resource Sharing                                                      ; Off             ; Off           ;
+; Maximum Fan-in Per Macrocell                                               ; 100             ; 100           ;
+; Use LogicLock Constraints during Resource Balancing                        ; On              ; On            ;
+; Ignore translate_off and synthesis_off directives                          ; Off             ; Off           ;
+; Report Parameter Settings                                                  ; On              ; On            ;
+; Report Source Assignments                                                  ; On              ; On            ;
+; Report Connectivity Checks                                                 ; On              ; On            ;
+; HDL message level                                                          ; Level2          ; Level2        ;
+; Suppress Register Optimization Related Messages                            ; Off             ; Off           ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000            ; 5000          ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000            ; 5000          ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100             ; 100           ;
+; Block Design Naming                                                        ; Auto            ; Auto          ;
+; Synthesis Effort                                                           ; Auto            ; Auto          ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On              ; On            ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off             ; Off           ;
+; Analysis & Synthesis Message Level                                         ; Medium          ; Medium        ;
+; Disable Register Merging Across Hierarchies                                ; Auto            ; Auto          ;
+; Synthesis Seed                                                             ; 1               ; 1             ;
++----------------------------------------------------------------------------+-----------------+---------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 24     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                           ;
++----------------------------------+-----------------+------------------------+------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path             ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------+---------+
+; 68k_cpld.v                       ; yes             ; User Verilog HDL File  ; /home/eddie/work/68k_dev/cpld/68k_cpld.v ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------+---------+
+
+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++----------------------+----------------------+
+; Resource             ; Usage                ;
++----------------------+----------------------+
+; Logic cells          ; 5                    ;
+; Total registers      ; 0                    ;
+; I/O pins             ; 38                   ;
+; Maximum fan-out node ; addr[20]             ;
+; Maximum fan-out      ; 3                    ;
+; Total fan-out        ; 20                   ;
+; Average fan-out      ; 0.47                 ;
++----------------------+----------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                 ;
++----------------------------+------------+------+---------------------+--------------+
+; Compilation Hierarchy Node ; Macrocells ; Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+------------+------+---------------------+--------------+
+; |top                       ; 5          ; 38   ; |top                ; work         ;
++----------------------------+------------+------+---------------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Oct 14 00:34:36 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off 68k_cpld -c 68k_cpld
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file button_debouce.v
+    Info (12023): Found entity 1: PushButton_Debouncer
+Info (12021): Found 1 design units, including 1 entities, in source file 68k_cpld.v
+    Info (12023): Found entity 1: top
+Info (12021): Found 1 design units, including 1 entities, in source file spi_master.v
+    Info (12023): Found entity 1: SPI_Master_With_Single_CS
+Info (12127): Elaborating entity "top" for the top level hierarchy
+Warning (10235): Verilog HDL Always Construct warning at 68k_cpld.v(27): variable "addr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at 68k_cpld.v(28): variable "addr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at 68k_cpld.v(29): variable "addr" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10034): Output port "dtack" at 68k_cpld.v(15) has no driver
+Warning (10034): Output port "berr" at 68k_cpld.v(17) has no driver
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "dtack" is stuck at GND
+    Warning (13410): Pin "berr" is stuck at GND
+Warning (21074): Design contains 28 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "cpu_clk"
+    Warning (15610): No output dependent on input pin "addr[0]"
+    Warning (15610): No output dependent on input pin "addr[1]"
+    Warning (15610): No output dependent on input pin "addr[2]"
+    Warning (15610): No output dependent on input pin "addr[3]"
+    Warning (15610): No output dependent on input pin "addr[4]"
+    Warning (15610): No output dependent on input pin "addr[5]"
+    Warning (15610): No output dependent on input pin "addr[6]"
+    Warning (15610): No output dependent on input pin "addr[7]"
+    Warning (15610): No output dependent on input pin "addr[8]"
+    Warning (15610): No output dependent on input pin "addr[9]"
+    Warning (15610): No output dependent on input pin "addr[10]"
+    Warning (15610): No output dependent on input pin "addr[11]"
+    Warning (15610): No output dependent on input pin "addr[12]"
+    Warning (15610): No output dependent on input pin "addr[13]"
+    Warning (15610): No output dependent on input pin "addr[14]"
+    Warning (15610): No output dependent on input pin "addr[15]"
+    Warning (15610): No output dependent on input pin "addr[16]"
+    Warning (15610): No output dependent on input pin "addr[17]"
+    Warning (15610): No output dependent on input pin "addr[18]"
+    Warning (15610): No output dependent on input pin "addr[19]"
+    Warning (15610): No output dependent on input pin "rw"
+    Warning (15610): No output dependent on input pin "fc[0]"
+    Warning (15610): No output dependent on input pin "fc[1]"
+    Warning (15610): No output dependent on input pin "fc[2]"
+    Warning (15610): No output dependent on input pin "single_step"
+    Warning (15610): No output dependent on input pin "lds"
+    Warning (15610): No output dependent on input pin "uds"
+Info (21057): Implemented 43 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 33 input pins
+    Info (21059): Implemented 5 output pins
+    Info (21063): Implemented 5 macrocells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 38 warnings
+    Info: Peak virtual memory: 561 megabytes
+    Info: Processing ended: Wed Oct 14 00:34:37 2020
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
+
+
