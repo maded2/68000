@@ -24,10 +24,6 @@ $(TARGET_BIN_ELF): $(ALL_OBJS)
 
 $(TARGET_BIN): $(TARGET_BIN_ELF)	
 	$(OBJCOPY) --reverse-bytes=2 --pad-to 0x00020000 --only-section .text* --only-section .rodata* --only-section .data* -v -O binary $(TARGET_BIN_ELF) $(TARGET_BIN)
-	# $(OBJCOPY) -v -O binary a.out monitor.bin
-
-#monitor.s: monitor.c
-#	$(CC) -Wall -nostdlib -nodefaultlibs -m68000 -fomit-frame-pointer -S monitor.c
 
 clean:
 	$(RM) $(TARGET_BIN) $(TARGET_BIN_ELF) $(ALL_OBJS)
