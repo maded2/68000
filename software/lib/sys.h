@@ -1,6 +1,9 @@
 
 typedef unsigned int size_t;
 
+extern void puts(const char *s);
+
+extern void inituart();
 extern void putch(const char c);
 extern int getch();
 extern int getch2();

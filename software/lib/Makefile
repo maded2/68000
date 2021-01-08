@@ -1,22 +1,17 @@
 CC=m68k-linux-gnu-gcc-10
 AR=m68k-linux-gnu-ar
 
-LIB_SRC = uart.s lib.s memset.c memcpy.c
-
-LIB_OBJS = uart.o lib.o memset.o memcpy.o 
-
-# boot.o needs to be 1st in the list as it contains the Vector table
-ALL_OBJS = $(LIB_OBJS) 
-
+LIB_SRC = memset.c memcpy.c io.c fpgnulib.c uart.s libgcc.s lb1sf68.S
+LIB_OBJS = uart.o libgcc.o memset.o memcpy.o io.o lb1sf68.o fpgnulib.o
 TARGET_BIN = libsys.a
 
 all: $(TARGET_BIN)	
 
-$(ALL_OBJS): $(MONITOR_SRC) $(RUNTIME_SRC)
-	$(CC) -Wall -m68000 -fomit-frame-pointer -nostdlib -nodefaultlibs -c $(LIB_SRC)
+$(LIB_OBJS): $(LIB_SRC)
+	$(CC) -v -Wall -m68000 -fomit-frame-pointer -nostdlib -nodefaultlibs -D L_float -D L_floatex -D L_mulsi3 -D L_ltsf2 -c $(LIB_SRC)
 
-$(TARGET_BIN): $(ALL_OBJS)	
-	$(AR)  rcs $(TARGET_BIN) $(ALL_OBJS)
+$(TARGET_BIN): $(LIB_OBJS)	
+	$(AR) rcs $(TARGET_BIN) $(LIB_OBJS)
 
 clean:
-	$(RM) $(TARGET_BIN) $(ALL_OBJS)
+	$(RM) $(TARGET_BIN) $(LIB_OBJS)

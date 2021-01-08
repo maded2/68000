@@ -25,6 +25,25 @@ RBR             = RHR     /* receive buffer register */
 IIR             = ISR     /* interrupt identification register */
 SCR             = SPR     /* scratch register */
 
+/*
+    Initialise UART 
+*/
+ .global inituart
+inituart:   lea.l   UART,%a1
+
+            move.b  #0,LCR(%a1)              /* reset DLAB */
+            move.b  #0b00000000,IER(%a1)      /* clear Interrupt register */
+            move.b  #0b00000111,FCR(%a1)      /* new: enable FIFO and reset RX and TX FIFO */
+
+            move.b  LCR(%a1),%d0             /* prophylactic read of line status read */
+
+            move.b  #0x80,LCR(%a1)            /* set DLAB */
+            move.b  #BAUD_DIV_L,DLL(%a1)     /* set divisor latch low byte */
+            move.b  #BAUD_DIV_U,DLM(%a1)     /* set divisor latch high byte */
+
+            move.b  #0x03,LCR(%a1)             /* set 8N1 and DLAB=0 */
+            move.b  #0x03,MCR(%a1)             /* set DTR and RTS */
+            rts
 
 
 /*
@@ -32,8 +51,8 @@ SCR             = SPR     /* scratch register */
     D0 char to send
     A1 clobbered
 */
-.global putch
-            lea.l   UART,%a1
+.globl putch
+putch:      lea.l   UART,%a1
 .L2:        btst.b  #5,LSR(%a1)
             beq     .L2
             move.l  4(%sp),%d0
@@ -45,8 +64,8 @@ SCR             = SPR     /* scratch register */
     D0 char read, -1 if no char read
     A1 clobbered
 */
-.global getch
-            lea.l   UART,%a1
+.globl getch
+getch:      lea.l   UART,%a1
             move.l  #-1,%d0             /* -1 to indicate no char read */
             btst.b  #0,LSR(%a1)         /* char received?  */
             beq     .L1
@@ -59,8 +78,8 @@ SCR             = SPR     /* scratch register */
     D0 char read
     A1 clobbered
 */
-.global getch2                           /* blocking read */
-            lea.l   UART,%a1
+.globl getch2                           /* blocking read */
+getch2:     lea.l   UART,%a1
 .L3:        btst.b  #0,LSR(%a1)         /* char received?  */
             beq     .L3
             move.b  RHR(%a1),%d0        /* receive character  */
