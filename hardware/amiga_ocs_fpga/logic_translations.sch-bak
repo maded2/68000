@@ -386,32 +386,14 @@ Text GLabel 4700 6700 2    50   Input ~ 0
 A23
 Text GLabel 6750 2150 2    50   Output ~ 0
 DTACK
-Text GLabel 6750 4300 2    50   Output ~ 0
-BERR
 Text GLabel 6750 4000 2    50   Output ~ 0
 IPL0
 Text GLabel 6750 4100 2    50   Output ~ 0
 IPL1
 Text GLabel 6750 4200 2    50   Output ~ 0
 IPL2
-Text GLabel 8100 4050 0    50   Input ~ 0
-VMA
-Text GLabel 8100 4150 0    50   Output ~ 0
-E
-Text GLabel 8100 4250 0    50   Input ~ 0
-VPA
-Text GLabel 8100 3750 0    50   Input ~ 0
-FC0
-Text GLabel 8100 3850 0    50   Input ~ 0
-FC1
-Text GLabel 8100 3950 0    50   Input ~ 0
-FC2
-Text GLabel 6750 4400 2    50   Input ~ 0
+Text GLabel 6750 4300 2    50   Input ~ 0
 BGACK
-Text GLabel 6750 4500 2    50   Output ~ 0
-BG
-Text GLabel 6750 4600 2    50   Input ~ 0
-BR
 Text GLabel 4700 6800 2    50   Input ~ 0
 AS
 Text GLabel 6750 1850 2    50   Input ~ 0
@@ -517,17 +499,17 @@ Text GLabel 3900 6700 0    50   Input ~ 0
 3v3_A23
 Text GLabel 3900 6800 0    50   Input ~ 0
 3v3_AS
-Text GLabel 5950 1650 0    50   Input ~ 0
+Text GLabel 5950 1650 0    50   Output ~ 0
 3V3_RW
-Text GLabel 5950 2050 0    50   Input ~ 0
+Text GLabel 5950 2050 0    50   Output ~ 0
 3V3_UDS
-Text GLabel 5950 1950 0    50   Input ~ 0
+Text GLabel 5950 1950 0    50   Output ~ 0
 3V3_LDS
-Text GLabel 5950 2150 0    50   Output ~ 0
+Text GLabel 5950 2150 0    50   Input ~ 0
 3V3_DTACK
-Text GLabel 5950 1850 0    50   Input ~ 0
+Text GLabel 5950 1850 0    50   Output ~ 0
 3V3_RST
-Text GLabel 5950 1750 0    50   Input ~ 0
+Text GLabel 5950 1750 0    50   Output ~ 0
 3V3_CPU_CLK
 $Comp
 L Logic_LevelTranslator:TXS0108EPW U?
@@ -580,18 +562,12 @@ Wire Wire Line
 Wire Wire Line
 	5950 3600 6250 3600
 Connection ~ 6250 3600
-Text GLabel 5950 4000 0    50   Input ~ 0
+Text GLabel 5950 4000 0    50   Output ~ 0
 3V3_IPL0
-Text GLabel 5950 4400 0    50   Output ~ 0
+Text GLabel 5950 4300 0    50   Output ~ 0
 3V3_GACK
-Text GLabel 5950 4300 0    50   Input ~ 0
-3V3_BERR
-Text GLabel 5950 4500 0    50   Input ~ 0
-3V3_GB
-Text GLabel 5950 4200 0    50   Input ~ 0
+Text GLabel 5950 4200 0    50   Output ~ 0
 3V3_IPL2
-Text GLabel 5950 4100 0    50   Input ~ 0
+Text GLabel 5950 4100 0    50   Output ~ 0
 3V3_IPL1
-Text GLabel 5950 4600 0    50   Output ~ 0
-3V3_BR
 $EndSCHEMATC

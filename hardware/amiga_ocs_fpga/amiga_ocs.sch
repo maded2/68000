@@ -42,8 +42,6 @@ $EndComp
 Wire Wire Line
 	4950 1600 3800 1600
 Wire Wire Line
-	3800 1600 3800 2000
-Wire Wire Line
 	4950 2500 3800 2500
 Connection ~ 3800 2500
 Wire Wire Line
@@ -85,21 +83,6 @@ Wire Wire Line
 	4950 1800 3900 1800
 Wire Wire Line
 	3900 1800 3900 1350
-$Comp
-L power:+3.3V #PWR012
-U 1 1 5FA3C99B
-P 4100 1350
-F 0 "#PWR012" H 4100 1200 50  0001 C CNN
-F 1 "+3.3V" H 4115 1523 50  0000 C CNN
-F 2 "" H 4100 1350 50  0001 C CNN
-F 3 "" H 4100 1350 50  0001 C CNN
-	1    4100 1350
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4950 2400 4100 2400
-Wire Wire Line
-	4100 2400 4100 1350
 Text GLabel 6350 4800 2    50   Input ~ 0
 RW
 Text GLabel 6350 5600 2    50   Input ~ 0
@@ -124,16 +107,6 @@ Text GLabel 4950 5300 0    50   Output ~ 0
 IPL1
 Text GLabel 4950 5400 0    50   Output ~ 0
 IPL2
-Wire Wire Line
-	4950 2200 3800 2200
-Connection ~ 3800 2200
-Wire Wire Line
-	3800 2200 3800 2500
-Wire Wire Line
-	4950 2000 3800 2000
-Connection ~ 3800 2000
-Wire Wire Line
-	3800 2000 3800 2200
 Text GLabel 4950 3400 0    50   Output ~ 0
 ROM_SEL
 Text GLabel 4950 3100 0    50   Output ~ 0
@@ -298,4 +271,9 @@ U 5FBA1782
 F0 "logic_translations" 50
 F1 "logic_translations.sch" 50
 $EndSheet
+Wire Wire Line
+	3800 1600 3800 2500
+NoConn ~ 4950 2000
+NoConn ~ 4950 2200
+NoConn ~ 4950 2400
 $EndSCHEMATC

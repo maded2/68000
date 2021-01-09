@@ -1,0 +1,38 @@
+
+module top(
+	input wire clk,
+	input wire [23:1] addr,
+	input wire [15:0] data,
+	input wire as,
+	input wire rw,
+	input wire lds,
+	input wire uds,
+	output wire rom_sel, 
+	output wire io1_sel, 
+	output wire io2_sel, 
+	output wire mem1_sel, 
+	output wire mem2_sel, 
+	output wire mem3_sel, 
+	output wire mem4_sel,
+	output wire wrl,
+	output wire rdl,
+	output wire wru,
+	output wire rdu,
+);
+
+	rom_sel  = !(addr[23:20] == 4'b_0000) // 0x000000
+	io2_sel  = !(addr[23:20] == 4'b_1001) // 0x900000
+	io1_sel  = !(addr[23:20] == 4'b_1010) // 0xA00000
+	ram1_sel = !(addr[23:20] == 4'b_1100) // 0xC00000
+	ram2_sel = !(addr[23:20] == 4'b_1101) // 0xD00000
+	ram3_sel = !(addr[23:20] == 4'b_1110) // 0xE00000
+	ram4_sel = !(addr[23:20] == 4'b_1111) // 0xF00000
+	always @(posedge clk) begin
+		wrl <= !(as == 1'b_0 && rw == 1'b_0 && lds == 1'b_0)	
+		rdl <= !(as == 1'b_0 && rw == 1'b_1 && lds == 1'b_0)	
+		wru <= !(as == 1'b_0 && rw == 1'b_0 && uds == 1'b_0)	
+		rdu <= !(as == 1'b_0 && rw == 1'b_1 && uds == 1'b_0)	
+  end
+end
+
+endmodule
