@@ -1,5 +1,5 @@
 EDA Netlist Writer report for 68k_glue
-Sat Jan  9 23:54:04 2021
+Sun Jan 17 13:40:58 2021
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sat Jan  9 23:54:04 2021 ;
+; EDA Netlist Writer Status ; Successful - Sun Jan 17 13:40:58 2021 ;
 ; Revision Name             ; 68k_glue                              ;
 ; Top-level Entity Name     ; glue                                  ;
 ; Family                    ; MAX7000S                              ;
@@ -82,13 +82,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat Jan  9 23:54:03 2021
+    Info: Processing started: Sun Jan 17 13:40:58 2021
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off 68k_glue -c 68k_glue
 Info (204018): Generated files "68k_glue.vo" and "68k_glue_v.sdo" in directory "/home/eddie/work/68000/hardware/cpld/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 755 megabytes
-    Info: Processing ended: Sat Jan  9 23:54:04 2021
-    Info: Elapsed time: 00:00:01
+    Info: Peak virtual memory: 766 megabytes
+    Info: Processing ended: Sun Jan 17 13:40:58 2021
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
 

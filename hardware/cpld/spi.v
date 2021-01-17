@@ -32,6 +32,8 @@
 //              time when CS is high between trasnfers.
 ///////////////////////////////////////////////////////////////////////////////
 
+// https://github.com/nandland/spi-master/blob/master/LICENSE
+
 module SPI_Master_With_Single_CS
   #(parameter SPI_MODE = 0,
     parameter CLKS_PER_HALF_BIT = 2,

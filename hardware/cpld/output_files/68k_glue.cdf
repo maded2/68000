@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EPM7128SL84) Path("/home/eddie/work/68k_dev/hardware/cpld/output_files/") File("68k_glue.pof") MfrSpec(OpMask(1));
+		Device PartName(EPM7128SL84) Path("/home/eddie/work/68000/hardware/cpld/output_files/") File("68k_glue.pof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

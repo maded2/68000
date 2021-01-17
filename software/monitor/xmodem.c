@@ -28,7 +28,7 @@ int xmodemReceive(unsigned char *dest)
 
 	while (1) {
 		outch(NAK);
-		int c = getch(2500000);
+		int c = getch(250000);
 		if (c == SOH) {
 			break;
 		}

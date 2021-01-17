@@ -1,5 +1,5 @@
 Flow report for 68k_glue
-Sat Jan  9 23:54:10 2021
+Sun Jan 17 13:41:07 2021
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,14 +40,14 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+
 ; Flow Summary                                                                ;
 +---------------------------+-------------------------------------------------+
-; Flow Status               ; Successful - Sat Jan  9 23:54:10 2021           ;
+; Flow Status               ; Successful - Sun Jan 17 13:41:07 2021           ;
 ; Quartus II 64-Bit Version ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name             ; 68k_glue                                        ;
 ; Top-level Entity Name     ; glue                                            ;
 ; Family                    ; MAX7000S                                        ;
 ; Device                    ; EPM7128SLC84-15                                 ;
 ; Timing Models             ; Final                                           ;
-; Total macrocells          ; 57                                              ;
+; Total macrocells          ; 70                                              ;
 ; Total pins                ; 64                                              ;
 +---------------------------+-------------------------------------------------+
 
@@ -57,7 +57,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/09/2021 23:54:09 ;
+; Start date & time ; 01/17/2021 13:41:07 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; 68k_glue            ;
 +-------------------+---------------------+
@@ -68,7 +68,7 @@ applicable agreement for further details.
 +--------------------------+---------------------------+---------------+-------------+----------------+
 ; Assignment Name          ; Value                     ; Default Value ; Entity Name ; Section Id     ;
 +--------------------------+---------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID    ; 0.161020764932699         ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID    ; 0.161086206720494         ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT   ; Verilog Hdl               ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL      ; ModelSim-Altera (Verilog) ; <None>        ; --          ; --             ;
 ; FITTER_EFFORT            ; Standard Fit              ; Auto Fit      ; --          ; --             ;

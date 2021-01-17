@@ -59,9 +59,11 @@ void printi(int value) {
     }
 }
 
-char lineBuffer[100];
+unsigned char lineBuffer[100];
+unsigned char *linePos;
+int targetAddress;
 
-char *readline() {
+void readline() {
     int index = 0;
     for (;;) {
         int cc = inch();
@@ -87,7 +89,7 @@ char *readline() {
         }
     }
 
-    return (char *)&lineBuffer;
+    linePos= (unsigned char *)&lineBuffer;
 }
 
 int strlen(const char *line) {
@@ -99,37 +101,39 @@ int strlen(const char *line) {
     return l;
 }
 
-int parseHex(const char *s) {
-    int addr = 0;
-    while (*s == 32) {
-        s++;
+int parseHex() {
+    int value = 0;
+    while (*linePos == 32) {
+        linePos++;
     }
-    while (*s != 0 && *s != 32) {
+    while (*linePos != 0 && *linePos != 32) {
         for (int i=0; i < 16; i++) {
-            if (*s == int2hex[i]) {
-                addr = (addr * 16) + i;
+            if (*linePos == int2hex[i]) {
+                value = (value * 16) + i;
                 break;
             }
         }
-        s++;
+        linePos++;
     }
-    return addr;
+    return value;
 }
 
-void memorydump(const char *line) {
-    int address = parseHex(++line);
+void memorydump(int option) {
+    if (option == 0) {
+        targetAddress = parseHex(++linePos);
+    }
     for (int y=0; y<8; y++) {
-        printlw(address);
+        printlw(targetAddress);
         prints(": ");
-        char *s = (char *)address;
+        char *s = (char *)targetAddress;
         for (int i=0; i<16; i++) {
             printb(*s++);
             prints(" ");
         }
         prints("   [");
-        s = (char *)address;
+        s = (char *)targetAddress;
         for (int i=0; i<16; i++) {
-            if (*s < 32 || *s > 127) {
+            if (*s < 32 || *s > 126) {
                 outch('.');
             } else {
                 outch(*s);
@@ -137,54 +141,147 @@ void memorydump(const char *line) {
             s++;
         }
         prints("]\r\n");
-        address+= 16;
+        targetAddress+= 16;
     }
-
 }
 
-void runCode(const char *line) {
-    int address = parseHex(++line);
-    prints("]\r\n");
-    exec((const char *)address);
+void memorytest(int option) {
+    if (option == 0) {
+        targetAddress = parseHex(++linePos);
+    }
+    for (int y=0; y<16; y++) {
+        printlw(targetAddress);
+        prints(": [");
+        unsigned char *s = (unsigned char *)targetAddress;
+        for (int x=0; x<64; x++) {
+            int fail1 = 0;
+            int fail2 = 0;
+            for (int i=0; i<1024; i++) {
+                *s = 0xAA;
+                if (*s != 0xAA) {
+                    fail1++;
+                }
+                *s = 0x88;
+                if (*s != 0x88) {
+                    fail2++;
+                }     
+                s++;           
+            }
+            if (fail1 > 0 && fail2 > 0) {
+                prints("%");
+            } else if (fail1 > 0) {
+                prints("?");
+            } else if (fail2 > 0) {
+                prints("*");
+            } else {
+                prints(".");
+            }
+        }
+        prints("]\r\n");
+        targetAddress+= 256*256;
+    }
+}
+
+void testbyte(int option) {
+    if (option == 0) {
+        targetAddress = parseHex(++linePos);
+    }
+    printlw(targetAddress);
+    prints("\r\n");
+    unsigned char *s = (unsigned char *)targetAddress;
+    unsigned char v=0;
+    for (int y = 0; y<16; y++) {
+        prints(" [");
+        for (int x=0; x<16; x++) {
+            *s = v;
+            int v1 = *s;
+            if (v == v1) {
+                prints(" ..:.."); 
+            } else {
+                prints(" ");
+                printb(v);
+                prints(":");
+                printb(v1);
+            }
+            v++;
+        }
+        prints("]\r\n");
+    }
+    targetAddress++;
+}
+
+void setMemory() {
+    targetAddress = parseHex(++linePos);
+    int value = parseHex(++linePos);
+    *(unsigned char *)targetAddress = (char)value;
+}
+
+void runCode() {
+    targetAddress = parseHex(++linePos);
+    prints("\r\n");
+    exec((const char *)targetAddress);
 }
 
 extern int xmodemReceive(unsigned char *dest);
 
-void xtransfer(const char *line) {
-    unsigned char *address = (unsigned char *)parseHex(line);
+void xtransfer() {
+    targetAddress = parseHex(++linePos);
 
-    int rc = xmodemReceive(address);  
+    prints("xmodem transfer: ");
+    printlw(targetAddress);
+
+    int rc = xmodemReceive((unsigned char *)targetAddress);  
     for (int i=0; i< 100000; i++);  // wait a bit
     prints("\r\nreturn code=");
     printi(rc);
     prints("\r\n");
 }
 
-void processCmd(const char *line) {
-    while (*line == 32) { // skip whitespace
-        line++;
+void processCmd() {
+    while (*linePos == 32) { // skip whitespace
+        linePos++;
     }
-    switch (*line) {
+    switch (*linePos) {
     case 'm':
-        memorydump(++line);
+        memorydump(0);
         break;
+    case 'M':
+        memorydump(1);
+        break;
+    case 't':
+        memorytest(0);
+        break;
+    case 'T':
+        memorytest(1);
+        break;
+    case 'y':
+        testbyte(0);
+        break;
+    case 'Y':
+        testbyte(1);
+        break;        
     case 'x':
-        xtransfer(++line);
+        xtransfer();
         break;
     case 'g':
-        runCode(++line);
+        runCode();
+        break;
+    case 's':
+        setMemory();   
+        break;
+    default:
+        prints("Unknown command\r\n");
     }
     prints("\r\n");
 }
 
 
-void main() {
-    char *line;
-    prints("\r\n68000 Monitor, v0.1\r\n\r\n");
+int main() {
+    prints("\r\n68000 Monitor, v0.2\r\n\r\n");
 
     for (;;) {
         prints(" > ");
-        line = readline();
-        processCmd(line);
+        readline();
+        processCmd();
     }
 }

@@ -1,0 +1,6 @@
+
+State Machine - |glue|SPI_Master_With_Single_CS:UUT|r_SM_CS
+Name r_SM_CS.state_bit_1 r_SM_CS.state_bit_0 
+r_SM_CS.IDLE 0 0 
+r_SM_CS.TRANSFER 0 1 
+r_SM_CS.CS_INACTIVE 1 0 

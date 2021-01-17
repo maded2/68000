@@ -127,3 +127,4 @@ set_instance_assignment -name GLOBAL_SIGNAL GLOBAL_CLOCK -to as
 set_instance_assignment -name GLOBAL_SIGNAL OFF -to rst
 set_instance_assignment -name GLOBAL_SIGNAL OFF -to rw
 set_location_assignment PIN_12 -to dc
+set_global_assignment -name VERILOG_FILE SPI_Master.v
