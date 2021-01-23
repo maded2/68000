@@ -1,6 +1,5 @@
 #include "ssd1351.h"
 
-
 uint8_t *spiStatus = (uint8_t *)0xB00001;
 uint8_t *spiIn = (uint8_t *)0xB00003;
 uint8_t *spiOut = (uint8_t *)0xB00005;
@@ -19,45 +18,46 @@ void sendAndWait(uint8_t value)
 
 void outSpi0(uint8_t cmd)
 {
-	setSpiStatus(SPI_SS1_ENABLE | SPI_SS2_DISABLE | SPI_CMD); // SS1 & Cmd
+    setSpiStatus(SPI_SS1_ENABLE | SPI_SS2_DISABLE | SPI_CMD); // SS1 & Cmd
     sendAndWait(cmd);
-	setSpiStatus(SPI_SS1_ENABLE | SPI_SS2_DISABLE | SPI_DATA); // SS1 & Data
+    setSpiStatus(SPI_SS1_ENABLE | SPI_SS2_DISABLE | SPI_DATA); // SS1 & Data
 }
 
 void outSpi1(uint8_t cmd, uint8_t arg1)
 {
-	setSpiStatus(SPI_SS1_ENABLE | SPI_SS2_DISABLE | SPI_CMD); // SS1 & Cmd
+    setSpiStatus(SPI_SS1_ENABLE | SPI_SS2_DISABLE | SPI_CMD); // SS1 & Cmd
     sendAndWait(cmd);
-	setSpiStatus(SPI_SS1_ENABLE | SPI_SS2_DISABLE | SPI_DATA); // SS1 & Data
+    setSpiStatus(SPI_SS1_ENABLE | SPI_SS2_DISABLE | SPI_DATA); // SS1 & Data
     sendAndWait(arg1);
-	setSpiStatus(SPI_SS1_DISABLE | SPI_SS2_DISABLE | SPI_DATA); // Data
+    setSpiStatus(SPI_SS1_DISABLE | SPI_SS2_DISABLE | SPI_DATA); // Data
 }
 
 void outSpi2(uint8_t cmd, uint8_t arg1, uint8_t arg2)
 {
-	setSpiStatus(SPI_SS1_ENABLE | SPI_SS2_DISABLE | SPI_CMD); // SS1 & Cmd
+    setSpiStatus(SPI_SS1_ENABLE | SPI_SS2_DISABLE | SPI_CMD); // SS1 & Cmd
     sendAndWait(cmd);
-	setSpiStatus(SPI_SS1_ENABLE | SPI_SS2_DISABLE | SPI_DATA); // SS1 & Data
+    setSpiStatus(SPI_SS1_ENABLE | SPI_SS2_DISABLE | SPI_DATA); // SS1 & Data
     sendAndWait(arg1);
     sendAndWait(arg2);
-	setSpiStatus(SPI_SS1_DISABLE | SPI_SS2_DISABLE | SPI_DATA); // Data
+    setSpiStatus(SPI_SS1_DISABLE | SPI_SS2_DISABLE | SPI_DATA); // Data
 }
 
 void outSpi3(uint8_t cmd, uint8_t arg1, uint8_t arg2, uint8_t arg3)
 {
-	setSpiStatus(SPI_SS1_ENABLE | SPI_SS2_DISABLE | SPI_CMD); // SS1 & CMD
+    setSpiStatus(SPI_SS1_ENABLE | SPI_SS2_DISABLE | SPI_CMD); // SS1 & CMD
     sendAndWait(cmd);
-	setSpiStatus(SPI_SS1_ENABLE | SPI_SS2_DISABLE | SPI_DATA); // SS1 & Data
+    setSpiStatus(SPI_SS1_ENABLE | SPI_SS2_DISABLE | SPI_DATA); // SS1 & Data
     sendAndWait(arg1);
     sendAndWait(arg2);
     sendAndWait(arg3);
-	setSpiStatus(SPI_SS1_DISABLE | SPI_SS2_DISABLE | SPI_DATA); // Data
+    setSpiStatus(SPI_SS1_DISABLE | SPI_SS2_DISABLE | SPI_DATA); // Data
 }
 
 void setAddrWindow(uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2)
 {
     outSpi2(0x15, x1, x2); // column address
     outSpi2(0x75, y1, y2); // row address
+    setSpiStatus(SPI_SS1_ENABLE | SPI_SS2_DISABLE | SPI_CMD); // SS1 & CMD
     outSpi0(0x5c);
 }
 
@@ -70,33 +70,90 @@ void drawRect(uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, uint16_t colour)
 {
     // printw(colour);
     // prints("\r\n");
- 
+
     setAddrWindow((uint8_t)x1, (uint8_t)y1, (uint8_t)x2, (uint8_t)y2);
-	setSpiStatus(SPI_SS1_ENABLE | SPI_SS2_DISABLE | SPI_DATA); // SS1 & Data
+    setSpiStatus(SPI_SS1_ENABLE | SPI_SS2_DISABLE | SPI_DATA); // SS1 & Data
     for (int y = y1; y <= y2; ++y)
     {
         for (int x = x1; x <= x2; ++x)
         {
-            sendAndWait((uint8_t)(colour>>8));
+            sendAndWait((uint8_t)(colour >> 8));
             sendAndWait((uint8_t)colour);
         }
     }
-	setSpiStatus(SPI_SS1_DISABLE | SPI_SS2_DISABLE | SPI_DATA); // Data
+    setSpiStatus(SPI_SS1_DISABLE | SPI_SS2_DISABLE | SPI_DATA); // Data
+}
+
+uint8_t cursor_x = 0;
+uint8_t cursor_y = 0;
+
+void oledsetcursor(uint8_t x, uint8_t y)
+{
+    cursor_x = x * 8;
+    cursor_y = y * 8;
+}
+
+void oledprints(char *s) {
+    while (*s != 0) {
+        oledprintch(*s++);
+    }
+}
+
+void oledprintch(char c)
+{
+    if (c == '\r') {
+        cursor_x = 0;
+    } else if (c == '\n') {
+        cursor_y += 8;
+    } else {
+        putchar_xy(cursor_x, cursor_y, c);
+     cursor_x += 8;
+   }
+    if (cursor_x >= 128) {
+        cursor_x = 0;
+        cursor_y += 8;
+    }
+}
+
+void putchar_xy(uint8_t X, uint8_t Y, uint8_t c)
+{
+    setAddrWindow(X, Y, X + 7, Y + 7);
+    uint8_t *car_ptr = font_8x8 + (int)c * 8;
+    for (int row = 0; row < 8; ++row)
+    {
+        for (int col = 0; col < 8; ++col)
+        {
+            uint32_t BW = (car_ptr[col] & (1 << row)) ? 255 : 0;
+            uint16_t colour = BW ? WHITE : BLACK;
+            sendAndWait((uint8_t)(colour >> 8));
+            sendAndWait((uint8_t)colour);
+        }
+    }   
+    setSpiStatus(SPI_SS1_DISABLE | SPI_SS2_DISABLE | SPI_DATA); // Data
+}
+
+void oleddrawpic() {
+    uint8_t *pic_ptr = pic;
+    setAddrWindow(0, 0, 127, 127);
+    for (int i =0; i<32768; i++) {
+        sendAndWait(*pic_ptr++);
+    }
+    setSpiStatus(SPI_SS1_DISABLE | SPI_SS2_DISABLE | SPI_DATA); // Data
 }
 
 void initSSD1351()
 {
-    // prints("init oled\r\n");
+    prints("init oled\r\n");
 
     //Initialization sequence / configuration
-    outSpi1(0xfd, 0x12);             // unlock driver
-    outSpi1(0xfd, 0xb1);             // unlock commands
-    outSpi0(0xae);                   // display off
-    outSpi0(0xa4);                   // display mode off
-    outSpi2(0x15, 0x00, 0x7f);       // column address
-    outSpi2(0x75, 0x00, 0x7f);       // row address
-    outSpi1(0xb3, 0xf1);             // front clock divider (see section 8.5 of manual)
-    outSpi1(0xca, 0x7f);             // multiplex
+    outSpi1(0xfd, 0x12);       // unlock driver
+    outSpi1(0xfd, 0xb1);       // unlock commands
+    outSpi0(0xae);             // display off
+    outSpi0(0xa4);             // display mode off
+    outSpi2(0x15, 0x00, 0x7f); // column address
+    outSpi2(0x75, 0x00, 0x7f); // row address
+    outSpi1(0xb3, 0xf1);       // front clock divider (see section 8.5 of manual)
+    outSpi1(0xca, 0x7f);       // multiplex
     // outSpi1(0xa0, 0x74);             // remap, data format, increment
     outSpi1(0xa0, 0x66);             // remap, data format, increment
     outSpi1(0xa1, 0x00);             // display start line

@@ -13,7 +13,6 @@ int main()
 {
 	initSSD1351();
 
-
 	for (;;) {
 		clearDisplay();
 		drawRect(10, 10, 100, 100, BLUE);
@@ -28,6 +27,15 @@ int main()
 		for (int i=0; i< 100000; i++);
 	
 		clearDisplay();	
+
+		oleddrawpic();
+		
+		oledsetcursor(5, 3);
+		oledprints("Hello\nWorld!!");
+
+		oledsetcursor(0, 10);
+		oledprints("Thank\nYou!!");
+
 		setAddrWindow(0, 0, 127, 127);
 		setSpiStatus(SPI_SS1_ENABLE | SPI_SS2_DISABLE | SPI_DATA); // SS1 & Data
 

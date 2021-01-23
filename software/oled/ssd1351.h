@@ -45,6 +45,9 @@ SPI Registers, only uses the lower 8 bits of the data bus
 #define SPI_CMD 0
 #define SPI_DATA 4
 
+extern uint8_t* font_8x8;
+extern uint8_t* pic;
+
 void setSpiStatus(uint8_t value);
 void sendAndWait(uint8_t value);
 void outSpi0(uint8_t cmd);
@@ -55,3 +58,8 @@ void setAddrWindow(uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2);
 void clearDisplay();
 void drawRect(uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, uint16_t colour);
 void initSSD1351();
+void oledsetcursor(uint8_t x, uint8_t y);
+void oledprints(char *s);
+void oledprintch(char c);
+void putchar_xy(uint8_t X, uint8_t Y, uint8_t c);
+void oleddrawpic();
