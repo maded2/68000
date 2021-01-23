@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.inc": "vasmmot",
+        "*.asm": "vasmmot",
+        "*.tcc": "c"
+    }
+}

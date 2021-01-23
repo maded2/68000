@@ -8,7 +8,7 @@ TARGET_BIN = libsys.a
 all: $(TARGET_BIN)	
 
 $(LIB_OBJS): $(LIB_SRC)
-	$(CC) -v -Wall -m68000 -fomit-frame-pointer -nostdlib -nodefaultlibs -D L_float -D L_floatex -D L_mulsi3 -D L_ltsf2 -c $(LIB_SRC)
+	$(CC) -v -Wall -m68000 -fomit-frame-pointer -nostdlib -nodefaultlibs -D L_float -D L_floatex -D L_mulsi3 -D L_ltsf2 -D L_gtsf2 -c $(LIB_SRC)
 
 $(TARGET_BIN): $(LIB_OBJS)	
 	$(AR) rcs $(TARGET_BIN) $(LIB_OBJS)

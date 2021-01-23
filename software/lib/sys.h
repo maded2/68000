@@ -1,10 +1,15 @@
+#include "stdint-gcc.h"
+#include "stddef.h"
 
-typedef unsigned int size_t;
 
-extern void puts(const char *s);
+extern void prints(char *s);
+extern void printb(uint8_t value);
+extern void printw(uint16_t value);
+extern void printlw(uint32_t value);
+extern void printi(int value);
 
 extern void inituart();
-extern void putch(const char c);
+extern void putch(uint8_t c);
 extern int getch();
 extern int getch2();
 

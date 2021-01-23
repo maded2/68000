@@ -89,7 +89,7 @@ L5:	subq.l	#1, %d0	/* adjust quotient */
 
 L6:	move.l	%sp@+, %d2
 	rts
-
+/*
 
 .globl	__mulsi3
 __mulsi3:
@@ -104,4 +104,4 @@ __mulsi3:
 	mulu.w	%sp@(10), %d1	/* x1*y1 */
 	add.l	%d1, %d0
 	rts
-	
+	*/

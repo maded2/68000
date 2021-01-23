@@ -121,10 +121,11 @@ set_location_assignment PIN_20 -to mosi
 set_location_assignment PIN_21 -to miso
 set_location_assignment PIN_10 -to ss1
 set_location_assignment PIN_11 -to ss2
-set_global_assignment -name VERILOG_FILE spi.v
 set_instance_assignment -name GLOBAL_SIGNAL GLOBAL_CLOCK -to clk
-set_instance_assignment -name GLOBAL_SIGNAL GLOBAL_CLOCK -to as
+set_instance_assignment -name GLOBAL_SIGNAL "GLOBAL CLOCK" -to as
 set_instance_assignment -name GLOBAL_SIGNAL OFF -to rst
 set_instance_assignment -name GLOBAL_SIGNAL OFF -to rw
 set_location_assignment PIN_12 -to dc
 set_global_assignment -name VERILOG_FILE SPI_Master.v
+set_instance_assignment -name FAST_INPUT_REGISTER ON -to as
+set_instance_assignment -name FAST_INPUT_REGISTER ON -to clk
