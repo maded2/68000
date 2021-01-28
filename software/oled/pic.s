@@ -2053,3 +2053,9 @@
 
 pic:
     .long .LC0	
+
+
+
+# image conversion
+# fmpeg -vcodec png -i test.png -vcodec rawvideo -f rawvideo -pix_fmt rgb565 test.raw
+# hexdump -vx test.raw

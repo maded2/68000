@@ -11,17 +11,17 @@ module glue (
 	input wire irq1,
 	input wire irq2,
 	input wire miso,
-	output reg rom_sel, 
-	output reg io1_sel, 
+	output wire rom_sel, 
+	output wire io1_sel, 
 	output reg io2_sel, 
-	output reg ram1_sel, 
-	output reg ram2_sel, 
-	output reg ram3_sel, 
-	output reg ram4_sel,
-	output reg wrl,
-	output reg rdl,
-	output reg wru,
-	output reg rdu,
+	output wire ram1_sel, 
+	output wire ram2_sel, 
+	output wire ram3_sel, 
+	output wire ram4_sel,
+	output wire wrl,
+	output wire rdl,
+	output wire wru,
+	output wire rdu,
 	output wire [2:0] ipl,
 	output wire dtack,
 	output wire rst_h,
@@ -30,7 +30,7 @@ module glue (
 	output wire ss1,
 	output wire ss2,
 	output wire dc,
-	inout tri [7:0] data
+	inout [7:0] data
 );
 
 	reg [7:0] status= 8'b_00011000;
@@ -51,7 +51,7 @@ module glue (
 	end
 
 	parameter SPI_MODE = 3;           // CPOL = 1, CPHA = 1
-	parameter CLKS_PER_HALF_BIT = 10;  // 3 MHz
+	parameter CLKS_PER_HALF_BIT = 2;  // 12Mhz / (2 * 4) = 1.5Mb/s
 	wire [7:0] w_Master_RX_Byte;
 	reg [7:0] r_Master_TX_Byte;
 	wire w_Master_RX_DV;
@@ -92,6 +92,16 @@ module glue (
 	        ___/                \__________________/
 	              _______________________              ___
 	DTACK	_____/                       \____________/  	
+
+	
+	SPI Registers, only uses the lower 8 bits of the data bus
+	0xB00001 - Status Register
+					Bit 0 - Send Busy(1)
+					Bit 1 - Recv Data(1)
+					Bit 2 - Data(1) / Cmd(0)
+					Bit 3 - SS1 (0=enable)
+					Bit 4 - SS2 (0=enable)
+	0xB00003 - Send/Recv Data Register, 8 bits
 */
 
     // Instantiate Master
@@ -124,70 +134,52 @@ module glue (
 	assign dc = status[2];
 	assign ss1 = status[3];
 	assign ss2 = status[4];
+	assign wrl = !(as == 1'b_0 && rw == 1'b_0 && lds == 1'b_0);
+	assign rdl = !(as == 1'b_0 && rw == 1'b_1 && lds == 1'b_0);	
+	assign wru = !(as == 1'b_0 && rw == 1'b_0 && uds == 1'b_0);
+	assign rdu = !(as == 1'b_0 && rw == 1'b_1 && uds == 1'b_0);		
+	assign rom_sel  = !(as == 1'b_0 && addr[23:20] == 4'b_0000); // 0x000000
+	assign ram1_sel = !(as == 1'b_0 && addr[23:20] == 4'b_1100); // 0xC00000
+	assign ram2_sel = !(as == 1'b_0 && addr[23:20] == 4'b_1101); // 0xD00000
+	assign ram3_sel = !(as == 1'b_0 && addr[23:20] == 4'b_1110); // 0xE00000
+	assign ram4_sel = !(as == 1'b_0 && addr[23:20] == 4'b_1111); // 0xF00000
+	assign io1_sel  = !(as == 1'b_0 && addr[23:20] == 4'b_1010); // 0xA00000
 
 	always @(clk) begin
-
-		wrl <= !(as == 1'b_0 && rw == 1'b_0 && lds == 1'b_0);
-		rdl <= !(as == 1'b_0 && rw == 1'b_1 && lds == 1'b_0);	
-		wru <= !(as == 1'b_0 && rw == 1'b_0 && uds == 1'b_0);
-		rdu <= !(as == 1'b_0 && rw == 1'b_1 && uds == 1'b_0);
-		rom_sel  <= !(as == 1'b_0 && addr[23:20] == 4'b_0000 && rw == 1'b_1); // 0x000000
-		ram1_sel <= !(as == 1'b_0 && addr[23:20] == 4'b_1100); // 0xC00000
-		ram2_sel <= !(as == 1'b_0 && addr[23:20] == 4'b_1101); // 0xD00000
-		ram3_sel <= !(as == 1'b_0 && addr[23:20] == 4'b_1110); // 0xE00000
-		ram4_sel <= !(as == 1'b_0 && addr[23:20] == 4'b_1111); // 0xF00000
-		io1_sel  <= !(as == 1'b_0 && addr[23:20] == 4'b_1010); // 0xA00000
-
 		r_Master_TX_DV = 1'b_0;
-		r_out_enable = 1'b_0;
-		/*
-		SPI Registers, only uses the lower 8 bits of the data bus
-		0xB00001 - Status Register
-						Bit 0 - Send Busy(1)
-						Bit 1 - Recv Data(1)
-						Bit 2 - Data(1) / Cmd(0)
-						Bit 3 - SS1 (0=enable)
-						Bit 4 - SS2 (0=enable)
-		0xB00003 - Send Data Register, 8 bits
-		0xB00005 - Recv Data Register, 8 bits
-		*/
+		r_out_enable = 1'b_0;	
+	
+		if (w_Master_RX_DV== 1'b_1) begin  // listen to stroke from the SPI interface
+			datain <= w_Master_RX_Byte;
+			status[1] <= 1'b_1;  // set data available flag to indicate SPI data received
+		end
+		
 		if (as == 1'b_0 && addr[23:20] == 4'b_1011) begin // 0xB00000
-			if (rdl == 1'b_0) begin
-				case(addr[2:1])
-				2'b_00 : begin	// read status register, 0xB00000
+			case(addr[2:1])
+			2'b_00 : begin	// read status register, 0xB00000
+					if (rdl == 1'b_0) begin
 						status[0] = w_Master_TX_Ready;
 						buffer <= status;
 						r_out_enable <= 1'b_1;
 					end
-				2'b_01 : begin	// read spi data in register, 0xB00003
-						buffer <= datain;
-						r_out_enable <= 1'b_1;
-						status[1] <= 1'b_0;  // clear data available flag after this read
-					end
-				2'b_10 : begin  // read spi data out register, 0xB00005
-						buffer <= dataout;
-						r_out_enable <= 1'b_1;
-					end
-				endcase
-			end
-			if (wrl == 1'b_0) begin  // write spi data out register, 0xB00005
-				case(addr[2:1])
-				2'b_00 : begin	// write status register, 0xB00000
+					if (wrl == 1'b_0) begin
 						status[4:2] <= data[4:2];
 					end
-				2'b_10 : begin	// write spi data out register, 0xB00005
-						if (w_Master_TX_Ready== 1'b_1) begin
-							dataout <= data;
-							r_Master_TX_Byte <= data;
-							r_Master_TX_DV <= 1'b_1;   // write stroke to the SPI interface
-						end
+				end
+			2'b_01 : begin	// read spi data in register, 0xB00003
+					if (rdl == 1'b_0) begin
+						buffer <= dataout;
+						status[1] <= 1'b_0;  // clear data available flag after read
+						r_out_enable <= 1'b_1;
 					end
-				endcase
-			end
-		end
-		if (w_Master_RX_DV== 1'b_1) begin  // listen to stroke from the SPI interface
-			datain <= w_Master_RX_Byte;
-			status[1] <= 1'b_1;  // set flag to indicate data is available
+					if (wrl == 1'b_0 && w_Master_TX_Ready== 1'b_1) begin
+						dataout <= data;
+						r_Master_TX_Byte <= data;
+						r_Master_TX_DV <= 1'b_1;   // write stroke to the SPI interface
+					end
+
+				end
+			endcase
 		end
 	end
 

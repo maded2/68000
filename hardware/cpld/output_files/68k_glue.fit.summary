@@ -1,9 +1,9 @@
-Fitter Status : Successful - Fri Jan 22 20:01:07 2021
+Fitter Status : Successful - Fri Jan 29 05:23:30 2021
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : 68k_glue
 Top-level Entity Name : glue
 Family : MAX7000S
 Device : EPM7128SLC84-15
 Timing Models : Final
-Total macrocells : 125 / 128 ( 98 % )
+Total macrocells : 108 / 128 ( 84 % )
 Total pins : 68 / 68 ( 100 % )

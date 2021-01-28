@@ -1,0 +1,26 @@
+Microchip Pof2jed  Version 4.45.1 Mar 13 2018
+Copyright 2018 Microchip. All Rights Reserved.
+
+  EPM7128SLC84-15 --> 1508asPLCC84
+Input file                : Z:\68000\hardware\cpld\output_files\68k_glue.pof
+Output file               : Z:\68000\hardware\cpld\output_files\68k_glue.jed
+Conversion Report file    : Z:\68000\hardware\cpld\output_files\68k_glue.txt
+
+Conversion is completed
+
+Options :  (1508 only)
+   Powerdown :		OFF
+   Security Bit :	AUTO
+   Slew Rate :		AUTO
+   PinClk :		OFF
+   Race Coverage :	ON
+   Pin Keeper :		OFF
+   Macrocell Low Power:	AUTO
+   Power Reset :	ALWAYS
+   ITD on GCLK1 :	ON
+   ITD on GCLK2 :	ON
+   ITD on GCLK3 :	ON
+   Open Collector :	AUTO
+   JTAG mode :		AUTO
+   TDI Pullup :		OFF
+   TMS Pullup :		OFF

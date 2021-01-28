@@ -1,6 +1,9 @@
 #include "stdint-gcc.h"
 #include "stddef.h"
 
+extern uint8_t* font_8x8;
+extern uint8_t* font_5x7;
+
 extern void prints(char *s);
 extern void printb(uint8_t value);
 extern void printw(uint16_t value);

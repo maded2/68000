@@ -2,6 +2,5 @@
 <LOG_ROOT>
 	<PROJECT NAME="68k_glue">
 		<CBX_INST_ENTRY INSTANCE_NAME="|glue|SPI_Master:SPI_Master_Inst|lpm_add_sub:Add0" CBX_FILE_NAME="add_sub_uch.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|glue|SPI_Master:SPI_Master_Inst|lpm_add_sub:Add1" CBX_FILE_NAME="add_sub_onh.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

@@ -1,4 +1,12 @@
-#include "sys.h"
+#include "stdio.h"
+#include "stdint-gcc.h"
+
+extern uint8_t* font_8x8;
+extern uint8_t* font_5x7;
+extern uint8_t* pic;
+
+#ifndef SSD1351
+#define SSD1351
 
 static const uint16_t	BLACK		=	0x0000;
 static const uint16_t	WHITE   	=	0xFFFF;
@@ -45,8 +53,11 @@ SPI Registers, only uses the lower 8 bits of the data bus
 #define SPI_CMD 0
 #define SPI_DATA 4
 
-extern uint8_t* font_8x8;
-extern uint8_t* pic;
+#endif // SSD1351
+
+extern void spicpy(uint8_t *loc);
+extern void spiset(uint16_t colour, uint16_t len);
+
 
 void setSpiStatus(uint8_t value);
 void sendAndWait(uint8_t value);
@@ -63,3 +74,4 @@ void oledprints(char *s);
 void oledprintch(char c);
 void putchar_xy(uint8_t X, uint8_t Y, uint8_t c);
 void oleddrawpic();
+void selectFont8x8();

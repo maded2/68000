@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for 68k_glue
-Fri Jan 22 20:01:09 2021
+Fri Jan 29 05:23:32 2021
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -99,7 +99,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------+-----------------+------------+------+
 ; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
 +-----------+-----------------+------------+------+
-; 33.33 MHz ; 33.33 MHz       ; clk        ;      ;
+; 45.45 MHz ; 45.45 MHz       ; clk        ;      ;
 ; 76.92 MHz ; 76.92 MHz       ; as         ;      ;
 +-----------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
@@ -110,7 +110,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+---------+---------------+
 ; Clock ; Slack   ; End Point TNS ;
 +-------+---------+---------------+
-; clk   ; -29.000 ; -692.000      ;
+; clk   ; -21.000 ; -449.000      ;
 ; as    ; -12.000 ; -264.000      ;
 +-------+---------+---------------+
 
@@ -142,7 +142,7 @@ No paths to report.
 +-------+--------+---------------+
 ; Clock ; Slack  ; End Point TNS ;
 +-------+--------+---------------+
-; clk   ; -4.500 ; -351.000      ;
+; clk   ; -4.500 ; -252.000      ;
 ; as    ; -4.500 ; -198.000      ;
 +-------+--------+---------------+
 
@@ -152,106 +152,106 @@ No paths to report.
 +---------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack   ; From Node                                     ; To Node                                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +---------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
-; -29.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_TX_Byte[5]       ; clk          ; clk         ; 1.000        ; 0.000      ; 26.000     ;
-; -29.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_TX_Byte[4]       ; clk          ; clk         ; 1.000        ; 0.000      ; 26.000     ;
-; -29.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_TX_Byte[3]       ; clk          ; clk         ; 1.000        ; 0.000      ; 26.000     ;
-; -29.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_TX_Byte[2]       ; clk          ; clk         ; 1.000        ; 0.000      ; 26.000     ;
-; -29.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_TX_Byte[0]       ; clk          ; clk         ; 1.000        ; 0.000      ; 26.000     ;
-; -29.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_TX_Byte[1]       ; clk          ; clk         ; 1.000        ; 0.000      ; 26.000     ;
-; -27.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[5]       ; as           ; clk         ; 0.500        ; 3.000      ; 27.000     ;
-; -27.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[4]       ; as           ; clk         ; 0.500        ; 3.000      ; 27.000     ;
-; -27.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[3]       ; as           ; clk         ; 0.500        ; 3.000      ; 27.000     ;
-; -27.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[2]       ; as           ; clk         ; 0.500        ; 3.000      ; 27.000     ;
-; -27.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[0]       ; as           ; clk         ; 0.500        ; 3.000      ; 27.000     ;
-; -27.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[1]       ; as           ; clk         ; 0.500        ; 3.000      ; 27.000     ;
-; -27.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[5]       ; as           ; clk         ; 1.000        ; 3.000      ; 27.000     ;
-; -27.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[4]       ; as           ; clk         ; 1.000        ; 3.000      ; 27.000     ;
-; -27.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[3]       ; as           ; clk         ; 1.000        ; 3.000      ; 27.000     ;
-; -27.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[2]       ; as           ; clk         ; 1.000        ; 3.000      ; 27.000     ;
-; -27.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[0]       ; as           ; clk         ; 1.000        ; 3.000      ; 27.000     ;
-; -27.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[1]       ; as           ; clk         ; 1.000        ; 3.000      ; 27.000     ;
-; -22.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 19.000     ;
-; -22.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk          ; clk          ; clk         ; 1.000        ; 0.000      ; 19.000     ;
-; -22.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 19.000     ;
-; -22.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 19.000     ;
-; -22.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 19.000     ;
-; -22.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 19.000     ;
-; -22.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[4] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 19.000     ;
-; -22.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 19.000     ;
-; -22.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk          ; clk          ; clk         ; 1.000        ; 0.000      ; 19.000     ;
-; -22.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk          ; clk          ; clk         ; 1.000        ; 0.000      ; 19.000     ;
-; -22.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk          ; clk          ; clk         ; 1.000        ; 0.000      ; 19.000     ;
-; -22.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk          ; clk          ; clk         ; 1.000        ; 0.000      ; 19.000     ;
-; -22.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[4] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk          ; clk          ; clk         ; 1.000        ; 0.000      ; 19.000     ;
-; -22.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk          ; clk          ; clk         ; 1.000        ; 0.000      ; 19.000     ;
-; -21.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 18.000     ;
-; -21.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 18.000     ;
-; -21.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 18.000     ;
 ; -21.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_TX_Byte[7]       ; clk          ; clk         ; 1.000        ; 0.000      ; 18.000     ;
 ; -21.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_TX_Byte[6]       ; clk          ; clk         ; 1.000        ; 0.000      ; 18.000     ;
-; -21.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 18.000     ;
-; -21.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 18.000     ;
-; -21.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 18.000     ;
-; -21.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk          ; clk          ; clk         ; 1.000        ; 0.000      ; 18.000     ;
-; -21.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk          ; clk          ; clk         ; 1.000        ; 0.000      ; 18.000     ;
-; -21.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk          ; clk          ; clk         ; 1.000        ; 0.000      ; 18.000     ;
-; -20.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
-; -20.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
-; -20.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
-; -20.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
-; -20.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
-; -20.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
-; -20.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
-; -20.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
+; -21.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_TX_Byte[5]       ; clk          ; clk         ; 1.000        ; 0.000      ; 18.000     ;
+; -21.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_TX_Byte[0]       ; clk          ; clk         ; 1.000        ; 0.000      ; 18.000     ;
+; -21.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_TX_Byte[4]       ; clk          ; clk         ; 1.000        ; 0.000      ; 18.000     ;
+; -21.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_TX_Byte[3]       ; clk          ; clk         ; 1.000        ; 0.000      ; 18.000     ;
+; -21.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_TX_Byte[2]       ; clk          ; clk         ; 1.000        ; 0.000      ; 18.000     ;
+; -21.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_TX_Byte[1]       ; clk          ; clk         ; 1.000        ; 0.000      ; 18.000     ;
+; -20.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[7]       ; as           ; clk         ; 0.500        ; 3.000      ; 20.000     ;
+; -20.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[6]       ; as           ; clk         ; 0.500        ; 3.000      ; 20.000     ;
+; -20.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[5]       ; as           ; clk         ; 0.500        ; 3.000      ; 20.000     ;
+; -20.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[0]       ; as           ; clk         ; 0.500        ; 3.000      ; 20.000     ;
+; -20.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[4]       ; as           ; clk         ; 0.500        ; 3.000      ; 20.000     ;
+; -20.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[3]       ; as           ; clk         ; 0.500        ; 3.000      ; 20.000     ;
+; -20.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[2]       ; as           ; clk         ; 0.500        ; 3.000      ; 20.000     ;
+; -20.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[1]       ; as           ; clk         ; 0.500        ; 3.000      ; 20.000     ;
+; -20.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
+; -20.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
+; -20.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
 ; -20.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
-; -20.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; SPI_Master:SPI_Master_Inst|r_Trailing_Edge    ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
-; -20.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_Trailing_Edge    ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
-; -20.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_SPI_Clk          ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
-; -20.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; SPI_Master:SPI_Master_Inst|r_Leading_Edge     ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
-; -20.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_Leading_Edge     ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
-; -20.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
-; -20.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
-; -20.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
-; -20.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
-; -20.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
-; -20.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
-; -20.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
-; -20.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
-; -20.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
-; -20.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
-; -20.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
-; -20.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
-; -20.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; SPI_Master:SPI_Master_Inst|r_Trailing_Edge    ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
-; -20.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; SPI_Master:SPI_Master_Inst|r_Trailing_Edge    ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
-; -20.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; SPI_Master:SPI_Master_Inst|r_Trailing_Edge    ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
-; -20.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; SPI_Master:SPI_Master_Inst|r_Trailing_Edge    ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
-; -20.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; SPI_Master:SPI_Master_Inst|r_Leading_Edge     ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
-; -20.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; SPI_Master:SPI_Master_Inst|r_Leading_Edge     ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
-; -20.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; SPI_Master:SPI_Master_Inst|r_Leading_Edge     ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
-; -20.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; SPI_Master:SPI_Master_Inst|r_Leading_Edge     ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
-; -19.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; as           ; clk         ; 0.500        ; 3.000      ; 19.000     ;
-; -19.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; as           ; clk         ; 0.500        ; 3.000      ; 19.000     ;
-; -19.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; as           ; clk         ; 0.500        ; 3.000      ; 19.000     ;
-; -19.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[7]       ; as           ; clk         ; 0.500        ; 3.000      ; 19.000     ;
-; -19.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[6]       ; as           ; clk         ; 0.500        ; 3.000      ; 19.000     ;
-; -19.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; as           ; clk         ; 1.000        ; 3.000      ; 19.000     ;
-; -19.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; as           ; clk         ; 1.000        ; 3.000      ; 19.000     ;
-; -19.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; as           ; clk         ; 1.000        ; 3.000      ; 19.000     ;
-; -19.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[7]       ; as           ; clk         ; 1.000        ; 3.000      ; 19.000     ;
-; -19.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[6]       ; as           ; clk         ; 1.000        ; 3.000      ; 19.000     ;
-; -18.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[2] ; as           ; clk         ; 0.500        ; 3.000      ; 18.000     ;
-; -18.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[3] ; as           ; clk         ; 0.500        ; 3.000      ; 18.000     ;
-; -18.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[4] ; as           ; clk         ; 0.500        ; 3.000      ; 18.000     ;
-; -18.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; as           ; clk         ; 0.500        ; 3.000      ; 18.000     ;
-; -18.500 ; as                                            ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; as           ; clk         ; 0.500        ; 3.000      ; 18.000     ;
+; -20.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
+; -20.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 17.000     ;
+; -20.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[7]       ; as           ; clk         ; 1.000        ; 3.000      ; 20.000     ;
+; -20.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[6]       ; as           ; clk         ; 1.000        ; 3.000      ; 20.000     ;
+; -20.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[5]       ; as           ; clk         ; 1.000        ; 3.000      ; 20.000     ;
+; -20.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[0]       ; as           ; clk         ; 1.000        ; 3.000      ; 20.000     ;
+; -20.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[4]       ; as           ; clk         ; 1.000        ; 3.000      ; 20.000     ;
+; -20.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[3]       ; as           ; clk         ; 1.000        ; 3.000      ; 20.000     ;
+; -20.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[2]       ; as           ; clk         ; 1.000        ; 3.000      ; 20.000     ;
+; -20.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[1]       ; as           ; clk         ; 1.000        ; 3.000      ; 20.000     ;
+; -18.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; as           ; clk         ; 0.500        ; 3.000      ; 18.000     ;
+; -18.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; as           ; clk         ; 0.500        ; 3.000      ; 18.000     ;
 ; -18.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; as           ; clk         ; 0.500        ; 3.000      ; 18.000     ;
-; -18.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_Trailing_Edge    ; as           ; clk         ; 0.500        ; 3.000      ; 18.000     ;
-; -18.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk          ; as           ; clk         ; 0.500        ; 3.000      ; 18.000     ;
-; -18.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_Leading_Edge     ; as           ; clk         ; 0.500        ; 3.000      ; 18.000     ;
-; -18.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[2] ; as           ; clk         ; 1.000        ; 3.000      ; 18.000     ;
-; -18.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[3] ; as           ; clk         ; 1.000        ; 3.000      ; 18.000     ;
-; -18.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[4] ; as           ; clk         ; 1.000        ; 3.000      ; 18.000     ;
-; -18.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; as           ; clk         ; 1.000        ; 3.000      ; 18.000     ;
+; -18.500 ; as                                            ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; as           ; clk         ; 0.500        ; 3.000      ; 18.000     ;
+; -18.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; as           ; clk         ; 1.000        ; 3.000      ; 18.000     ;
+; -18.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; as           ; clk         ; 1.000        ; 3.000      ; 18.000     ;
+; -18.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; as           ; clk         ; 1.000        ; 3.000      ; 18.000     ;
+; -18.000 ; as                                            ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; as           ; clk         ; 1.000        ; 3.000      ; 18.000     ;
+; -13.000 ; SPI_Master:SPI_Master_Inst|r_TX_Bit_Count[2]  ; SPI_Master:SPI_Master_Inst|o_SPI_MOSI         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.000     ;
+; -13.000 ; SPI_Master:SPI_Master_Inst|r_TX_Bit_Count[1]  ; SPI_Master:SPI_Master_Inst|o_SPI_MOSI         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.000     ;
+; -13.000 ; SPI_Master:SPI_Master_Inst|r_TX_Bit_Count[0]  ; SPI_Master:SPI_Master_Inst|o_SPI_MOSI         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.000     ;
+; -13.000 ; SPI_Master:SPI_Master_Inst|r_TX_Byte[4]       ; SPI_Master:SPI_Master_Inst|o_SPI_MOSI         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.000     ;
+; -13.000 ; SPI_Master:SPI_Master_Inst|r_TX_Byte[0]       ; SPI_Master:SPI_Master_Inst|o_SPI_MOSI         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.000     ;
+; -13.000 ; SPI_Master:SPI_Master_Inst|r_TX_Byte[1]       ; SPI_Master:SPI_Master_Inst|o_SPI_MOSI         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.000     ;
+; -13.000 ; SPI_Master:SPI_Master_Inst|r_TX_Byte[3]       ; SPI_Master:SPI_Master_Inst|o_SPI_MOSI         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.000     ;
+; -13.000 ; SPI_Master:SPI_Master_Inst|r_TX_Byte[2]       ; SPI_Master:SPI_Master_Inst|o_SPI_MOSI         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.000     ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_SPI_Clk          ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk          ; SPI_Master:SPI_Master_Inst|r_SPI_Clk          ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk          ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk          ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk          ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk          ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk          ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk          ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 9.000      ;
 +---------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -368,106 +368,106 @@ No paths to report.
 +-------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node                                     ; To Node                                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
-; 3.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ; as           ; clk         ; 0.000        ; 3.000      ; 10.000     ;
 ; 3.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; as           ; clk         ; 0.000        ; 3.000      ; 10.000     ;
+; 3.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; as           ; clk         ; 0.000        ; 3.000      ; 10.000     ;
 ; 3.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; as           ; clk         ; 0.000        ; 3.000      ; 10.000     ;
-; 3.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; as           ; clk         ; 0.000        ; 3.000      ; 10.000     ;
 ; 3.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; as           ; clk         ; 0.000        ; 3.000      ; 10.000     ;
+; 3.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; as           ; clk         ; 0.000        ; 3.000      ; 10.000     ;
 ; 3.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[7]       ; as           ; clk         ; 0.000        ; 3.000      ; 10.000     ;
 ; 3.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[6]       ; as           ; clk         ; 0.000        ; 3.000      ; 10.000     ;
 ; 3.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[5]       ; as           ; clk         ; 0.000        ; 3.000      ; 10.000     ;
+; 3.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[0]       ; as           ; clk         ; 0.000        ; 3.000      ; 10.000     ;
 ; 3.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[4]       ; as           ; clk         ; 0.000        ; 3.000      ; 10.000     ;
 ; 3.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[3]       ; as           ; clk         ; 0.000        ; 3.000      ; 10.000     ;
 ; 3.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[2]       ; as           ; clk         ; 0.000        ; 3.000      ; 10.000     ;
-; 3.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[0]       ; as           ; clk         ; 0.000        ; 3.000      ; 10.000     ;
+; 3.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk          ; as           ; clk         ; 0.000        ; 3.000      ; 10.000     ;
+; 3.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ; as           ; clk         ; 0.000        ; 3.000      ; 10.000     ;
+; 3.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_Leading_Edge     ; as           ; clk         ; 0.000        ; 3.000      ; 10.000     ;
+; 3.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_Trailing_Edge    ; as           ; clk         ; 0.000        ; 3.000      ; 10.000     ;
 ; 3.000 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[1]       ; as           ; clk         ; 0.000        ; 3.000      ; 10.000     ;
-; 3.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ; as           ; clk         ; -0.500       ; 3.000      ; 10.000     ;
 ; 3.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; as           ; clk         ; -0.500       ; 3.000      ; 10.000     ;
+; 3.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; as           ; clk         ; -0.500       ; 3.000      ; 10.000     ;
 ; 3.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; as           ; clk         ; -0.500       ; 3.000      ; 10.000     ;
-; 3.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; as           ; clk         ; -0.500       ; 3.000      ; 10.000     ;
 ; 3.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; as           ; clk         ; -0.500       ; 3.000      ; 10.000     ;
+; 3.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; as           ; clk         ; -0.500       ; 3.000      ; 10.000     ;
 ; 3.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[7]       ; as           ; clk         ; -0.500       ; 3.000      ; 10.000     ;
 ; 3.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[6]       ; as           ; clk         ; -0.500       ; 3.000      ; 10.000     ;
 ; 3.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[5]       ; as           ; clk         ; -0.500       ; 3.000      ; 10.000     ;
+; 3.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[0]       ; as           ; clk         ; -0.500       ; 3.000      ; 10.000     ;
 ; 3.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[4]       ; as           ; clk         ; -0.500       ; 3.000      ; 10.000     ;
 ; 3.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[3]       ; as           ; clk         ; -0.500       ; 3.000      ; 10.000     ;
 ; 3.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[2]       ; as           ; clk         ; -0.500       ; 3.000      ; 10.000     ;
-; 3.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[0]       ; as           ; clk         ; -0.500       ; 3.000      ; 10.000     ;
+; 3.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk          ; as           ; clk         ; -0.500       ; 3.000      ; 10.000     ;
+; 3.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ; as           ; clk         ; -0.500       ; 3.000      ; 10.000     ;
+; 3.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_Leading_Edge     ; as           ; clk         ; -0.500       ; 3.000      ; 10.000     ;
+; 3.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_Trailing_Edge    ; as           ; clk         ; -0.500       ; 3.000      ; 10.000     ;
 ; 3.500 ; as                                            ; SPI_Master:SPI_Master_Inst|r_TX_Byte[1]       ; as           ; clk         ; -0.500       ; 3.000      ; 10.000     ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[4] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[4] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
 ; 5.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
 ; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
 ; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[4] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
 ; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[4] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
 ; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[4] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[4] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
 ; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
 ; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
 ; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
 ; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
 ; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
 ; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_TX_Byte[7]       ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_TX_Byte[6]       ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_TX_Byte[5]       ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_TX_Byte[0]       ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_TX_Byte[4]       ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_TX_Byte[3]       ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_TX_Byte[2]       ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|o_TX_Ready         ; SPI_Master:SPI_Master_Inst|r_SPI_Clk          ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk          ; SPI_Master:SPI_Master_Inst|r_SPI_Clk          ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk          ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk          ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk          ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk          ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk          ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk          ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[4] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[3] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[2] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 9.000      ;
 +-------+-----------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -584,22 +584,6 @@ No paths to report.
 +--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------+
 ; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                        ;
 +--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------+
-; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|o_RX_Byte[0]       ;
-; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|o_RX_Byte[0]       ;
-; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|o_RX_Byte[1]       ;
-; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|o_RX_Byte[1]       ;
-; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|o_RX_Byte[2]       ;
-; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|o_RX_Byte[2]       ;
-; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|o_RX_Byte[3]       ;
-; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|o_RX_Byte[3]       ;
-; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|o_RX_Byte[4]       ;
-; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|o_RX_Byte[4]       ;
-; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|o_RX_Byte[5]       ;
-; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|o_RX_Byte[5]       ;
-; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|o_RX_Byte[6]       ;
-; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|o_RX_Byte[6]       ;
-; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|o_RX_Byte[7]       ;
-; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|o_RX_Byte[7]       ;
 ; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|o_RX_DV            ;
 ; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|o_RX_DV            ;
 ; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|o_SPI_Clk          ;
@@ -622,12 +606,6 @@ No paths to report.
 ; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[0] ;
 ; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ;
 ; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[1] ;
-; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[2] ;
-; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[2] ;
-; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[3] ;
-; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[3] ;
-; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[4] ;
-; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Count[4] ;
 ; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ;
 ; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[0] ;
 ; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|r_SPI_Clk_Edges[1] ;
@@ -662,28 +640,50 @@ No paths to report.
 ; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|r_TX_Byte[7]       ;
 ; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|r_Trailing_Edge    ;
 ; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master:SPI_Master_Inst|r_Trailing_Edge    ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master_Inst|o_RX_Byte[0]|clk              ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master_Inst|o_RX_Byte[0]|clk              ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master_Inst|o_RX_Byte[1]|clk              ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master_Inst|o_RX_Byte[1]|clk              ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master_Inst|o_RX_Byte[2]|clk              ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master_Inst|o_RX_Byte[2]|clk              ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master_Inst|o_RX_Byte[3]|clk              ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master_Inst|o_RX_Byte[3]|clk              ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master_Inst|o_RX_Byte[4]|clk              ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master_Inst|o_RX_Byte[4]|clk              ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master_Inst|o_RX_Byte[5]|clk              ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master_Inst|o_RX_Byte[5]|clk              ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master_Inst|o_RX_Byte[6]|clk              ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master_Inst|o_RX_Byte[6]|clk              ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master_Inst|o_RX_Byte[7]|clk              ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master_Inst|o_RX_Byte[7]|clk              ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master_Inst|o_RX_DV|clk                   ;
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master_Inst|o_RX_DV|clk                   ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master_Inst|o_SPI_Clk|clk                 ;
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master_Inst|o_SPI_Clk|clk                 ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master_Inst|o_SPI_MOSI|clk                ;
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master_Inst|o_SPI_MOSI|clk                ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master_Inst|o_TX_Ready|clk                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master_Inst|o_TX_Ready|clk                ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master_Inst|r_Leading_Edge|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master_Inst|r_Leading_Edge|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master_Inst|r_RX_Bit_Count[0]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master_Inst|r_RX_Bit_Count[0]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master_Inst|r_RX_Bit_Count[1]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master_Inst|r_RX_Bit_Count[1]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master_Inst|r_RX_Bit_Count[2]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master_Inst|r_RX_Bit_Count[2]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master_Inst|r_SPI_Clk_Count[0]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master_Inst|r_SPI_Clk_Count[0]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master_Inst|r_SPI_Clk_Count[1]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master_Inst|r_SPI_Clk_Count[1]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master_Inst|r_SPI_Clk_Edges[0]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master_Inst|r_SPI_Clk_Edges[0]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master_Inst|r_SPI_Clk_Edges[1]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master_Inst|r_SPI_Clk_Edges[1]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master_Inst|r_SPI_Clk_Edges[2]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master_Inst|r_SPI_Clk_Edges[2]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master_Inst|r_SPI_Clk_Edges[3]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master_Inst|r_SPI_Clk_Edges[3]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master_Inst|r_SPI_Clk_Edges[4]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master_Inst|r_SPI_Clk_Edges[4]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master_Inst|r_SPI_Clk|clk                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master_Inst|r_SPI_Clk|clk                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master_Inst|r_TX_Bit_Count[0]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master_Inst|r_TX_Bit_Count[0]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master_Inst|r_TX_Bit_Count[1]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master_Inst|r_TX_Bit_Count[1]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master_Inst|r_TX_Bit_Count[2]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master_Inst|r_TX_Bit_Count[2]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master_Inst|r_TX_Byte[0]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master_Inst|r_TX_Byte[0]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master_Inst|r_TX_Byte[1]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master_Inst|r_TX_Byte[1]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; SPI_Master_Inst|r_TX_Byte[2]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; SPI_Master_Inst|r_TX_Byte[2]|clk              ;
 +--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------+
 
 
@@ -790,14 +790,14 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; addr[*]   ; clk        ; 28.000 ; 28.000 ; Rise       ; clk             ;
-;  addr[1]  ; clk        ; 28.000 ; 28.000 ; Rise       ; clk             ;
-;  addr[2]  ; clk        ; 28.000 ; 28.000 ; Rise       ; clk             ;
-;  addr[20] ; clk        ; 28.000 ; 28.000 ; Rise       ; clk             ;
-;  addr[21] ; clk        ; 28.000 ; 28.000 ; Rise       ; clk             ;
-;  addr[22] ; clk        ; 28.000 ; 28.000 ; Rise       ; clk             ;
-;  addr[23] ; clk        ; 28.000 ; 28.000 ; Rise       ; clk             ;
-; as        ; clk        ; 28.000 ; 28.000 ; Rise       ; clk             ;
+; addr[*]   ; clk        ; 22.000 ; 22.000 ; Rise       ; clk             ;
+;  addr[1]  ; clk        ; 22.000 ; 22.000 ; Rise       ; clk             ;
+;  addr[2]  ; clk        ; 21.000 ; 21.000 ; Rise       ; clk             ;
+;  addr[20] ; clk        ; 21.000 ; 21.000 ; Rise       ; clk             ;
+;  addr[21] ; clk        ; 22.000 ; 22.000 ; Rise       ; clk             ;
+;  addr[22] ; clk        ; 20.000 ; 20.000 ; Rise       ; clk             ;
+;  addr[23] ; clk        ; 21.000 ; 21.000 ; Rise       ; clk             ;
+; as        ; clk        ; 21.000 ; 21.000 ; Rise       ; clk             ;
 ; data[*]   ; clk        ; 20.000 ; 20.000 ; Rise       ; clk             ;
 ;  data[0]  ; clk        ; 20.000 ; 20.000 ; Rise       ; clk             ;
 ;  data[1]  ; clk        ; 20.000 ; 20.000 ; Rise       ; clk             ;
@@ -807,9 +807,8 @@ No paths to report.
 ;  data[5]  ; clk        ; 20.000 ; 20.000 ; Rise       ; clk             ;
 ;  data[6]  ; clk        ; 20.000 ; 20.000 ; Rise       ; clk             ;
 ;  data[7]  ; clk        ; 20.000 ; 20.000 ; Rise       ; clk             ;
-; lds       ; clk        ; 28.000 ; 28.000 ; Rise       ; clk             ;
-; miso      ; clk        ; 11.000 ; 11.000 ; Rise       ; clk             ;
-; rw        ; clk        ; 28.000 ; 28.000 ; Rise       ; clk             ;
+; lds       ; clk        ; 21.000 ; 21.000 ; Rise       ; clk             ;
+; rw        ; clk        ; 20.000 ; 20.000 ; Rise       ; clk             ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -836,7 +835,6 @@ No paths to report.
 ;  data[6]  ; clk        ; -12.000 ; -12.000 ; Rise       ; clk             ;
 ;  data[7]  ; clk        ; -12.000 ; -12.000 ; Rise       ; clk             ;
 ; lds       ; clk        ; -3.000  ; -3.000  ; Rise       ; clk             ;
-; miso      ; clk        ; -3.000  ; -3.000  ; Rise       ; clk             ;
 ; rw        ; clk        ; -3.000  ; -3.000  ; Rise       ; clk             ;
 +-----------+------------+---------+---------+------------+-----------------+
 
@@ -846,15 +844,15 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; data[*]   ; as         ; 50.000 ; 50.000 ; Rise       ; as              ;
-;  data[0]  ; as         ; 50.000 ; 50.000 ; Rise       ; as              ;
+; data[*]   ; as         ; 41.000 ; 41.000 ; Rise       ; as              ;
+;  data[0]  ; as         ; 34.000 ; 34.000 ; Rise       ; as              ;
 ;  data[1]  ; as         ; 41.000 ; 41.000 ; Rise       ; as              ;
 ;  data[2]  ; as         ; 41.000 ; 41.000 ; Rise       ; as              ;
 ;  data[3]  ; as         ; 41.000 ; 41.000 ; Rise       ; as              ;
 ;  data[4]  ; as         ; 41.000 ; 41.000 ; Rise       ; as              ;
-;  data[5]  ; as         ; 41.000 ; 41.000 ; Rise       ; as              ;
-;  data[6]  ; as         ; 33.000 ; 33.000 ; Rise       ; as              ;
-;  data[7]  ; as         ; 33.000 ; 33.000 ; Rise       ; as              ;
+;  data[5]  ; as         ; 25.000 ; 25.000 ; Rise       ; as              ;
+;  data[6]  ; as         ; 25.000 ; 25.000 ; Rise       ; as              ;
+;  data[7]  ; as         ; 25.000 ; 25.000 ; Rise       ; as              ;
 ; dc        ; as         ; 23.000 ; 23.000 ; Rise       ; as              ;
 ; io1_sel   ; as         ; 15.000 ; 15.000 ; Rise       ; as              ;
 ; ram1_sel  ; as         ; 15.000 ; 15.000 ; Rise       ; as              ;
@@ -868,15 +866,15 @@ No paths to report.
 ; ss2       ; as         ; 23.000 ; 23.000 ; Rise       ; as              ;
 ; wrl       ; as         ; 15.000 ; 15.000 ; Rise       ; as              ;
 ; wru       ; as         ; 15.000 ; 15.000 ; Rise       ; as              ;
-; data[*]   ; as         ; 50.000 ; 50.000 ; Fall       ; as              ;
-;  data[0]  ; as         ; 50.000 ; 50.000 ; Fall       ; as              ;
+; data[*]   ; as         ; 41.000 ; 41.000 ; Fall       ; as              ;
+;  data[0]  ; as         ; 34.000 ; 34.000 ; Fall       ; as              ;
 ;  data[1]  ; as         ; 41.000 ; 41.000 ; Fall       ; as              ;
 ;  data[2]  ; as         ; 41.000 ; 41.000 ; Fall       ; as              ;
 ;  data[3]  ; as         ; 41.000 ; 41.000 ; Fall       ; as              ;
 ;  data[4]  ; as         ; 41.000 ; 41.000 ; Fall       ; as              ;
-;  data[5]  ; as         ; 41.000 ; 41.000 ; Fall       ; as              ;
-;  data[6]  ; as         ; 33.000 ; 33.000 ; Fall       ; as              ;
-;  data[7]  ; as         ; 33.000 ; 33.000 ; Fall       ; as              ;
+;  data[5]  ; as         ; 25.000 ; 25.000 ; Fall       ; as              ;
+;  data[6]  ; as         ; 25.000 ; 25.000 ; Fall       ; as              ;
+;  data[7]  ; as         ; 25.000 ; 25.000 ; Fall       ; as              ;
 ; dc        ; as         ; 23.000 ; 23.000 ; Fall       ; as              ;
 ; io1_sel   ; as         ; 15.000 ; 15.000 ; Fall       ; as              ;
 ; io2_sel   ; as         ; 8.000  ; 8.000  ; Fall       ; as              ;
@@ -891,15 +889,15 @@ No paths to report.
 ; ss2       ; as         ; 23.000 ; 23.000 ; Fall       ; as              ;
 ; wrl       ; as         ; 15.000 ; 15.000 ; Fall       ; as              ;
 ; wru       ; as         ; 15.000 ; 15.000 ; Fall       ; as              ;
-; data[*]   ; clk        ; 52.000 ; 52.000 ; Rise       ; clk             ;
-;  data[0]  ; clk        ; 52.000 ; 52.000 ; Rise       ; clk             ;
-;  data[1]  ; clk        ; 43.000 ; 43.000 ; Rise       ; clk             ;
-;  data[2]  ; clk        ; 43.000 ; 43.000 ; Rise       ; clk             ;
-;  data[3]  ; clk        ; 43.000 ; 43.000 ; Rise       ; clk             ;
-;  data[4]  ; clk        ; 43.000 ; 43.000 ; Rise       ; clk             ;
-;  data[5]  ; clk        ; 43.000 ; 43.000 ; Rise       ; clk             ;
-;  data[6]  ; clk        ; 35.000 ; 35.000 ; Rise       ; clk             ;
-;  data[7]  ; clk        ; 35.000 ; 35.000 ; Rise       ; clk             ;
+; data[*]   ; clk        ; 35.000 ; 35.000 ; Rise       ; clk             ;
+;  data[0]  ; clk        ; 35.000 ; 35.000 ; Rise       ; clk             ;
+;  data[1]  ; clk        ; 35.000 ; 35.000 ; Rise       ; clk             ;
+;  data[2]  ; clk        ; 35.000 ; 35.000 ; Rise       ; clk             ;
+;  data[3]  ; clk        ; 35.000 ; 35.000 ; Rise       ; clk             ;
+;  data[4]  ; clk        ; 35.000 ; 35.000 ; Rise       ; clk             ;
+;  data[5]  ; clk        ; 26.000 ; 26.000 ; Rise       ; clk             ;
+;  data[6]  ; clk        ; 26.000 ; 26.000 ; Rise       ; clk             ;
+;  data[7]  ; clk        ; 26.000 ; 26.000 ; Rise       ; clk             ;
 ; mosi      ; clk        ; 8.000  ; 8.000  ; Rise       ; clk             ;
 ; sclk      ; clk        ; 8.000  ; 8.000  ; Rise       ; clk             ;
 +-----------+------------+--------+--------+------------+-----------------+
@@ -955,15 +953,15 @@ No paths to report.
 ; ss2       ; as         ; 15.000 ; 15.000 ; Fall       ; as              ;
 ; wrl       ; as         ; 15.000 ; 15.000 ; Fall       ; as              ;
 ; wru       ; as         ; 15.000 ; 15.000 ; Fall       ; as              ;
-; data[*]   ; clk        ; 35.000 ; 35.000 ; Rise       ; clk             ;
-;  data[0]  ; clk        ; 35.000 ; 35.000 ; Rise       ; clk             ;
-;  data[1]  ; clk        ; 35.000 ; 35.000 ; Rise       ; clk             ;
+; data[*]   ; clk        ; 26.000 ; 26.000 ; Rise       ; clk             ;
+;  data[0]  ; clk        ; 26.000 ; 26.000 ; Rise       ; clk             ;
+;  data[1]  ; clk        ; 26.000 ; 26.000 ; Rise       ; clk             ;
 ;  data[2]  ; clk        ; 35.000 ; 35.000 ; Rise       ; clk             ;
 ;  data[3]  ; clk        ; 35.000 ; 35.000 ; Rise       ; clk             ;
 ;  data[4]  ; clk        ; 35.000 ; 35.000 ; Rise       ; clk             ;
-;  data[5]  ; clk        ; 35.000 ; 35.000 ; Rise       ; clk             ;
-;  data[6]  ; clk        ; 35.000 ; 35.000 ; Rise       ; clk             ;
-;  data[7]  ; clk        ; 35.000 ; 35.000 ; Rise       ; clk             ;
+;  data[5]  ; clk        ; 26.000 ; 26.000 ; Rise       ; clk             ;
+;  data[6]  ; clk        ; 26.000 ; 26.000 ; Rise       ; clk             ;
+;  data[7]  ; clk        ; 26.000 ; 26.000 ; Rise       ; clk             ;
 ; mosi      ; clk        ; 8.000  ; 8.000  ; Rise       ; clk             ;
 ; sclk      ; clk        ; 8.000  ; 8.000  ; Rise       ; clk             ;
 +-----------+------------+--------+--------+------------+-----------------+
@@ -974,36 +972,36 @@ No paths to report.
 +------------+-------------+--------+--------+--------+--------+
 ; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
 +------------+-------------+--------+--------+--------+--------+
-; addr[1]    ; data[0]     ; 50.000 ; 42.000 ; 42.000 ; 50.000 ;
-; addr[1]    ; data[1]     ; 41.000 ; 41.000 ; 41.000 ; 41.000 ;
-; addr[1]    ; data[2]     ; 41.000 ; 33.000 ; 33.000 ; 41.000 ;
-; addr[1]    ; data[3]     ; 41.000 ; 33.000 ; 33.000 ; 41.000 ;
-; addr[1]    ; data[4]     ; 41.000 ; 33.000 ; 33.000 ; 41.000 ;
-; addr[1]    ; data[5]     ; 41.000 ; 33.000 ; 33.000 ; 41.000 ;
-; addr[1]    ; data[6]     ; 34.000 ; 33.000 ; 33.000 ; 34.000 ;
-; addr[1]    ; data[7]     ; 34.000 ; 33.000 ; 33.000 ; 34.000 ;
+; addr[1]    ; data[0]     ; 33.000 ; 35.000 ; 35.000 ; 33.000 ;
+; addr[1]    ; data[1]     ; 33.000 ; 41.000 ; 41.000 ; 33.000 ;
+; addr[1]    ; data[2]     ; 41.000 ; 35.000 ; 35.000 ; 41.000 ;
+; addr[1]    ; data[3]     ; 41.000 ; 35.000 ; 35.000 ; 41.000 ;
+; addr[1]    ; data[4]     ; 41.000 ; 35.000 ; 35.000 ; 41.000 ;
+; addr[1]    ; data[5]     ; 24.000 ; 26.000 ; 26.000 ; 24.000 ;
+; addr[1]    ; data[6]     ; 24.000 ; 26.000 ; 26.000 ; 24.000 ;
+; addr[1]    ; data[7]     ; 24.000 ; 26.000 ; 26.000 ; 24.000 ;
 ; addr[1]    ; dc          ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; addr[1]    ; ss1         ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; addr[1]    ; ss2         ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
-; addr[2]    ; data[0]     ; 42.000 ; 50.000 ; 50.000 ; 42.000 ;
-; addr[2]    ; data[1]     ; 41.000 ; 41.000 ; 41.000 ; 41.000 ;
-; addr[2]    ; data[2]     ; 41.000 ; 41.000 ; 41.000 ; 41.000 ;
-; addr[2]    ; data[3]     ; 41.000 ; 41.000 ; 41.000 ; 41.000 ;
-; addr[2]    ; data[4]     ; 41.000 ; 41.000 ; 41.000 ; 41.000 ;
-; addr[2]    ; data[5]     ; 33.000 ; 41.000 ; 41.000 ; 33.000 ;
-; addr[2]    ; data[6]     ; 33.000 ; 34.000 ; 34.000 ; 33.000 ;
-; addr[2]    ; data[7]     ; 33.000 ; 34.000 ; 34.000 ; 33.000 ;
+; addr[2]    ; data[0]     ; 34.000 ; 33.000 ; 33.000 ; 34.000 ;
+; addr[2]    ; data[1]     ; 41.000 ; 33.000 ; 33.000 ; 41.000 ;
+; addr[2]    ; data[2]     ; 41.000 ; 33.000 ; 33.000 ; 41.000 ;
+; addr[2]    ; data[3]     ; 41.000 ; 33.000 ; 33.000 ; 41.000 ;
+; addr[2]    ; data[4]     ; 41.000 ; 33.000 ; 33.000 ; 41.000 ;
+; addr[2]    ; data[5]     ; 25.000 ; 24.000 ; 24.000 ; 25.000 ;
+; addr[2]    ; data[6]     ; 25.000 ; 24.000 ; 24.000 ; 25.000 ;
+; addr[2]    ; data[7]     ; 25.000 ; 24.000 ; 24.000 ; 25.000 ;
 ; addr[2]    ; dc          ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; addr[2]    ; ss1         ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; addr[2]    ; ss2         ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
-; addr[20]   ; data[0]     ; 42.000 ; 50.000 ; 50.000 ; 42.000 ;
+; addr[20]   ; data[0]     ; 33.000 ; 34.000 ; 34.000 ; 33.000 ;
 ; addr[20]   ; data[1]     ; 33.000 ; 41.000 ; 41.000 ; 33.000 ;
 ; addr[20]   ; data[2]     ; 33.000 ; 41.000 ; 41.000 ; 33.000 ;
 ; addr[20]   ; data[3]     ; 33.000 ; 41.000 ; 41.000 ; 33.000 ;
 ; addr[20]   ; data[4]     ; 33.000 ; 41.000 ; 41.000 ; 33.000 ;
-; addr[20]   ; data[5]     ; 33.000 ; 41.000 ; 41.000 ; 33.000 ;
-; addr[20]   ; data[6]     ; 33.000 ; 35.000 ; 35.000 ; 33.000 ;
-; addr[20]   ; data[7]     ; 33.000 ; 35.000 ; 35.000 ; 33.000 ;
+; addr[20]   ; data[5]     ; 24.000 ; 25.000 ; 25.000 ; 24.000 ;
+; addr[20]   ; data[6]     ; 24.000 ; 25.000 ; 25.000 ; 24.000 ;
+; addr[20]   ; data[7]     ; 24.000 ; 25.000 ; 25.000 ; 24.000 ;
 ; addr[20]   ; dc          ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
 ; addr[20]   ; io1_sel     ;        ; 15.000 ; 15.000 ;        ;
 ; addr[20]   ; ram1_sel    ;        ; 15.000 ; 15.000 ;        ;
@@ -1013,14 +1011,14 @@ No paths to report.
 ; addr[20]   ; rom_sel     ;        ; 15.000 ; 15.000 ;        ;
 ; addr[20]   ; ss1         ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
 ; addr[20]   ; ss2         ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
-; addr[21]   ; data[0]     ; 42.000 ; 50.000 ; 50.000 ; 42.000 ;
+; addr[21]   ; data[0]     ; 33.000 ; 35.000 ; 35.000 ; 33.000 ;
 ; addr[21]   ; data[1]     ; 33.000 ; 41.000 ; 41.000 ; 33.000 ;
 ; addr[21]   ; data[2]     ; 33.000 ; 41.000 ; 41.000 ; 33.000 ;
 ; addr[21]   ; data[3]     ; 33.000 ; 41.000 ; 41.000 ; 33.000 ;
 ; addr[21]   ; data[4]     ; 33.000 ; 41.000 ; 41.000 ; 33.000 ;
-; addr[21]   ; data[5]     ; 33.000 ; 41.000 ; 41.000 ; 33.000 ;
-; addr[21]   ; data[6]     ; 33.000 ; 33.000 ; 33.000 ; 33.000 ;
-; addr[21]   ; data[7]     ; 33.000 ; 33.000 ; 33.000 ; 33.000 ;
+; addr[21]   ; data[5]     ; 24.000 ; 26.000 ; 26.000 ; 24.000 ;
+; addr[21]   ; data[6]     ; 24.000 ; 26.000 ; 26.000 ; 24.000 ;
+; addr[21]   ; data[7]     ; 24.000 ; 26.000 ; 26.000 ; 24.000 ;
 ; addr[21]   ; dc          ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
 ; addr[21]   ; io1_sel     ; 15.000 ;        ;        ; 15.000 ;
 ; addr[21]   ; ram1_sel    ;        ; 15.000 ; 15.000 ;        ;
@@ -1030,14 +1028,14 @@ No paths to report.
 ; addr[21]   ; rom_sel     ;        ; 15.000 ; 15.000 ;        ;
 ; addr[21]   ; ss1         ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
 ; addr[21]   ; ss2         ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
-; addr[22]   ; data[0]     ; 50.000 ; 42.000 ; 42.000 ; 50.000 ;
+; addr[22]   ; data[0]     ; 33.000 ; 33.000 ; 33.000 ; 33.000 ;
 ; addr[22]   ; data[1]     ; 41.000 ; 33.000 ; 33.000 ; 41.000 ;
 ; addr[22]   ; data[2]     ; 41.000 ; 33.000 ; 33.000 ; 41.000 ;
 ; addr[22]   ; data[3]     ; 41.000 ; 33.000 ; 33.000 ; 41.000 ;
 ; addr[22]   ; data[4]     ; 41.000 ; 33.000 ; 33.000 ; 41.000 ;
-; addr[22]   ; data[5]     ; 41.000 ; 33.000 ; 33.000 ; 41.000 ;
-; addr[22]   ; data[6]     ; 34.000 ; 33.000 ; 33.000 ; 34.000 ;
-; addr[22]   ; data[7]     ; 34.000 ; 33.000 ; 33.000 ; 34.000 ;
+; addr[22]   ; data[5]     ; 24.000 ; 24.000 ; 24.000 ; 24.000 ;
+; addr[22]   ; data[6]     ; 24.000 ; 24.000 ; 24.000 ; 24.000 ;
+; addr[22]   ; data[7]     ; 24.000 ; 24.000 ; 24.000 ; 24.000 ;
 ; addr[22]   ; dc          ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; addr[22]   ; io1_sel     ;        ; 15.000 ; 15.000 ;        ;
 ; addr[22]   ; ram1_sel    ; 15.000 ;        ;        ; 15.000 ;
@@ -1047,14 +1045,14 @@ No paths to report.
 ; addr[22]   ; rom_sel     ;        ; 15.000 ; 15.000 ;        ;
 ; addr[22]   ; ss1         ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; addr[22]   ; ss2         ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
-; addr[23]   ; data[0]     ; 42.000 ; 50.000 ; 50.000 ; 42.000 ;
+; addr[23]   ; data[0]     ; 33.000 ; 34.000 ; 34.000 ; 33.000 ;
 ; addr[23]   ; data[1]     ; 33.000 ; 41.000 ; 41.000 ; 33.000 ;
 ; addr[23]   ; data[2]     ; 33.000 ; 41.000 ; 41.000 ; 33.000 ;
 ; addr[23]   ; data[3]     ; 33.000 ; 41.000 ; 41.000 ; 33.000 ;
 ; addr[23]   ; data[4]     ; 33.000 ; 41.000 ; 41.000 ; 33.000 ;
-; addr[23]   ; data[5]     ; 33.000 ; 41.000 ; 41.000 ; 33.000 ;
-; addr[23]   ; data[6]     ; 33.000 ; 35.000 ; 35.000 ; 33.000 ;
-; addr[23]   ; data[7]     ; 33.000 ; 35.000 ; 35.000 ; 33.000 ;
+; addr[23]   ; data[5]     ; 24.000 ; 25.000 ; 25.000 ; 24.000 ;
+; addr[23]   ; data[6]     ; 24.000 ; 25.000 ; 25.000 ; 24.000 ;
+; addr[23]   ; data[7]     ; 24.000 ; 25.000 ; 25.000 ; 24.000 ;
 ; addr[23]   ; dc          ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
 ; addr[23]   ; io1_sel     ; 15.000 ;        ;        ; 15.000 ;
 ; addr[23]   ; ram1_sel    ; 15.000 ;        ;        ; 15.000 ;
@@ -1064,7 +1062,7 @@ No paths to report.
 ; addr[23]   ; rom_sel     ;        ; 15.000 ; 15.000 ;        ;
 ; addr[23]   ; ss1         ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
 ; addr[23]   ; ss2         ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
-; data[0]    ; data[0]     ; 42.000 ;        ;        ; 42.000 ;
+; data[0]    ; data[0]     ; 33.000 ;        ;        ; 33.000 ;
 ; data[1]    ; data[1]     ; 33.000 ;        ;        ; 33.000 ;
 ; data[2]    ; data[2]     ; 33.000 ;        ;        ; 33.000 ;
 ; data[2]    ; dc          ; 15.000 ;        ;        ; 15.000 ;
@@ -1072,35 +1070,34 @@ No paths to report.
 ; data[3]    ; ss1         ; 15.000 ;        ;        ; 15.000 ;
 ; data[4]    ; data[4]     ; 33.000 ;        ;        ; 33.000 ;
 ; data[4]    ; ss2         ; 15.000 ;        ;        ; 15.000 ;
-; data[5]    ; data[5]     ; 33.000 ;        ;        ; 33.000 ;
-; data[6]    ; data[6]     ; 33.000 ;        ;        ; 33.000 ;
-; data[7]    ; data[7]     ; 33.000 ;        ;        ; 33.000 ;
-; lds        ; data[0]     ; 50.000 ; 42.000 ; 42.000 ; 50.000 ;
+; data[5]    ; data[5]     ; 24.000 ;        ;        ; 24.000 ;
+; data[6]    ; data[6]     ; 24.000 ;        ;        ; 24.000 ;
+; data[7]    ; data[7]     ; 24.000 ;        ;        ; 24.000 ;
+; lds        ; data[0]     ; 34.000 ; 33.000 ; 33.000 ; 34.000 ;
 ; lds        ; data[1]     ; 41.000 ; 33.000 ; 33.000 ; 41.000 ;
 ; lds        ; data[2]     ; 41.000 ; 33.000 ; 33.000 ; 41.000 ;
 ; lds        ; data[3]     ; 41.000 ; 33.000 ; 33.000 ; 41.000 ;
 ; lds        ; data[4]     ; 41.000 ; 33.000 ; 33.000 ; 41.000 ;
-; lds        ; data[5]     ; 41.000 ; 33.000 ; 33.000 ; 41.000 ;
-; lds        ; data[6]     ; 34.000 ; 33.000 ; 33.000 ; 34.000 ;
-; lds        ; data[7]     ; 34.000 ; 33.000 ; 33.000 ; 34.000 ;
+; lds        ; data[5]     ; 25.000 ; 24.000 ; 24.000 ; 25.000 ;
+; lds        ; data[6]     ; 25.000 ; 24.000 ; 24.000 ; 25.000 ;
+; lds        ; data[7]     ; 25.000 ; 24.000 ; 24.000 ; 25.000 ;
 ; lds        ; dc          ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; lds        ; rdl         ;        ; 15.000 ; 15.000 ;        ;
 ; lds        ; ss1         ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; lds        ; ss2         ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; lds        ; wrl         ;        ; 15.000 ; 15.000 ;        ;
 ; rst        ; rst_h       ;        ; 15.000 ; 15.000 ;        ;
-; rw         ; data[0]     ; 50.000 ; 42.000 ; 42.000 ; 50.000 ;
-; rw         ; data[1]     ; 41.000 ; 41.000 ; 41.000 ; 41.000 ;
+; rw         ; data[0]     ; 33.000 ; 33.000 ; 33.000 ; 33.000 ;
+; rw         ; data[1]     ; 33.000 ; 41.000 ; 41.000 ; 33.000 ;
 ; rw         ; data[2]     ; 41.000 ; 33.000 ; 33.000 ; 41.000 ;
 ; rw         ; data[3]     ; 41.000 ; 33.000 ; 33.000 ; 41.000 ;
 ; rw         ; data[4]     ; 41.000 ; 33.000 ; 33.000 ; 41.000 ;
-; rw         ; data[5]     ; 41.000 ; 33.000 ; 33.000 ; 41.000 ;
-; rw         ; data[6]     ; 34.000 ; 33.000 ; 33.000 ; 34.000 ;
-; rw         ; data[7]     ; 34.000 ; 33.000 ; 33.000 ; 34.000 ;
+; rw         ; data[5]     ; 24.000 ; 24.000 ; 24.000 ; 24.000 ;
+; rw         ; data[6]     ; 24.000 ; 24.000 ; 24.000 ; 24.000 ;
+; rw         ; data[7]     ; 24.000 ; 24.000 ; 24.000 ; 24.000 ;
 ; rw         ; dc          ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; rw         ; rdl         ; 15.000 ;        ;        ; 15.000 ;
 ; rw         ; rdu         ; 15.000 ;        ;        ; 15.000 ;
-; rw         ; rom_sel     ; 15.000 ;        ;        ; 15.000 ;
 ; rw         ; ss1         ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; rw         ; ss2         ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; rw         ; wrl         ;        ; 15.000 ; 15.000 ;        ;
@@ -1115,36 +1112,36 @@ No paths to report.
 +------------+-------------+--------+--------+--------+--------+
 ; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
 +------------+-------------+--------+--------+--------+--------+
-; addr[1]    ; data[0]     ; 24.000 ; 33.000 ; 33.000 ; 24.000 ;
-; addr[1]    ; data[1]     ; 24.000 ; 24.000 ; 24.000 ; 24.000 ;
-; addr[1]    ; data[2]     ; 24.000 ; 24.000 ; 24.000 ; 24.000 ;
-; addr[1]    ; data[3]     ; 24.000 ; 24.000 ; 24.000 ; 24.000 ;
-; addr[1]    ; data[4]     ; 24.000 ; 24.000 ; 24.000 ; 24.000 ;
-; addr[1]    ; data[5]     ; 24.000 ; 24.000 ; 24.000 ; 24.000 ;
-; addr[1]    ; data[6]     ; 24.000 ; 24.000 ; 24.000 ; 24.000 ;
-; addr[1]    ; data[7]     ; 24.000 ; 24.000 ; 24.000 ; 24.000 ;
+; addr[1]    ; data[0]     ; 24.000 ; 24.000 ; 24.000 ; 24.000 ;
+; addr[1]    ; data[1]     ; 24.000 ; 32.000 ; 32.000 ; 24.000 ;
+; addr[1]    ; data[2]     ; 24.000 ; 32.000 ; 32.000 ; 24.000 ;
+; addr[1]    ; data[3]     ; 24.000 ; 32.000 ; 32.000 ; 24.000 ;
+; addr[1]    ; data[4]     ; 24.000 ; 32.000 ; 32.000 ; 24.000 ;
+; addr[1]    ; data[5]     ; 15.000 ; 26.000 ; 26.000 ; 15.000 ;
+; addr[1]    ; data[6]     ; 15.000 ; 26.000 ; 26.000 ; 15.000 ;
+; addr[1]    ; data[7]     ; 15.000 ; 26.000 ; 26.000 ; 15.000 ;
 ; addr[1]    ; dc          ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; addr[1]    ; ss1         ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; addr[1]    ; ss2         ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
-; addr[2]    ; data[0]     ; 24.000 ; 33.000 ; 33.000 ; 24.000 ;
-; addr[2]    ; data[1]     ; 24.000 ; 24.000 ; 24.000 ; 24.000 ;
-; addr[2]    ; data[2]     ; 24.000 ; 24.000 ; 24.000 ; 24.000 ;
-; addr[2]    ; data[3]     ; 24.000 ; 24.000 ; 24.000 ; 24.000 ;
-; addr[2]    ; data[4]     ; 24.000 ; 24.000 ; 24.000 ; 24.000 ;
-; addr[2]    ; data[5]     ; 24.000 ; 33.000 ; 33.000 ; 24.000 ;
-; addr[2]    ; data[6]     ; 24.000 ; 33.000 ; 33.000 ; 24.000 ;
-; addr[2]    ; data[7]     ; 24.000 ; 33.000 ; 33.000 ; 24.000 ;
+; addr[2]    ; data[0]     ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
+; addr[2]    ; data[1]     ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
+; addr[2]    ; data[2]     ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
+; addr[2]    ; data[3]     ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
+; addr[2]    ; data[4]     ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
+; addr[2]    ; data[5]     ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
+; addr[2]    ; data[6]     ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
+; addr[2]    ; data[7]     ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; addr[2]    ; dc          ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; addr[2]    ; ss1         ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; addr[2]    ; ss2         ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
-; addr[20]   ; data[0]     ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
-; addr[20]   ; data[1]     ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
-; addr[20]   ; data[2]     ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
-; addr[20]   ; data[3]     ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
-; addr[20]   ; data[4]     ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
-; addr[20]   ; data[5]     ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
-; addr[20]   ; data[6]     ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
-; addr[20]   ; data[7]     ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
+; addr[20]   ; data[0]     ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
+; addr[20]   ; data[1]     ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
+; addr[20]   ; data[2]     ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
+; addr[20]   ; data[3]     ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
+; addr[20]   ; data[4]     ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
+; addr[20]   ; data[5]     ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
+; addr[20]   ; data[6]     ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
+; addr[20]   ; data[7]     ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
 ; addr[20]   ; dc          ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
 ; addr[20]   ; io1_sel     ;        ; 15.000 ; 15.000 ;        ;
 ; addr[20]   ; ram1_sel    ;        ; 15.000 ; 15.000 ;        ;
@@ -1154,14 +1151,14 @@ No paths to report.
 ; addr[20]   ; rom_sel     ;        ; 15.000 ; 15.000 ;        ;
 ; addr[20]   ; ss1         ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
 ; addr[20]   ; ss2         ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
-; addr[21]   ; data[0]     ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
-; addr[21]   ; data[1]     ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
-; addr[21]   ; data[2]     ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
-; addr[21]   ; data[3]     ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
-; addr[21]   ; data[4]     ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
-; addr[21]   ; data[5]     ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
-; addr[21]   ; data[6]     ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
-; addr[21]   ; data[7]     ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
+; addr[21]   ; data[0]     ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
+; addr[21]   ; data[1]     ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
+; addr[21]   ; data[2]     ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
+; addr[21]   ; data[3]     ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
+; addr[21]   ; data[4]     ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
+; addr[21]   ; data[5]     ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
+; addr[21]   ; data[6]     ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
+; addr[21]   ; data[7]     ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
 ; addr[21]   ; dc          ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
 ; addr[21]   ; io1_sel     ; 15.000 ;        ;        ; 15.000 ;
 ; addr[21]   ; ram1_sel    ;        ; 15.000 ; 15.000 ;        ;
@@ -1171,14 +1168,14 @@ No paths to report.
 ; addr[21]   ; rom_sel     ;        ; 15.000 ; 15.000 ;        ;
 ; addr[21]   ; ss1         ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
 ; addr[21]   ; ss2         ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
-; addr[22]   ; data[0]     ; 24.000 ; 15.000 ; 15.000 ; 24.000 ;
-; addr[22]   ; data[1]     ; 24.000 ; 15.000 ; 15.000 ; 24.000 ;
-; addr[22]   ; data[2]     ; 24.000 ; 15.000 ; 15.000 ; 24.000 ;
-; addr[22]   ; data[3]     ; 24.000 ; 15.000 ; 15.000 ; 24.000 ;
-; addr[22]   ; data[4]     ; 24.000 ; 15.000 ; 15.000 ; 24.000 ;
-; addr[22]   ; data[5]     ; 24.000 ; 15.000 ; 15.000 ; 24.000 ;
-; addr[22]   ; data[6]     ; 24.000 ; 15.000 ; 15.000 ; 24.000 ;
-; addr[22]   ; data[7]     ; 24.000 ; 15.000 ; 15.000 ; 24.000 ;
+; addr[22]   ; data[0]     ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
+; addr[22]   ; data[1]     ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
+; addr[22]   ; data[2]     ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
+; addr[22]   ; data[3]     ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
+; addr[22]   ; data[4]     ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
+; addr[22]   ; data[5]     ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
+; addr[22]   ; data[6]     ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
+; addr[22]   ; data[7]     ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; addr[22]   ; dc          ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; addr[22]   ; io1_sel     ;        ; 15.000 ; 15.000 ;        ;
 ; addr[22]   ; ram1_sel    ; 15.000 ;        ;        ; 15.000 ;
@@ -1188,14 +1185,14 @@ No paths to report.
 ; addr[22]   ; rom_sel     ;        ; 15.000 ; 15.000 ;        ;
 ; addr[22]   ; ss1         ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; addr[22]   ; ss2         ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
-; addr[23]   ; data[0]     ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
-; addr[23]   ; data[1]     ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
-; addr[23]   ; data[2]     ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
-; addr[23]   ; data[3]     ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
-; addr[23]   ; data[4]     ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
-; addr[23]   ; data[5]     ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
-; addr[23]   ; data[6]     ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
-; addr[23]   ; data[7]     ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
+; addr[23]   ; data[0]     ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
+; addr[23]   ; data[1]     ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
+; addr[23]   ; data[2]     ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
+; addr[23]   ; data[3]     ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
+; addr[23]   ; data[4]     ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
+; addr[23]   ; data[5]     ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
+; addr[23]   ; data[6]     ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
+; addr[23]   ; data[7]     ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
 ; addr[23]   ; dc          ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
 ; addr[23]   ; io1_sel     ; 15.000 ;        ;        ; 15.000 ;
 ; addr[23]   ; ram1_sel    ; 15.000 ;        ;        ; 15.000 ;
@@ -1205,7 +1202,7 @@ No paths to report.
 ; addr[23]   ; rom_sel     ;        ; 15.000 ; 15.000 ;        ;
 ; addr[23]   ; ss1         ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
 ; addr[23]   ; ss2         ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
-; data[0]    ; data[0]     ; 42.000 ;        ;        ; 42.000 ;
+; data[0]    ; data[0]     ; 33.000 ;        ;        ; 33.000 ;
 ; data[1]    ; data[1]     ; 33.000 ;        ;        ; 33.000 ;
 ; data[2]    ; data[2]     ; 33.000 ;        ;        ; 33.000 ;
 ; data[2]    ; dc          ; 15.000 ;        ;        ; 15.000 ;
@@ -1213,35 +1210,34 @@ No paths to report.
 ; data[3]    ; ss1         ; 15.000 ;        ;        ; 15.000 ;
 ; data[4]    ; data[4]     ; 33.000 ;        ;        ; 33.000 ;
 ; data[4]    ; ss2         ; 15.000 ;        ;        ; 15.000 ;
-; data[5]    ; data[5]     ; 33.000 ;        ;        ; 33.000 ;
-; data[6]    ; data[6]     ; 33.000 ;        ;        ; 33.000 ;
-; data[7]    ; data[7]     ; 33.000 ;        ;        ; 33.000 ;
-; lds        ; data[0]     ; 24.000 ; 15.000 ; 15.000 ; 24.000 ;
-; lds        ; data[1]     ; 24.000 ; 15.000 ; 15.000 ; 24.000 ;
-; lds        ; data[2]     ; 24.000 ; 15.000 ; 15.000 ; 24.000 ;
-; lds        ; data[3]     ; 24.000 ; 15.000 ; 15.000 ; 24.000 ;
-; lds        ; data[4]     ; 24.000 ; 15.000 ; 15.000 ; 24.000 ;
-; lds        ; data[5]     ; 24.000 ; 15.000 ; 15.000 ; 24.000 ;
-; lds        ; data[6]     ; 24.000 ; 15.000 ; 15.000 ; 24.000 ;
-; lds        ; data[7]     ; 24.000 ; 15.000 ; 15.000 ; 24.000 ;
+; data[5]    ; data[5]     ; 24.000 ;        ;        ; 24.000 ;
+; data[6]    ; data[6]     ; 24.000 ;        ;        ; 24.000 ;
+; data[7]    ; data[7]     ; 24.000 ;        ;        ; 24.000 ;
+; lds        ; data[0]     ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
+; lds        ; data[1]     ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
+; lds        ; data[2]     ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
+; lds        ; data[3]     ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
+; lds        ; data[4]     ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
+; lds        ; data[5]     ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
+; lds        ; data[6]     ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
+; lds        ; data[7]     ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; lds        ; dc          ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; lds        ; rdl         ;        ; 15.000 ; 15.000 ;        ;
 ; lds        ; ss1         ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; lds        ; ss2         ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; lds        ; wrl         ;        ; 15.000 ; 15.000 ;        ;
 ; rst        ; rst_h       ;        ; 15.000 ; 15.000 ;        ;
-; rw         ; data[0]     ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
-; rw         ; data[1]     ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
-; rw         ; data[2]     ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
-; rw         ; data[3]     ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
-; rw         ; data[4]     ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
-; rw         ; data[5]     ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
-; rw         ; data[6]     ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
-; rw         ; data[7]     ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
+; rw         ; data[0]     ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
+; rw         ; data[1]     ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
+; rw         ; data[2]     ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
+; rw         ; data[3]     ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
+; rw         ; data[4]     ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
+; rw         ; data[5]     ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
+; rw         ; data[6]     ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
+; rw         ; data[7]     ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
 ; rw         ; dc          ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; rw         ; rdl         ; 15.000 ;        ;        ; 15.000 ;
 ; rw         ; rdu         ; 15.000 ;        ;        ; 15.000 ;
-; rw         ; rom_sel     ; 15.000 ;        ;        ; 15.000 ;
 ; rw         ; ss1         ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; rw         ; ss2         ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; rw         ; wrl         ;        ; 15.000 ; 15.000 ;        ;
@@ -1361,8 +1357,8 @@ No paths to report.
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
 ; as         ; as       ; 0        ; 0        ; 0        ; 232      ;
-; as         ; clk      ; 53       ; 53       ; 0        ; 0        ;
-; clk        ; clk      ; 461      ; 0        ; 0        ; 0        ;
+; as         ; clk      ; 39       ; 39       ; 0        ; 0        ;
+; clk        ; clk      ; 209      ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1373,8 +1369,8 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
 ; as         ; as       ; 0        ; 0        ; 0        ; 232      ;
-; as         ; clk      ; 53       ; 53       ; 0        ; 0        ;
-; clk        ; clk      ; 461      ; 0        ; 0        ; 0        ;
+; as         ; clk      ; 39       ; 39       ; 0        ; 0        ;
+; clk        ; clk      ; 209      ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1398,10 +1394,10 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 20    ; 20   ;
-; Unconstrained Input Port Paths  ; 385   ; 385  ;
+; Unconstrained Input Ports       ; 19    ; 19   ;
+; Unconstrained Input Port Paths  ; 341   ; 341  ;
 ; Unconstrained Output Ports      ; 25    ; 25   ;
-; Unconstrained Output Port Paths ; 181   ; 181  ;
+; Unconstrained Output Port Paths ; 165   ; 165  ;
 +---------------------------------+-------+------+
 
 
@@ -1411,7 +1407,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Jan 22 20:01:09 2021
+    Info: Processing started: Fri Jan 29 05:23:31 2021
 Info: Command: quartus_sta 68k_glue -c 68k_glue
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -1421,110 +1417,122 @@ Warning (335095): TimeQuest Timing Analyzer does not support the analysis of lat
 Critical Warning (332012): Synopsys Design Constraints File file not found: '68k_glue.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
-    Info (332105): create_clock -period 1.000 -name as as
     Info (332105): create_clock -period 1.000 -name clk clk
+    Info (332105): create_clock -period 1.000 -name as as
 Warning (332125): Found combinational loop of 2 nodes
-    Warning (332126): Node "buffer[1]~62|dataout"
-    Warning (332126): Node "buffer[1]~62|[2]"
-Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "buffer[1]~66|dataout"
+    Warning (332126): Node "buffer[1]~66|[1]"
+Warning (332125): Found combinational loop of 8 nodes
     Warning (332126): Node "r_Master_TX_Byte[1]~90|dataout"
+    Warning (332126): Node "r_Master_TX_Byte[1]~183|[1]"
+    Warning (332126): Node "r_Master_TX_Byte[1]~183|pexpout"
+    Warning (332126): Node "r_Master_TX_Byte[1]~182|pexpin"
+    Warning (332126): Node "r_Master_TX_Byte[1]~182|pexpout"
+    Warning (332126): Node "r_Master_TX_Byte[1]~90|pexpin"
+    Warning (332126): Node "r_Master_TX_Byte[1]~182|[1]"
     Warning (332126): Node "r_Master_TX_Byte[1]~90|[1]"
 Warning (332125): Found combinational loop of 2 nodes
-    Warning (332126): Node "buffer[7]~58|dataout"
-    Warning (332126): Node "buffer[7]~58|[2]"
+    Warning (332126): Node "status[1]~45|[0]"
+    Warning (332126): Node "status[1]~45|dataout"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "buffer[7]~50|[0]"
+    Warning (332126): Node "buffer[7]~50|dataout"
 Warning (332125): Found combinational loop of 8 nodes
-    Warning (332126): Node "r_Master_TX_Byte[7]~54|dataout"
+    Warning (332126): Node "r_Master_TX_Byte[7]~42|dataout"
     Warning (332126): Node "r_Master_TX_Byte[7]~106|[1]"
     Warning (332126): Node "r_Master_TX_Byte[7]~106|pexpout"
     Warning (332126): Node "r_Master_TX_Byte[7]~105|pexpin"
     Warning (332126): Node "r_Master_TX_Byte[7]~105|pexpout"
-    Warning (332126): Node "r_Master_TX_Byte[7]~54|pexpin"
+    Warning (332126): Node "r_Master_TX_Byte[7]~42|pexpin"
     Warning (332126): Node "r_Master_TX_Byte[7]~105|[1]"
-    Warning (332126): Node "r_Master_TX_Byte[7]~54|[1]"
+    Warning (332126): Node "r_Master_TX_Byte[7]~42|[1]"
 Warning (332125): Found combinational loop of 2 nodes
-    Warning (332126): Node "buffer[6]~54|dataout"
-    Warning (332126): Node "buffer[6]~54|[2]"
+    Warning (332126): Node "buffer[6]~46|[0]"
+    Warning (332126): Node "buffer[6]~46|dataout"
 Warning (332125): Found combinational loop of 8 nodes
-    Warning (332126): Node "r_Master_TX_Byte[6]~58|dataout"
+    Warning (332126): Node "r_Master_TX_Byte[6]~46|dataout"
     Warning (332126): Node "r_Master_TX_Byte[6]~117|[1]"
     Warning (332126): Node "r_Master_TX_Byte[6]~117|pexpout"
     Warning (332126): Node "r_Master_TX_Byte[6]~116|pexpin"
     Warning (332126): Node "r_Master_TX_Byte[6]~116|pexpout"
-    Warning (332126): Node "r_Master_TX_Byte[6]~58|pexpin"
+    Warning (332126): Node "r_Master_TX_Byte[6]~46|pexpin"
     Warning (332126): Node "r_Master_TX_Byte[6]~116|[1]"
-    Warning (332126): Node "r_Master_TX_Byte[6]~58|[1]"
+    Warning (332126): Node "r_Master_TX_Byte[6]~46|[1]"
 Warning (332125): Found combinational loop of 2 nodes
-    Warning (332126): Node "buffer[5]~50|dataout"
-    Warning (332126): Node "buffer[5]~50|[2]"
+    Warning (332126): Node "buffer[5]~42|[0]"
+    Warning (332126): Node "buffer[5]~42|dataout"
+Warning (332125): Found combinational loop of 8 nodes
+    Warning (332126): Node "r_Master_TX_Byte[5]~38|dataout"
+    Warning (332126): Node "r_Master_TX_Byte[5]~128|[1]"
+    Warning (332126): Node "r_Master_TX_Byte[5]~128|pexpout"
+    Warning (332126): Node "r_Master_TX_Byte[5]~127|pexpin"
+    Warning (332126): Node "r_Master_TX_Byte[5]~127|pexpout"
+    Warning (332126): Node "r_Master_TX_Byte[5]~38|pexpin"
+    Warning (332126): Node "r_Master_TX_Byte[5]~127|[1]"
+    Warning (332126): Node "r_Master_TX_Byte[5]~38|[1]"
 Warning (332125): Found combinational loop of 2 nodes
-    Warning (332126): Node "r_Master_TX_Byte[5]~50|dataout"
-    Warning (332126): Node "r_Master_TX_Byte[5]~50|[1]"
-Warning (332125): Found combinational loop of 2 nodes
-    Warning (332126): Node "buffer[0]~34|dataout"
-    Warning (332126): Node "buffer[0]~34|[2]"
-Warning (332125): Found combinational loop of 2 nodes
-    Warning (332126): Node "r_Master_TX_Byte[0]~34|dataout"
-    Warning (332126): Node "r_Master_TX_Byte[0]~34|[1]"
-Warning (332125): Found combinational loop of 2 nodes
-    Warning (332126): Node "status[1]~41|[0]"
-    Warning (332126): Node "status[1]~41|dataout"
-Warning (332125): Found combinational loop of 2 nodes
-    Warning (332126): Node "datain[7]~62|[2]"
-    Warning (332126): Node "datain[7]~62|dataout"
-Warning (332125): Found combinational loop of 2 nodes
-    Warning (332126): Node "datain[6]~58|[2]"
-    Warning (332126): Node "datain[6]~58|dataout"
-Warning (332125): Found combinational loop of 2 nodes
-    Warning (332126): Node "datain[5]~54|[2]"
-    Warning (332126): Node "datain[5]~54|dataout"
-Warning (332125): Found combinational loop of 2 nodes
-    Warning (332126): Node "datain[1]~38|[2]"
-    Warning (332126): Node "datain[1]~38|dataout"
-Warning (332125): Found combinational loop of 2 nodes
-    Warning (332126): Node "datain[0]~34|[2]"
-    Warning (332126): Node "datain[0]~34|dataout"
-Warning (332125): Found combinational loop of 2 nodes
-    Warning (332126): Node "buffer[2]~38|dataout"
-    Warning (332126): Node "buffer[2]~38|[2]"
-Warning (332125): Found combinational loop of 2 nodes
-    Warning (332126): Node "r_Master_TX_Byte[2]~42|dataout"
-    Warning (332126): Node "r_Master_TX_Byte[2]~42|[1]"
-Warning (332125): Found combinational loop of 2 nodes
-    Warning (332126): Node "datain[2]~42|dataout"
-    Warning (332126): Node "datain[2]~42|[2]"
+    Warning (332126): Node "buffer[2]~54|dataout"
+    Warning (332126): Node "buffer[2]~54|[1]"
+Warning (332125): Found combinational loop of 8 nodes
+    Warning (332126): Node "r_Master_TX_Byte[2]~70|dataout"
+    Warning (332126): Node "r_Master_TX_Byte[2]~172|[1]"
+    Warning (332126): Node "r_Master_TX_Byte[2]~172|pexpout"
+    Warning (332126): Node "r_Master_TX_Byte[2]~171|pexpin"
+    Warning (332126): Node "r_Master_TX_Byte[2]~171|pexpout"
+    Warning (332126): Node "r_Master_TX_Byte[2]~70|pexpin"
+    Warning (332126): Node "r_Master_TX_Byte[2]~171|[1]"
+    Warning (332126): Node "r_Master_TX_Byte[2]~70|[1]"
 Warning (332125): Found combinational loop of 2 nodes
     Warning (332126): Node "status[2]~38|[1]"
     Warning (332126): Node "status[2]~38|dataout"
 Warning (332125): Found combinational loop of 2 nodes
-    Warning (332126): Node "buffer[4]~46|dataout"
-    Warning (332126): Node "buffer[4]~46|[2]"
-Warning (332125): Found combinational loop of 2 nodes
-    Warning (332126): Node "r_Master_TX_Byte[4]~46|dataout"
-    Warning (332126): Node "r_Master_TX_Byte[4]~46|[1]"
-Warning (332125): Found combinational loop of 2 nodes
-    Warning (332126): Node "datain[4]~50|dataout"
-    Warning (332126): Node "datain[4]~50|[2]"
+    Warning (332126): Node "buffer[4]~62|dataout"
+    Warning (332126): Node "buffer[4]~62|[1]"
+Warning (332125): Found combinational loop of 8 nodes
+    Warning (332126): Node "r_Master_TX_Byte[4]~74|dataout"
+    Warning (332126): Node "r_Master_TX_Byte[4]~150|[1]"
+    Warning (332126): Node "r_Master_TX_Byte[4]~150|pexpout"
+    Warning (332126): Node "r_Master_TX_Byte[4]~149|pexpin"
+    Warning (332126): Node "r_Master_TX_Byte[4]~149|pexpout"
+    Warning (332126): Node "r_Master_TX_Byte[4]~74|pexpin"
+    Warning (332126): Node "r_Master_TX_Byte[4]~149|[1]"
+    Warning (332126): Node "r_Master_TX_Byte[4]~74|[1]"
 Warning (332125): Found combinational loop of 2 nodes
     Warning (332126): Node "status[4]~34|[1]"
     Warning (332126): Node "status[4]~34|dataout"
 Warning (332125): Found combinational loop of 2 nodes
-    Warning (332126): Node "buffer[3]~42|dataout"
-    Warning (332126): Node "buffer[3]~42|[2]"
-Warning (332125): Found combinational loop of 2 nodes
-    Warning (332126): Node "r_Master_TX_Byte[3]~38|dataout"
-    Warning (332126): Node "r_Master_TX_Byte[3]~38|[1]"
-Warning (332125): Found combinational loop of 2 nodes
-    Warning (332126): Node "datain[3]~46|dataout"
-    Warning (332126): Node "datain[3]~46|[2]"
+    Warning (332126): Node "buffer[3]~58|dataout"
+    Warning (332126): Node "buffer[3]~58|[1]"
+Warning (332125): Found combinational loop of 8 nodes
+    Warning (332126): Node "r_Master_TX_Byte[3]~66|dataout"
+    Warning (332126): Node "r_Master_TX_Byte[3]~161|[1]"
+    Warning (332126): Node "r_Master_TX_Byte[3]~161|pexpout"
+    Warning (332126): Node "r_Master_TX_Byte[3]~160|pexpin"
+    Warning (332126): Node "r_Master_TX_Byte[3]~160|pexpout"
+    Warning (332126): Node "r_Master_TX_Byte[3]~66|pexpin"
+    Warning (332126): Node "r_Master_TX_Byte[3]~160|[1]"
+    Warning (332126): Node "r_Master_TX_Byte[3]~66|[1]"
 Warning (332125): Found combinational loop of 2 nodes
     Warning (332126): Node "status[3]~30|[1]"
     Warning (332126): Node "status[3]~30|dataout"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "buffer[0]~38|dataout"
+    Warning (332126): Node "buffer[0]~38|[1]"
+Warning (332125): Found combinational loop of 8 nodes
+    Warning (332126): Node "r_Master_TX_Byte[0]~34|dataout"
+    Warning (332126): Node "r_Master_TX_Byte[0]~139|[1]"
+    Warning (332126): Node "r_Master_TX_Byte[0]~139|pexpout"
+    Warning (332126): Node "r_Master_TX_Byte[0]~138|pexpin"
+    Warning (332126): Node "r_Master_TX_Byte[0]~138|pexpout"
+    Warning (332126): Node "r_Master_TX_Byte[0]~34|pexpin"
+    Warning (332126): Node "r_Master_TX_Byte[0]~138|[1]"
+    Warning (332126): Node "r_Master_TX_Byte[0]~34|[1]"
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -29.000
+Info (332146): Worst-case setup slack is -21.000
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):   -29.000      -692.000 clk 
+    Info (332119):   -21.000      -449.000 clk 
     Info (332119):   -12.000      -264.000 as 
 Info (332146): Worst-case hold slack is 3.000
     Info (332119):     Slack End Point TNS Clock 
@@ -1536,15 +1544,15 @@ Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -4.500
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -4.500      -351.000 clk 
+    Info (332119):    -4.500      -252.000 clk 
     Info (332119):    -4.500      -198.000 as 
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 100 warnings
-    Info: Peak virtual memory: 461 megabytes
-    Info: Processing ended: Fri Jan 22 20:01:09 2021
-    Info: Elapsed time: 00:00:00
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 112 warnings
+    Info: Peak virtual memory: 454 megabytes
+    Info: Processing ended: Fri Jan 29 05:23:32 2021
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 
 
