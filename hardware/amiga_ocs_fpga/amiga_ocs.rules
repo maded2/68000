@@ -1,0 +1,103 @@
+
+(rules PCB amiga_ocs
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (eu.mihosoft.freerouting.autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 526)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.7)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.6)
+    )
+  )
+  (rule
+    (width 250.0)
+    (clear 200.2)
+    (clear 125.0 (type smd_to_turn_gap))
+    (clear 50.0 (type smd_smd))
+  )
+  (padstack "Via[0-1]_800:400_um"
+    (shape
+      (circle F.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 800.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_800:400_um" "Via[0-1]_800:400_um" default
+  )
+  (via 
+    "Via[0-1]_800:400_um-kicad_default" "Via[0-1]_800:400_um" "kicad_default"
+  )
+  (via_rule
+    default "Via[0-1]_800:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_800:400_um-kicad_default"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    +5V +3V3 "WIRE2_1" "Net-(J1-Pad4)" "Net-(J1-Pad5)" "Net-(J1-Pad6)" "Net-(J1-Pad7)" "Net-(J1-Pad8)"
+    "Net-(J1-Pad9)" "Net-(J1-Pad11)" "Net-(J1-Pad12)" "Net-(J1-Pad13)" "Net-(J1-Pad14)" "Net-(J1-Pad15)" "Net-(J1-Pad16)" "Net-(J1-Pad17)"
+    "Net-(J1-Pad18)" "Net-(J1-Pad19)" "WIRE2_2" "Net-(J1-Pad21)" "Net-(J1-Pad22)" "WIRE2_3" "WIRE2_4" "WIRE2_5"
+    "WIRE2_6" "WIRE2_7" "WIRE2_8" "Net-(J1-Pad30)" "Net-(J1-Pad32)" "WIRE3_1" "WIRE3_2" "WIRE3_3"
+    "WIRE3_4" "WIRE3_5" "WIRE3_6" "WIRE3_7" "WIRE3_8" "Net-(J1-Pad41)" "WIRE7_1" "Net-(J1-Pad43)"
+    "Net-(J1-Pad44)" "Net-(J1-Pad45)" "WIRE7_2" "WIRE7_3" "WIRE7_4" "WIRE7_5" "WIRE7_6" "WIRE7_7"
+    "WIRE7_8" "WIRE5_1" "WIRE5_2" "WIRE5_3" "WIRE5_4" "WIRE5_5" "WIRE5_6" "WIRE5_7"
+    "WIRE5_8" "WIRE8_1" "Net-(J1-Pad62)" "Net-(J1-Pad63)" "WIRE1_1" "WIRE1_2" "WIRE1_3" "WIRE1_4"
+    "WIRE1_5" "WIRE1_6" "WIRE1_7" "WIRE1_8" "Net-(J1-Pad72)" "Net-(J1-Pad73)" "Net-(J1-Pad74)" "Net-(J1-Pad75)"
+    "Net-(J1-Pad76)" "Net-(J1-Pad77)" "Net-(J1-Pad79)" "WIRE8_2" "WIRE8_3" "WIRE8_4" "WIRE8_5" "WIRE8_6"
+    "WIRE8_7" "WIRE8_8" "WIRE6_1" "WIRE6_2" "WIRE6_3" "WIRE4_1" "WIRE4_2" "WIRE4_3"
+    "WIRE4_4" "WIRE4_5" "WIRE4_6" "WIRE4_7" "WIRE4_8" IPL2 BERR IPL1
+    VPA IPL0 E AS VMA A23 BGACK A22
+    DTACK A21 UDS A20 LDS A19 RST A18
+    "CPU_CLK" A17 RW A16 D15 A15 D14 A14
+    D13 A13 D12 A12 D11 A11 D10 A10
+    D9 A9 D8 A8 D7 A7 D6 A6
+    D5 A5 D4 A4 D3 A3 D2 A2
+    D1 A1 D0 GPIO0 GPIO27 GPIO1 GPIO28 GPIO2
+    GPIO29 GPIO3 GPIO30 GPIO4 GPIO31 GPIO5 GPIO32 GPIO6
+    GPIO33 GPIO7 GPIO34 GPIO8 GPIO35 GPIO9 GPIO36 GPIO10
+    GPIO37 GPIO11 GPIO38 GPIO12 GPIO39 GPIO13 GPIO40 GPIO14
+    GPIO41 GPIO15 GPIO42 GPIO16 GPIO43 GPIO17 GPIO44 GPIO18
+    GPIO45 GPIO19 GPIO46 GPIO20 GPIO47 GPIO21 GPIO48 GPIO22
+    BR GPIO23 BG GPIO24 FC0 GPIO25 FC1 GPIO26
+    FC2 "Net-(J4-Pad28)" "Net-(J4-Pad30)" "Net-(J4-Pad32)" "Net-(J4-Pad34)" "Net-(J4-Pad36)" "Net-(U6-Pad16)" "Net-(U6-Pad15)"
+    "Net-(U6-Pad14)" "Net-(U6-Pad13)" "Net-(U6-Pad12)" "Net-(U6-Pad9)" "Net-(U6-Pad8)" "Net-(U6-Pad7)" "Net-(U6-Pad6)" "Net-(U6-Pad5)"
+    GND
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)
