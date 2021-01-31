@@ -25,6 +25,8 @@ RBR             = RHR     /* receive buffer register */
 IIR             = ISR     /* interrupt identification register */
 SCR             = SPR     /* scratch register */
 
+.align	2
+
 /*
     Initialise UART 
 */

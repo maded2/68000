@@ -5,12 +5,17 @@
 #include "ssd1351.h"
 #include "mandelbrot.h"
 #include "drawrect.h"
-#include "drawbitmap.h"
 #include "sys.h"
 #include "stdio.h"
 
+extern uint8_t* pic;
+
 int main()
 {
+	char txtBuffer[100];
+	printf("Init  oled\r\n");
+    printf("pic  = %x\r\n", (uint32_t)pic);
+
 	initSSD1351();
 
 	clearDisplay();
@@ -18,12 +23,12 @@ int main()
 	for (int j=0;; j++)
 	{
 		drawRects();
-		drawBitmap();
 
-		char welcome[100];
+    	oleddrawbitmap(pic);
+
 		for (int k=0;k<20; k++) {
-			sprintf(welcome, "Hello %x\r\n", k);
-			oledprints(welcome);
+			sprintf(txtBuffer, "Hello %x\r\n", k);
+			oledprints(txtBuffer);
 			// printf(welcome);
 			// for (int i = 0; i < 1000; i++); // wait a bit
 			oledprints("   Hello World\r\n");

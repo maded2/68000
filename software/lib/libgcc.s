@@ -1,6 +1,7 @@
 /*
 minimal functions to support the gcc runtime
 */
+.align	2
 
 	.globl	__modsi3
 __modsi3:
@@ -105,3 +106,4 @@ __mulsi3:
 	add.l	%d1, %d0
 	rts
 	*/
+	

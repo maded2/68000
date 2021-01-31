@@ -1,5 +1,6 @@
 
 .section .rodata
+.align	2
 
 .globl font_8x8
 .LC0:

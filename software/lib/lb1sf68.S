@@ -29,6 +29,7 @@ see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
 */
 
 /* These are predefined by new versions of GNU cpp.  */
+.align	2
 
 #ifndef __USER_LABEL_PREFIX__
 #define __USER_LABEL_PREFIX__ _

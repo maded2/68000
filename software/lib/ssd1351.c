@@ -189,14 +189,14 @@ void putchar_xy(uint8_t X, uint8_t Y, uint8_t c)
     setSpiStatus(SPI_SS1_DISABLE | SPI_SS2_DISABLE | SPI_DATA); // Data
 }
 
-void oleddrawpic()
+void oleddrawbitmap(uint8_t* bitmap)
 {
     // uint8_t *pic_ptr = pic;
     setAddrWindow(0, 0, 127, 127);
-    spicpy((uint8_t *)pic);
+    spicpy((uint8_t*)bitmap, (uint16_t)0x8000);
     // for (int i = 0; i < 32768; i++)
     // {
-    //     sendAndWait(*pic_ptr++);
+        // sendAndWait(*bitmap++);
     // }
     setSpiStatus(SPI_SS1_DISABLE | SPI_SS2_DISABLE | SPI_DATA); // Data
 }
@@ -207,8 +207,7 @@ void selectFont8x8()
     font_width = 5;
     font_height = 8;
 
-    printlw((uint32_t)selectedFont);
-    prints("\r\n");
+    printf("font loc = %x\r\n", (uint32_t)selectedFont);
 }
 
 void initSSD1351()

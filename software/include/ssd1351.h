@@ -3,7 +3,6 @@
 
 extern uint8_t* font_8x8;
 extern uint8_t* font_5x7;
-extern uint8_t* pic;
 
 #ifndef SSD1351
 #define SSD1351
@@ -55,7 +54,7 @@ SPI Registers, only uses the lower 8 bits of the data bus
 
 #endif // SSD1351
 
-extern void spicpy(uint8_t *loc);
+extern void spicpy(uint8_t *loc, uint16_t len);
 extern void spiset(uint16_t colour, uint16_t len);
 
 
@@ -73,5 +72,5 @@ void oledsetcursor(uint8_t x, uint8_t y);
 void oledprints(char *s);
 void oledprintch(char c);
 void putchar_xy(uint8_t X, uint8_t Y, uint8_t c);
-void oleddrawpic();
+void oleddrawbitmap(uint8_t* bitmap);
 void selectFont8x8();
