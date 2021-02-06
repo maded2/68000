@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 6 6
+Sheet 6 7
 Title "68000 SBC"
 Date "2020-11-12"
 Rev "1.2"
@@ -78,14 +78,10 @@ Text GLabel 3900 4400 0    50   Input ~ 0
 WRU
 Wire Wire Line
 	3400 4700 3900 4700
-Text GLabel 3400 4900 0    50   Output ~ 0
-IRQ1
 Text GLabel 3400 5000 0    50   Input ~ 0
 RST_H
 Wire Wire Line
 	3900 5000 3400 5000
-Wire Wire Line
-	3400 4900 3900 4900
 Text GLabel 5900 3800 2    50   Input ~ 0
 TX
 Text GLabel 5900 3900 2    50   Output ~ 0
@@ -160,67 +156,8 @@ Wire Wire Line
 Wire Wire Line
 	5900 3300 6500 3300
 Wire Wire Line
-	6800 3300 7100 3300
-Wire Wire Line
-	7100 3300 7100 3750
-Wire Wire Line
 	5900 3000 6500 3000
-Wire Wire Line
-	6800 3000 7200 3000
-Wire Wire Line
-	7200 3000 7200 3750
-$Comp
-L power:GND #PWR?
-U 1 1 6071446A
-P 3200 6900
-AR Path="/5F8E786F/6071446A" Ref="#PWR?"  Part="1" 
-AR Path="/6071446A" Ref="#PWR?"  Part="1" 
-AR Path="/606CB633/6071446A" Ref="#PWR070"  Part="1" 
-F 0 "#PWR070" H 3200 6650 50  0001 C CNN
-F 1 "GND" H 3205 6727 50  0000 C CNN
-F 2 "" H 3200 6900 50  0001 C CNN
-F 3 "" H 3200 6900 50  0001 C CNN
-	1    3200 6900
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:VCC #PWR?
-U 1 1 60714470
-P 3200 6450
-AR Path="/5F8E786F/60714470" Ref="#PWR?"  Part="1" 
-AR Path="/60714470" Ref="#PWR?"  Part="1" 
-AR Path="/606CB633/60714470" Ref="#PWR069"  Part="1" 
-F 0 "#PWR069" H 3200 6300 50  0001 C CNN
-F 1 "VCC" H 3215 6623 50  0000 C CNN
-F 2 "" H 3200 6450 50  0001 C CNN
-F 3 "" H 3200 6450 50  0001 C CNN
-	1    3200 6450
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C?
-U 1 1 6071447C
-P 2750 6700
-AR Path="/5F8E786F/6071447C" Ref="C?"  Part="1" 
-AR Path="/6071447C" Ref="C?"  Part="1" 
-AR Path="/606CB633/6071447C" Ref="C22"  Part="1" 
-F 0 "C22" H 2865 6746 50  0000 L CNN
-F 1 "100nF" H 2865 6655 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2788 6550 50  0001 C CNN
-F 3 "~" H 2750 6700 50  0001 C CNN
-	1    2750 6700
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3200 6450 3200 6550
-Wire Wire Line
-	3200 6550 2750 6550
-Wire Wire Line
-	3200 6850 3200 6900
-Wire Wire Line
-	2750 6850 3200 6850
 NoConn ~ 7300 3750
-NoConn ~ 7400 3750
 Text GLabel 3900 3100 0    50   Input ~ 0
 A1
 Text GLabel 3900 3200 0    50   Input ~ 0
@@ -299,4 +236,85 @@ Wire Wire Line
 	3100 1400 3200 1400
 Connection ~ 3200 1400
 NoConn ~ 5900 3100
+$Comp
+L Device:LED D7
+U 1 1 601B5358
+P 7400 3350
+F 0 "D7" H 7393 3567 50  0000 C CNN
+F 1 "LED" H 7393 3476 50  0000 C CNN
+F 2 "LED_SMD:LED_0805_2012Metric" H 7400 3350 50  0001 C CNN
+F 3 "~" H 7400 3350 50  0001 C CNN
+	1    7400 3350
+	0    1    -1   0   
+$EndComp
+$Comp
+L power:VCC #PWR0107
+U 1 1 601B5A23
+P 7400 2850
+F 0 "#PWR0107" H 7400 2700 50  0001 C CNN
+F 1 "VCC" H 7415 3023 50  0000 C CNN
+F 2 "" H 7400 2850 50  0001 C CNN
+F 3 "" H 7400 2850 50  0001 C CNN
+	1    7400 2850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7400 2850 7400 3200
+Wire Wire Line
+	7400 3500 7400 3750
+NoConn ~ 3900 4900
+$Comp
+L Device:C C?
+U 1 1 6071447C
+P 2750 6700
+AR Path="/5F8E786F/6071447C" Ref="C?"  Part="1" 
+AR Path="/6071447C" Ref="C?"  Part="1" 
+AR Path="/606CB633/6071447C" Ref="C22"  Part="1" 
+F 0 "C22" H 2865 6746 50  0000 L CNN
+F 1 "100nF" H 2865 6655 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2788 6550 50  0001 C CNN
+F 3 "~" H 2750 6700 50  0001 C CNN
+	1    2750 6700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR?
+U 1 1 60714470
+P 2750 6400
+AR Path="/5F8E786F/60714470" Ref="#PWR?"  Part="1" 
+AR Path="/60714470" Ref="#PWR?"  Part="1" 
+AR Path="/606CB633/60714470" Ref="#PWR069"  Part="1" 
+F 0 "#PWR069" H 2750 6250 50  0001 C CNN
+F 1 "VCC" H 2765 6573 50  0000 C CNN
+F 2 "" H 2750 6400 50  0001 C CNN
+F 3 "" H 2750 6400 50  0001 C CNN
+	1    2750 6400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 6071446A
+P 2750 6950
+AR Path="/5F8E786F/6071446A" Ref="#PWR?"  Part="1" 
+AR Path="/6071446A" Ref="#PWR?"  Part="1" 
+AR Path="/606CB633/6071446A" Ref="#PWR070"  Part="1" 
+F 0 "#PWR070" H 2750 6700 50  0001 C CNN
+F 1 "GND" H 2755 6777 50  0000 C CNN
+F 2 "" H 2750 6950 50  0001 C CNN
+F 3 "" H 2750 6950 50  0001 C CNN
+	1    2750 6950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2750 6850 2750 6950
+Wire Wire Line
+	2750 6400 2750 6550
+Wire Wire Line
+	7200 3300 7200 3750
+Wire Wire Line
+	6800 3300 7200 3300
+Wire Wire Line
+	6800 3000 7100 3000
+Wire Wire Line
+	7100 3000 7100 3750
 $EndSCHEMATC

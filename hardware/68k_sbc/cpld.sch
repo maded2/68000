@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 6
+Sheet 3 7
 Title "68000 SBC"
 Date "2020-11-12"
 Rev "1.2"
@@ -337,14 +337,14 @@ Text GLabel 4950 3250 0    50   Output ~ 0
 IPL1
 Text GLabel 4950 3350 0    50   Output ~ 0
 IPL2
-Text GLabel 8500 5250 2    50   Output ~ 0
+Text GLabel 7150 5250 2    50   Output ~ 0
 ROM_SEL
-Text GLabel 8500 4950 2    50   Output ~ 0
+Text GLabel 7150 4950 2    50   Output ~ 0
 RAM2_SEL
-Text GLabel 8500 4850 2    50   Output ~ 0
+Text GLabel 7150 4850 2    50   Output ~ 0
 RAM1_SEL
-Text GLabel 8500 4650 2    50   Output ~ 0
-IO_SEL1
+Text GLabel 7150 4650 2    50   Output ~ 0
+RAM5_SEL
 Text GLabel 4950 2950 0    50   Output ~ 0
 SS2
 Text GLabel 4950 3450 0    50   Output ~ 0
@@ -574,12 +574,12 @@ Wire Wire Line
 Connection ~ 5100 6850
 Wire Wire Line
 	5100 6850 5550 6850
-Text GLabel 8500 5150 2    50   Output ~ 0
+Text GLabel 7150 5150 2    50   Output ~ 0
 RAM4_SEL
-Text GLabel 8500 5050 2    50   Output ~ 0
+Text GLabel 7150 5050 2    50   Output ~ 0
 RAM3_SEL
-Text GLabel 8500 4750 2    50   Output ~ 0
-IO_SEL2
+Text GLabel 7150 4750 2    50   Output ~ 0
+RAM6_SEL
 Text GLabel 4950 2350 0    50   Output ~ 0
 RST_H
 Text GLabel 4950 2750 0    50   Output ~ 0
@@ -590,10 +590,10 @@ Text GLabel 4950 2650 0    50   Output ~ 0
 WRL
 Text GLabel 4950 2550 0    50   Output ~ 0
 RDU
-Text GLabel 4950 3750 0    50   Input ~ 0
-IRQ1
-Text GLabel 4950 3850 0    50   Input ~ 0
-IRQ2
+Text GLabel 4950 3750 0    50   Output ~ 0
+IO_SEL1
+Text GLabel 4200 3850 0    50   Output ~ 0
+STATUS
 Text GLabel 7150 3850 2    50   BiDi ~ 0
 D0
 Text GLabel 7150 3950 2    50   BiDi ~ 0
@@ -658,32 +658,6 @@ Text GLabel 7150 3750 2    50   Input ~ 0
 A23
 $Comp
 L Device:R_Pack04 RN?
-U 1 1 607AC183
-P 7850 5650
-AR Path="/607AC183" Ref="RN?"  Part="1" 
-AR Path="/5F8E786F/607AC183" Ref="RN6"  Part="1" 
-F 0 "RN6" H 7450 5700 50  0000 L CNN
-F 1 "470" H 7450 5600 50  0000 L CNN
-F 2 "Resistor_SMD:R_Array_Convex_4x0603" V 8125 5650 50  0001 C CNN
-F 3 "~" H 7850 5650 50  0001 C CNN
-	1    7850 5650
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R_Pack04 RN?
-U 1 1 607BEA36
-P 8300 5650
-AR Path="/607BEA36" Ref="RN?"  Part="1" 
-AR Path="/5F8E786F/607BEA36" Ref="RN7"  Part="1" 
-F 0 "RN7" H 8488 5696 50  0000 L CNN
-F 1 "470" H 8488 5605 50  0000 L CNN
-F 2 "Resistor_SMD:R_Array_Convex_4x0603" V 8575 5650 50  0001 C CNN
-F 3 "~" H 8300 5650 50  0001 C CNN
-	1    8300 5650
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R_Pack04 RN?
 U 1 1 607CBC79
 P 4250 5550
 AR Path="/607CBC79" Ref="RN?"  Part="1" 
@@ -693,82 +667,6 @@ F 1 "470" H 4438 5505 50  0000 L CNN
 F 2 "Resistor_SMD:R_Array_Convex_4x0603" V 4525 5550 50  0001 C CNN
 F 3 "~" H 4250 5550 50  0001 C CNN
 	1    4250 5550
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3850 5050 4050 5050
-Wire Wire Line
-	3850 5250 4250 5250
-Wire Wire Line
-	4050 5050 4050 5350
-Connection ~ 4050 5050
-Wire Wire Line
-	4050 5050 4950 5050
-Wire Wire Line
-	4150 5150 4150 5350
-Connection ~ 4150 5150
-Wire Wire Line
-	4150 5150 3850 5150
-Wire Wire Line
-	7150 4650 8300 4650
-Wire Wire Line
-	8500 4750 8200 4750
-Wire Wire Line
-	7150 4850 8100 4850
-Wire Wire Line
-	8500 4950 7950 4950
-Wire Wire Line
-	7150 5050 7850 5050
-Wire Wire Line
-	8500 5150 7750 5150
-Wire Wire Line
-	7150 5250 7650 5250
-Wire Wire Line
-	7650 5450 7650 5250
-Connection ~ 7650 5250
-Wire Wire Line
-	7650 5250 8500 5250
-Wire Wire Line
-	7750 5450 7750 5150
-Connection ~ 7750 5150
-Wire Wire Line
-	7750 5150 7150 5150
-Wire Wire Line
-	7850 5450 7850 5050
-Connection ~ 7850 5050
-Wire Wire Line
-	7850 5050 8500 5050
-Wire Wire Line
-	7950 5450 7950 4950
-Connection ~ 7950 4950
-Wire Wire Line
-	7950 4950 7150 4950
-Wire Wire Line
-	8100 5450 8100 4850
-Connection ~ 8100 4850
-Wire Wire Line
-	8100 4850 8500 4850
-Wire Wire Line
-	8200 5450 8200 4750
-Connection ~ 8200 4750
-Wire Wire Line
-	8200 4750 7150 4750
-Wire Wire Line
-	8300 5450 8300 4650
-Connection ~ 8300 4650
-Wire Wire Line
-	8300 4650 8500 4650
-NoConn ~ 8400 5450
-NoConn ~ 8400 5850
-$Comp
-L power:GND #PWR076
-U 1 1 6081640D
-P 8600 6200
-F 0 "#PWR076" H 8600 5950 50  0001 C CNN
-F 1 "GND" H 8605 6027 50  0000 C CNN
-F 2 "" H 8600 6200 50  0001 C CNN
-F 3 "" H 8600 6200 50  0001 C CNN
-	1    8600 6200
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -785,15 +683,15 @@ $EndComp
 $Comp
 L Device:LED D?
 U 1 1 6081B969
-P 4050 5900
+P 4250 5900
 AR Path="/606CB633/6081B969" Ref="D?"  Part="1" 
 AR Path="/5F8E786F/6081B969" Ref="D3"  Part="1" 
-F 0 "D3" H 4150 5850 50  0000 C CNN
-F 1 "LED" H 4050 5800 50  0000 C CNN
-F 2 "LED_SMD:LED_0805_2012Metric" H 4050 5900 50  0001 C CNN
-F 3 "~" H 4050 5900 50  0001 C CNN
-	1    4050 5900
-	0    1    -1   0   
+F 0 "D3" H 4350 5850 50  0000 C CNN
+F 1 "LED" H 4250 5800 50  0000 C CNN
+F 2 "LED_SMD:LED_0805_2012Metric" H 4250 5900 50  0001 C CNN
+F 3 "~" H 4250 5900 50  0001 C CNN
+	1    4250 5900
+	0    -1   -1   0   
 $EndComp
 $Comp
 L Device:LED D?
@@ -806,20 +704,20 @@ F 1 "LED" H 4150 5800 50  0000 C CNN
 F 2 "LED_SMD:LED_0805_2012Metric" H 4150 5900 50  0001 C CNN
 F 3 "~" H 4150 5900 50  0001 C CNN
 	1    4150 5900
-	0    1    -1   0   
+	0    -1   -1   0   
 $EndComp
 $Comp
 L Device:LED D?
 U 1 1 6081FAFA
-P 4250 5900
+P 4050 5900
 AR Path="/606CB633/6081FAFA" Ref="D?"  Part="1" 
 AR Path="/5F8E786F/6081FAFA" Ref="D5"  Part="1" 
-F 0 "D5" H 4350 5850 50  0000 C CNN
-F 1 "LED" H 4250 5800 50  0000 C CNN
-F 2 "LED_SMD:LED_0805_2012Metric" H 4250 5900 50  0001 C CNN
-F 3 "~" H 4250 5900 50  0001 C CNN
-	1    4250 5900
-	0    1    -1   0   
+F 0 "D5" H 4150 5850 50  0000 C CNN
+F 1 "LED" H 4050 5800 50  0000 C CNN
+F 2 "LED_SMD:LED_0805_2012Metric" H 4050 5900 50  0001 C CNN
+F 3 "~" H 4050 5900 50  0001 C CNN
+	1    4050 5900
+	0    -1   -1   0   
 $EndComp
 $Comp
 L Device:LED D?
@@ -834,119 +732,6 @@ F 3 "~" H 4350 5900 50  0001 C CNN
 	1    4350 5900
 	0    1    -1   0   
 $EndComp
-$Comp
-L Device:LED D?
-U 1 1 60820571
-P 7650 6000
-AR Path="/606CB633/60820571" Ref="D?"  Part="1" 
-AR Path="/5F8E786F/60820571" Ref="D7"  Part="1" 
-F 0 "D7" H 7750 5950 50  0000 C CNN
-F 1 "LED" H 7650 5900 50  0000 C CNN
-F 2 "LED_SMD:LED_0805_2012Metric" H 7650 6000 50  0001 C CNN
-F 3 "~" H 7650 6000 50  0001 C CNN
-	1    7650 6000
-	0    1    -1   0   
-$EndComp
-$Comp
-L Device:LED D?
-U 1 1 60824B05
-P 7750 6000
-AR Path="/606CB633/60824B05" Ref="D?"  Part="1" 
-AR Path="/5F8E786F/60824B05" Ref="D8"  Part="1" 
-F 0 "D8" H 7850 5950 50  0000 C CNN
-F 1 "LED" H 7750 5900 50  0000 C CNN
-F 2 "LED_SMD:LED_0805_2012Metric" H 7750 6000 50  0001 C CNN
-F 3 "~" H 7750 6000 50  0001 C CNN
-	1    7750 6000
-	0    1    -1   0   
-$EndComp
-$Comp
-L Device:LED D?
-U 1 1 608250DD
-P 7850 6000
-AR Path="/606CB633/608250DD" Ref="D?"  Part="1" 
-AR Path="/5F8E786F/608250DD" Ref="D9"  Part="1" 
-F 0 "D9" H 7950 5950 50  0000 C CNN
-F 1 "LED" H 7850 5900 50  0000 C CNN
-F 2 "LED_SMD:LED_0805_2012Metric" H 7850 6000 50  0001 C CNN
-F 3 "~" H 7850 6000 50  0001 C CNN
-	1    7850 6000
-	0    1    -1   0   
-$EndComp
-$Comp
-L Device:LED D?
-U 1 1 60825733
-P 7950 6000
-AR Path="/606CB633/60825733" Ref="D?"  Part="1" 
-AR Path="/5F8E786F/60825733" Ref="D10"  Part="1" 
-F 0 "D10" H 8050 5950 50  0000 C CNN
-F 1 "LED" H 7950 5900 50  0000 C CNN
-F 2 "LED_SMD:LED_0805_2012Metric" H 7950 6000 50  0001 C CNN
-F 3 "~" H 7950 6000 50  0001 C CNN
-	1    7950 6000
-	0    1    -1   0   
-$EndComp
-$Comp
-L Device:LED D?
-U 1 1 60825C8E
-P 8100 6000
-AR Path="/606CB633/60825C8E" Ref="D?"  Part="1" 
-AR Path="/5F8E786F/60825C8E" Ref="D11"  Part="1" 
-F 0 "D11" H 8200 5950 50  0000 C CNN
-F 1 "LED" H 8100 5900 50  0000 C CNN
-F 2 "LED_SMD:LED_0805_2012Metric" H 8100 6000 50  0001 C CNN
-F 3 "~" H 8100 6000 50  0001 C CNN
-	1    8100 6000
-	0    1    -1   0   
-$EndComp
-$Comp
-L Device:LED D?
-U 1 1 608262B5
-P 8200 6000
-AR Path="/606CB633/608262B5" Ref="D?"  Part="1" 
-AR Path="/5F8E786F/608262B5" Ref="D12"  Part="1" 
-F 0 "D12" H 8300 5950 50  0000 C CNN
-F 1 "LED" H 8200 5900 50  0000 C CNN
-F 2 "LED_SMD:LED_0805_2012Metric" H 8200 6000 50  0001 C CNN
-F 3 "~" H 8200 6000 50  0001 C CNN
-	1    8200 6000
-	0    1    -1   0   
-$EndComp
-$Comp
-L Device:LED D?
-U 1 1 608267C4
-P 8300 6000
-AR Path="/606CB633/608267C4" Ref="D?"  Part="1" 
-AR Path="/5F8E786F/608267C4" Ref="D13"  Part="1" 
-F 0 "D13" H 8400 5950 50  0000 C CNN
-F 1 "LED" H 8300 5900 50  0000 C CNN
-F 2 "LED_SMD:LED_0805_2012Metric" H 8300 6000 50  0001 C CNN
-F 3 "~" H 8300 6000 50  0001 C CNN
-	1    8300 6000
-	0    1    -1   0   
-$EndComp
-Wire Wire Line
-	7650 6150 7750 6150
-Wire Wire Line
-	8600 6150 8600 6200
-Connection ~ 7750 6150
-Wire Wire Line
-	7750 6150 7850 6150
-Connection ~ 7850 6150
-Wire Wire Line
-	7850 6150 7950 6150
-Connection ~ 7950 6150
-Wire Wire Line
-	7950 6150 8100 6150
-Connection ~ 8100 6150
-Wire Wire Line
-	8100 6150 8200 6150
-Connection ~ 8200 6150
-Wire Wire Line
-	8200 6150 8300 6150
-Connection ~ 8300 6150
-Wire Wire Line
-	8300 6150 8600 6150
 Wire Wire Line
 	4050 6050 4150 6050
 Wire Wire Line
@@ -960,26 +745,34 @@ Wire Wire Line
 Connection ~ 4350 6050
 Wire Wire Line
 	4350 6050 4600 6050
-$Comp
-L power:VCC #PWR074
-U 1 1 608319C9
-P 4350 4800
-F 0 "#PWR074" H 4350 4650 50  0001 C CNN
-F 1 "VCC" H 4365 4973 50  0000 C CNN
-F 2 "" H 4350 4800 50  0001 C CNN
-F 3 "" H 4350 4800 50  0001 C CNN
-	1    4350 4800
-	1    0    0    -1  
-$EndComp
+Text GLabel 4950 1950 0    50   Input ~ 0
+RW
 Wire Wire Line
-	4350 4800 4350 5350
+	4950 3850 4350 3850
+Wire Wire Line
+	4350 3850 4350 5350
+Wire Wire Line
+	4200 3850 4350 3850
+Connection ~ 4350 3850
+Wire Wire Line
+	3850 5050 4250 5050
+Wire Wire Line
+	3850 5250 4050 5250
+Wire Wire Line
+	4250 5350 4250 5050
+Connection ~ 4250 5050
+Wire Wire Line
+	4250 5050 4950 5050
+Wire Wire Line
+	4150 5350 4150 5150
+Connection ~ 4150 5150
 Wire Wire Line
 	4150 5150 4950 5150
 Wire Wire Line
-	4250 5250 4250 5350
-Connection ~ 4250 5250
+	3850 5150 4150 5150
 Wire Wire Line
-	4250 5250 4950 5250
-Text GLabel 4950 1950 0    50   Input ~ 0
-RW
+	4050 5350 4050 5250
+Connection ~ 4050 5250
+Wire Wire Line
+	4050 5250 4950 5250
 $EndSCHEMATC

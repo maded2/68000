@@ -1,8 +1,8 @@
+#include "stdint-gcc.h"
+#include "stdio.h"
+#include "string.h"
+
 #include "sys.h"
-
-
-
-
 
 const char int2hex[16] = { '0', '1', '2', '3', '4', '5', '6', '7',
                            '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
@@ -60,3 +60,5 @@ void printi(int value) {
         putch( scratch[index - 1] );
     }
 }
+
+

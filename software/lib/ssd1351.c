@@ -1,5 +1,6 @@
 #include "stdint-gcc.h"
 #include "stdio.h"
+#include "stdlib.h"
 
 #include "ssd1351.h"
 #include "sys.h"
@@ -207,7 +208,7 @@ void selectFont8x8()
     font_width = 5;
     font_height = 8;
 
-    printf("font loc = %x\r\n", (uint32_t)selectedFont);
+    // printf("font loc = %x\r\n", (uint32_t)selectedFont);
 }
 
 void initSSD1351()

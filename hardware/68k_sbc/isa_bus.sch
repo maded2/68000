@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 6
+Sheet 2 7
 Title "68000 SBC"
 Date "2020-11-12"
 Rev "1.2"
@@ -85,21 +85,6 @@ Wire Wire Line
 	3600 1700 2550 1700
 Wire Wire Line
 	2550 1700 2550 1250
-$Comp
-L power:+3.3V #PWR012
-U 1 1 5FA3C99B
-P 2750 1250
-F 0 "#PWR012" H 2750 1100 50  0001 C CNN
-F 1 "+3.3V" H 2765 1423 50  0000 C CNN
-F 2 "" H 2750 1250 50  0001 C CNN
-F 3 "" H 2750 1250 50  0001 C CNN
-	1    2750 1250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3600 2300 2750 2300
-Wire Wire Line
-	2750 2300 2750 1250
 Text GLabel 5000 4700 2    50   Input ~ 0
 RW
 Text GLabel 5000 5500 2    50   Input ~ 0
@@ -134,40 +119,12 @@ Wire Wire Line
 Connection ~ 2450 1900
 Wire Wire Line
 	2450 1900 2450 2100
-Text GLabel 3600 3300 0    50   Output ~ 0
-ROM_SEL
-Text GLabel 3600 3000 0    50   Output ~ 0
-RAM2_SEL
-Text GLabel 3600 2900 0    50   Output ~ 0
-RAM1_SEL
-Text GLabel 3600 2700 0    50   Output ~ 0
-IO_SEL1
-Text GLabel 3600 3200 0    50   Output ~ 0
-RAM4_SEL
-Text GLabel 3600 3100 0    50   Output ~ 0
-RAM3_SEL
-Text GLabel 3600 2800 0    50   Output ~ 0
-IO_SEL2
-Text GLabel 3600 1800 0    50   Input ~ 0
-RST_H
-Text GLabel 3600 5900 0    50   Output ~ 0
-WRU
-Text GLabel 3600 5600 0    50   Output ~ 0
-RDL
-Text GLabel 3600 5800 0    50   Output ~ 0
-WRL
-Text GLabel 3600 5700 0    50   Output ~ 0
-RDU
 Text GLabel 3600 4800 0    50   Input ~ 0
 VMA
 Text GLabel 3600 4900 0    50   Output ~ 0
 E
 Text GLabel 3600 5000 0    50   Input ~ 0
 VPA
-Text GLabel 3600 6000 0    50   Input ~ 0
-IRQ1
-Text GLabel 3600 6100 0    50   Input ~ 0
-IRQ2
 Text GLabel 3600 4000 0    50   Input ~ 0
 BGACK
 Text GLabel 3600 4100 0    50   Output ~ 0
@@ -588,4 +545,19 @@ F 3 "" H 10450 4600 50  0001 C CNN
 	1    10450 4600
 	1    0    0    -1  
 $EndComp
+NoConn ~ 3600 1800
+NoConn ~ 3600 2300
+NoConn ~ 3600 2700
+NoConn ~ 3600 2800
+NoConn ~ 3600 2900
+NoConn ~ 3600 3000
+NoConn ~ 3600 3100
+NoConn ~ 3600 3200
+NoConn ~ 3600 3300
+NoConn ~ 3600 5600
+NoConn ~ 3600 5700
+NoConn ~ 3600 5800
+NoConn ~ 3600 5900
+NoConn ~ 3600 6000
+NoConn ~ 3600 6100
 $EndSCHEMATC

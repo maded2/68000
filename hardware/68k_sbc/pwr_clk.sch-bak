@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 4 6
+Sheet 4 7
 Title "68000 SBC"
 Date "2020-11-12"
 Rev "1.2"
@@ -164,7 +164,7 @@ AR Path="/5FAB0468" Ref="C?"  Part="1"
 AR Path="/5F9C489E/5FAB0468" Ref="C13"  Part="1" 
 F 0 "C13" H 4268 4046 50  0000 L CNN
 F 1 "22uF" H 4268 3955 50  0000 L CNN
-F 2 "Capacitor_SMD:CP_Elec_5x5.4" H 4188 3850 50  0001 C CNN
+F 2 "Capacitor_SMD:CP_Elec_6.3x7.7" H 4188 3850 50  0001 C CNN
 F 3 "~" H 4150 4000 50  0001 C CNN
 	1    4150 4000
 	1    0    0    -1  
@@ -196,7 +196,7 @@ AR Path="/5FAFD745" Ref="C?"  Part="1"
 AR Path="/5F9C489E/5FAFD745" Ref="C12"  Part="1" 
 F 0 "C12" H 2818 4046 50  0000 L CNN
 F 1 "22uF" H 2818 3955 50  0000 L CNN
-F 2 "Capacitor_SMD:CP_Elec_5x5.4" H 2738 3850 50  0001 C CNN
+F 2 "Capacitor_SMD:CP_Elec_6.3x7.7" H 2738 3850 50  0001 C CNN
 F 3 "~" H 2700 4000 50  0001 C CNN
 	1    2700 4000
 	1    0    0    -1  
@@ -280,10 +280,10 @@ Wire Wire Line
 Wire Wire Line
 	1400 3850 2700 3850
 $Comp
-L dk_Tactile-Switches:1825910-6 S?
+L dk_Tactile-Switches:1825910-6 S1
 U 1 1 5FF76D99
 P 4750 2100
-F 0 "S?" H 4750 2447 60  0000 C CNN
+F 0 "S1" H 4750 2447 60  0000 C CNN
 F 1 "1825910-6" H 4750 2341 60  0000 C CNN
 F 2 "digikey-footprints:Switch_Tactile_THT_6x6mm" H 4950 2300 60  0001 L CNN
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1825910&DocType=Customer+Drawing&DocLang=English" H 4950 2400 60  0001 L CNN

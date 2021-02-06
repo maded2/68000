@@ -14,6 +14,7 @@ extern void inituart();
 extern void putch(uint8_t c);
 extern int getch();
 extern int getch2();
+extern void millis();
 
 extern void *memcpy(void *to, const void *from, size_t n);
 extern void *memset(void *s, int c, size_t count);

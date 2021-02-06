@@ -87,3 +87,19 @@ getch2:     lea.l   UART,%a1
             move.b  RHR(%a1),%d0        /* receive character  */
             rts            
 
+/*
+    1ms delay,  calculation using 12Mhz clock
+
+    DBF.W requires IO cycles when the 68000 branches 
+    if the content of D0.W is not equal to -1
+    after autodecrementing D0.W by I. 
+    However, the 68000 goes to the next instruction and 
+    does not branch when [D0.W] = -1 
+    after autodecrementing DO.W by 1, and this requires 14 cycles. 
+    This means that the DELAY l00p will require 10 cycles for "count" times, 
+    and the last iteration will take I4 cycles.
+*/
+.globl millis
+millis:    move.w #1198,%d0     /* 7 cycles */
+.delay:     dbf.w %d0,.delay     /* 10/14 cycles */
+            rts
