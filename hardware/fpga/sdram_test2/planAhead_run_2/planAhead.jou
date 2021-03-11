@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Fri Mar  5 07:25:40 2021
+# Process ID: 45457
+# Log file: /home/eddie/work/68000/hardware/fpga/sdram_test2/planAhead_run_2/planAhead.log
+# Journal file: /home/eddie/work/68000/hardware/fpga/sdram_test2/planAhead_run_2/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source /home/eddie/work/68000/hardware/fpga/sdram_test2/pa.fromNetlist.tcl

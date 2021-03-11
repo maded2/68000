@@ -1,0 +1,2 @@
+verilog work ../../vga_clock.v
+verilog work ../example_design/vga_clock_exdes.v

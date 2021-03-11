@@ -1,0 +1,324 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 8 8
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L power:+3.3V #PWR089
+U 1 1 603CCFFE
+P 5950 1800
+F 0 "#PWR089" H 5950 1650 50  0001 C CNN
+F 1 "+3.3V" H 5965 1973 50  0000 C CNN
+F 2 "" H 5950 1800 50  0001 C CNN
+F 3 "" H 5950 1800 50  0001 C CNN
+	1    5950 1800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5650 2100 5650 1800
+Wire Wire Line
+	5650 1800 5950 1800
+$Comp
+L power:VCC #PWR091
+U 1 1 603CD006
+P 6150 1800
+F 0 "#PWR091" H 6150 1650 50  0001 C CNN
+F 1 "VCC" H 6165 1973 50  0000 C CNN
+F 2 "" H 6150 1800 50  0001 C CNN
+F 3 "" H 6150 1800 50  0001 C CNN
+	1    6150 1800
+	1    0    0    -1  
+$EndComp
+Connection ~ 5950 1800
+$Comp
+L Logic_LevelTranslator:TXS0108EPW U25
+U 1 1 603CD00D
+P 6050 2500
+F 0 "U25" H 6050 2500 50  0000 C CNN
+F 1 "TXS0108EPW" H 6050 1550 50  0000 C CNN
+F 2 "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm" H 6050 1750 50  0001 C CNN
+F 3 "www.ti.com/lit/ds/symlink/txs0108e.pdf" H 6050 2400 50  0001 C CNN
+	1    6050 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_02x20_Odd_Even J3
+U 1 1 603CD013
+P 3800 3100
+F 0 "J3" H 3850 4217 50  0000 C CNN
+F 1 "Conn_02x20_Odd_Even" H 3850 4126 50  0000 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x20_P2.54mm_Horizontal" H 3800 3100 50  0001 C CNN
+F 3 "~" H 3800 3100 50  0001 C CNN
+	1    3800 3100
+	-1   0    0    -1  
+$EndComp
+NoConn ~ 4000 3000
+NoConn ~ 4000 3100
+NoConn ~ 4000 3200
+NoConn ~ 4000 3300
+NoConn ~ 4000 3400
+NoConn ~ 4000 3500
+NoConn ~ 4000 3600
+NoConn ~ 3500 4100
+NoConn ~ 3500 4000
+NoConn ~ 3500 3900
+NoConn ~ 3500 3800
+NoConn ~ 3500 3700
+NoConn ~ 3500 3600
+NoConn ~ 3500 3500
+NoConn ~ 3500 3400
+NoConn ~ 3500 3300
+NoConn ~ 3500 3200
+NoConn ~ 3500 3100
+NoConn ~ 3500 3000
+NoConn ~ 3500 2900
+NoConn ~ 3500 2800
+$Comp
+L power:GND #PWR085
+U 1 1 603CD02E
+P 4600 3100
+F 0 "#PWR085" H 4600 2850 50  0001 C CNN
+F 1 "GND" H 4605 2927 50  0000 C CNN
+F 2 "" H 4600 3100 50  0001 C CNN
+F 3 "" H 4600 3100 50  0001 C CNN
+	1    4600 3100
+	-1   0    0    -1  
+$EndComp
+Text GLabel 6450 2500 2    50   Input ~ 0
+MISO
+Text GLabel 6450 2600 2    50   Output ~ 0
+MOSI
+Text GLabel 6450 2400 2    50   Input ~ 0
+SCLK
+Wire Wire Line
+	4950 3900 4950 3700
+Wire Wire Line
+	4800 3900 4950 3900
+$Comp
+L power:VCC #PWR086
+U 1 1 603CD039
+P 4950 3700
+F 0 "#PWR086" H 4950 3550 50  0001 C CNN
+F 1 "VCC" H 4965 3873 50  0000 C CNN
+F 2 "" H 4950 3700 50  0001 C CNN
+F 3 "" H 4950 3700 50  0001 C CNN
+	1    4950 3700
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	4000 4100 4200 4100
+$Comp
+L power:GND #PWR083
+U 1 1 603CD040
+P 4200 4250
+F 0 "#PWR083" H 4200 4000 50  0001 C CNN
+F 1 "GND" H 4205 4077 50  0000 C CNN
+F 2 "" H 4200 4250 50  0001 C CNN
+F 3 "" H 4200 4250 50  0001 C CNN
+	1    4200 4250
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:Jumper JP?
+U 1 1 603CD046
+P 4500 3900
+AR Path="/603CD046" Ref="JP?"  Part="1" 
+AR Path="/5F9C489E/603CD046" Ref="JP?"  Part="1" 
+AR Path="/5F8E4AC3/603CD046" Ref="JP?"  Part="1" 
+AR Path="/603BDB5F/603CD046" Ref="JP1"  Part="1" 
+F 0 "JP1" H 4500 4164 50  0000 C CNN
+F 1 "Jumper" H 4500 4073 50  0000 C CNN
+F 2 "TestPoint:TestPoint_2Pads_Pitch2.54mm_Drill0.8mm" H 4500 3900 50  0001 C CNN
+F 3 "~" H 4500 3900 50  0001 C CNN
+	1    4500 3900
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 3900 4000 3900
+Text GLabel 4000 4000 2    50   Input ~ 0
+CTS
+Text GLabel 6450 2300 2    50   Input ~ 0
+SS2
+Text GLabel 6450 2200 2    50   Input ~ 0
+SS1
+Text GLabel 4000 3800 2    50   Output ~ 0
+RX
+Text GLabel 4000 3700 2    50   Input ~ 0
+TX
+Text GLabel 6450 2700 2    50   Input ~ 0
+DC
+$Comp
+L power:+3.3V #PWR084
+U 1 1 603CD053
+P 4600 2000
+F 0 "#PWR084" H 4600 1850 50  0001 C CNN
+F 1 "+3.3V" H 4615 2173 50  0000 C CNN
+F 2 "" H 4600 2000 50  0001 C CNN
+F 3 "" H 4600 2000 50  0001 C CNN
+	1    4600 2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4000 2200 5650 2200
+Wire Wire Line
+	4000 2300 5650 2300
+Wire Wire Line
+	4000 2400 5650 2400
+Wire Wire Line
+	4000 2500 5650 2500
+Wire Wire Line
+	5650 2600 4000 2600
+Wire Wire Line
+	5650 2700 4000 2700
+NoConn ~ 6450 2800
+NoConn ~ 6450 2900
+NoConn ~ 5650 2800
+NoConn ~ 5650 2900
+NoConn ~ 3500 2700
+NoConn ~ 3500 2600
+NoConn ~ 3500 2500
+NoConn ~ 3500 2400
+NoConn ~ 3500 2300
+NoConn ~ 3500 2200
+Wire Wire Line
+	4000 2800 4600 2800
+Wire Wire Line
+	4600 2800 4600 2000
+Wire Wire Line
+	4000 2900 4600 2900
+Wire Wire Line
+	4600 2900 4600 3100
+Wire Wire Line
+	4200 4250 4200 4300
+Wire Wire Line
+	4200 4250 4200 4100
+Connection ~ 4200 4250
+$Comp
+L power:GND #PWR090
+U 1 1 603CD070
+P 6050 3200
+F 0 "#PWR090" H 6050 2950 50  0001 C CNN
+F 1 "GND" H 6055 3027 50  0000 C CNN
+F 2 "" H 6050 3200 50  0001 C CNN
+F 3 "" H 6050 3200 50  0001 C CNN
+	1    6050 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 603CD076
+P 7000 5050
+AR Path="/5F8E786F/603CD076" Ref="#PWR?"  Part="1" 
+AR Path="/603CD076" Ref="#PWR?"  Part="1" 
+AR Path="/606CB633/603CD076" Ref="#PWR?"  Part="1" 
+AR Path="/5F8E4AC3/603CD076" Ref="#PWR?"  Part="1" 
+AR Path="/603BDB5F/603CD076" Ref="#PWR093"  Part="1" 
+F 0 "#PWR093" H 7000 4800 50  0001 C CNN
+F 1 "GND" H 7005 4877 50  0000 C CNN
+F 2 "" H 7000 5050 50  0001 C CNN
+F 3 "" H 7000 5050 50  0001 C CNN
+	1    7000 5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 603CD07C
+P 6550 4850
+AR Path="/5F8E786F/603CD07C" Ref="C?"  Part="1" 
+AR Path="/603CD07C" Ref="C?"  Part="1" 
+AR Path="/606CB633/603CD07C" Ref="C?"  Part="1" 
+AR Path="/5F8E4AC3/603CD07C" Ref="C?"  Part="1" 
+AR Path="/603BDB5F/603CD07C" Ref="C34"  Part="1" 
+F 0 "C34" H 6665 4896 50  0000 L CNN
+F 1 "100nF" H 6665 4805 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 6588 4700 50  0001 C CNN
+F 3 "~" H 6550 4850 50  0001 C CNN
+	1    6550 4850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7000 4600 7000 4700
+Wire Wire Line
+	7000 4700 6550 4700
+Wire Wire Line
+	7000 5000 7000 5050
+Wire Wire Line
+	6550 5000 7000 5000
+$Comp
+L power:GND #PWR?
+U 1 1 603CD086
+P 5850 5050
+AR Path="/5F8E786F/603CD086" Ref="#PWR?"  Part="1" 
+AR Path="/603CD086" Ref="#PWR?"  Part="1" 
+AR Path="/606CB633/603CD086" Ref="#PWR?"  Part="1" 
+AR Path="/5F8E4AC3/603CD086" Ref="#PWR?"  Part="1" 
+AR Path="/603BDB5F/603CD086" Ref="#PWR088"  Part="1" 
+F 0 "#PWR088" H 5850 4800 50  0001 C CNN
+F 1 "GND" H 5855 4877 50  0000 C CNN
+F 2 "" H 5850 5050 50  0001 C CNN
+F 3 "" H 5850 5050 50  0001 C CNN
+	1    5850 5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR?
+U 1 1 603CD08C
+P 5850 4600
+AR Path="/5F8E786F/603CD08C" Ref="#PWR?"  Part="1" 
+AR Path="/603CD08C" Ref="#PWR?"  Part="1" 
+AR Path="/606CB633/603CD08C" Ref="#PWR?"  Part="1" 
+AR Path="/5F8E4AC3/603CD08C" Ref="#PWR?"  Part="1" 
+AR Path="/603BDB5F/603CD08C" Ref="#PWR087"  Part="1" 
+F 0 "#PWR087" H 5850 4450 50  0001 C CNN
+F 1 "VCC" H 5865 4773 50  0000 C CNN
+F 2 "" H 5850 4600 50  0001 C CNN
+F 3 "" H 5850 4600 50  0001 C CNN
+	1    5850 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 603CD092
+P 5400 4850
+AR Path="/5F8E786F/603CD092" Ref="C?"  Part="1" 
+AR Path="/603CD092" Ref="C?"  Part="1" 
+AR Path="/606CB633/603CD092" Ref="C?"  Part="1" 
+AR Path="/5F8E4AC3/603CD092" Ref="C?"  Part="1" 
+AR Path="/603BDB5F/603CD092" Ref="C33"  Part="1" 
+F 0 "C33" H 5515 4896 50  0000 L CNN
+F 1 "100nF" H 5515 4805 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5438 4700 50  0001 C CNN
+F 3 "~" H 5400 4850 50  0001 C CNN
+	1    5400 4850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5850 4600 5850 4700
+Wire Wire Line
+	5850 4700 5400 4700
+Wire Wire Line
+	5850 5000 5850 5050
+Wire Wire Line
+	5400 5000 5850 5000
+$Comp
+L power:+3.3V #PWR092
+U 1 1 603CD09C
+P 7000 4600
+F 0 "#PWR092" H 7000 4450 50  0001 C CNN
+F 1 "+3.3V" H 7015 4773 50  0000 C CNN
+F 2 "" H 7000 4600 50  0001 C CNN
+F 3 "" H 7000 4600 50  0001 C CNN
+	1    7000 4600
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC

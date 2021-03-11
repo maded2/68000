@@ -6,7 +6,8 @@
 #include "sys.h"
 
 uint8_t *spiStatus = (uint8_t *)0xB00001;
-uint8_t *spiInOut = (uint8_t *)0xB00003;
+uint8_t *spiOut = (uint8_t *)0xB00003;
+uint8_t *spiIn = (uint8_t *)0xB00005;
 
 uint8_t cursor_x = 0;
 uint8_t cursor_y = 0;
@@ -23,11 +24,8 @@ void setSpiStatus(uint8_t value)
 
 void sendAndWait(uint8_t value)
 {
-    *spiInOut = value;
-    // int i=0;
-    // while ((*spiStatus & MOSI_BUSY) == 0) {
-    //     i++; // loop until data out busy bit is clear
-    // }
+    while ((*spiStatus & MOSI_BUSY) == 0);
+    *spiOut = value;
     // printf("wait %d\r\n", i);
 }
 
@@ -90,15 +88,15 @@ void drawRect(uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, uint16_t colour)
 {
     setAddrWindow((uint8_t)x1, (uint8_t)y1, (uint8_t)x2, (uint8_t)y2);
     setSpiStatus(SPI_SS1_ENABLE | SPI_SS2_DISABLE | SPI_DATA); // SS1 & Data
-    spiset(colour, (y2-y1+1)*(x2-x1+1));
-    // for (int y = y1; y <= y2; ++y)
-    // {
-    //     for (int x = x1; x <= x2; ++x)
-    //     {
-    //         sendAndWait((uint8_t)(colour >> 8));
-    //         sendAndWait((uint8_t)colour);
-    //     }
-    // }
+    // spiset(colour, (y2-y1+1)*(x2-x1+1));
+    for (int y = y1; y <= y2; ++y)
+    {
+        for (int x = x1; x <= x2; ++x)
+        {
+            sendAndWait((uint8_t)(colour >> 8));
+            sendAndWait((uint8_t)colour);
+        }
+    }
     setSpiStatus(SPI_SS1_DISABLE | SPI_SS2_DISABLE | SPI_DATA); // Data
 }
 
@@ -194,11 +192,11 @@ void oleddrawbitmap(uint8_t* bitmap)
 {
     // uint8_t *pic_ptr = pic;
     setAddrWindow(0, 0, 127, 127);
-    spicpy((uint8_t*)bitmap, (uint16_t)0x8000);
-    // for (int i = 0; i < 32768; i++)
-    // {
-        // sendAndWait(*bitmap++);
-    // }
+    // spicpy((uint8_t*)bitmap, (uint16_t)32768);
+    for (int i = 0; i < 32768; i++)
+    {
+        sendAndWait(*bitmap++);
+    }
     setSpiStatus(SPI_SS1_DISABLE | SPI_SS2_DISABLE | SPI_DATA); // Data
 }
 

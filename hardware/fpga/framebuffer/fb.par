@@ -1,0 +1,266 @@
+Release 14.7 par P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+desktop1::  Sun Mar 07 08:42:04 2021
+
+par -w -intstyle ise -ol high -mt off fb_map.ncd fb.ncd fb.pcf 
+
+
+Constraints file: fb.pcf.
+Loading device for application Rf_Device from file '6slx16.nph' in environment
+/home/eddie/Applications/Xilinx_ISE/14.7/ISE_DS/ISE/.
+   "fb" is an NCD, version 3.2, device xc6slx16, package ftg256, speed -2
+
+Initializing temperature to 85.000 Celsius. (default - Range: 0.000 to 85.000 Celsius)
+Initializing voltage to 1.140 Volts. (default - Range: 1.140 to 1.260 Volts)
+
+
+Device speed data version:  "PRODUCTION 1.23 2013-10-13".
+
+
+
+Device Utilization Summary:
+
+Slice Logic Utilization:
+  Number of Slice Registers:                   608 out of  18,224    3%
+    Number used as Flip Flops:                 608
+    Number used as Latches:                      0
+    Number used as Latch-thrus:                  0
+    Number used as AND/OR logics:                0
+  Number of Slice LUTs:                        754 out of   9,112    8%
+    Number used as logic:                      728 out of   9,112    7%
+      Number using O6 output only:             467
+      Number using O5 output only:              87
+      Number using O5 and O6:                  174
+      Number used as ROM:                        0
+    Number used as Memory:                       0 out of   2,176    0%
+    Number used exclusively as route-thrus:     26
+      Number with same-slice register load:     18
+      Number with same-slice carry load:         8
+      Number with other load:                    0
+
+Slice Logic Distribution:
+  Number of occupied Slices:                   326 out of   2,278   14%
+  Number of MUXCYs used:                       204 out of   4,556    4%
+  Number of LUT Flip Flop pairs used:          878
+    Number with an unused Flip Flop:           328 out of     878   37%
+    Number with an unused LUT:                 124 out of     878   14%
+    Number of fully used LUT-FF pairs:         426 out of     878   48%
+    Number of slice register sites lost
+      to control set restrictions:               0 out of  18,224    0%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                        76 out of     186   40%
+    Number of LOCed IOBs:                       75 out of      76   98%
+
+Specific Feature Utilization:
+  Number of RAMB16BWERs:                         2 out of      32    6%
+  Number of RAMB8BWERs:                          0 out of      64    0%
+  Number of BUFIO2/BUFIO2_2CLKs:                 0 out of      32    0%
+  Number of BUFIO2FB/BUFIO2FB_2CLKs:             0 out of      32    0%
+  Number of BUFG/BUFGMUXs:                       6 out of      16   37%
+    Number used as BUFGs:                        5
+    Number used as BUFGMUX:                      1
+  Number of DCM/DCM_CLKGENs:                     0 out of       4    0%
+  Number of ILOGIC2/ISERDES2s:                   0 out of     248    0%
+  Number of IODELAY2/IODRP2/IODRP2_MCBs:        24 out of     248    9%
+    Number used as IODELAY2s:                    0
+    Number used as IODRP2s:                      2
+    Number used as IODRP2_MCBs:                 22
+  Number of OLOGIC2/OSERDES2s:                  47 out of     248   18%
+    Number used as OLOGIC2s:                     0
+    Number used as OSERDES2s:                   47
+  Number of BSCANs:                              0 out of       4    0%
+  Number of BUFHs:                               0 out of     128    0%
+  Number of BUFPLLs:                             0 out of       8    0%
+  Number of BUFPLL_MCBs:                         1 out of       4   25%
+  Number of DSP48A1s:                            0 out of      32    0%
+  Number of ICAPs:                               0 out of       1    0%
+  Number of MCBs:                                1 out of       2   50%
+  Number of PCILOGICSEs:                         0 out of       2    0%
+  Number of PLL_ADVs:                            2 out of       2  100%
+  Number of PMVs:                                0 out of       1    0%
+  Number of STARTUPs:                            0 out of       1    0%
+  Number of SUSPEND_SYNCs:                       0 out of       1    0%
+
+
+Overall effort level (-ol):   High 
+Router effort level (-rl):    High 
+
+Starting initial Timing Analysis.  REAL time: 2 secs 
+Finished initial Timing Analysis.  REAL time: 2 secs 
+
+WARNING:Par:288 - The signal as_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal cpu_clk_IBUF has no load.  PAR will not attempt to route this signal.
+Starting Router
+
+
+Phase  1  : 5808 unrouted;      REAL time: 2 secs 
+
+Phase  2  : 4483 unrouted;      REAL time: 3 secs 
+
+Phase  3  : 1438 unrouted;      REAL time: 3 secs 
+
+Phase  4  : 1438 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 4 secs 
+
+Updating file: fb.ncd with current fully routed design.
+
+Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 4 secs 
+
+Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 4 secs 
+
+Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 4 secs 
+
+Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 4 secs 
+
+Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 4 secs 
+
+Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 4 secs 
+Total REAL time to Router completion: 4 secs 
+Total CPU time to Router completion: 4 secs 
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Generating "PAR" statistics.
+
+**************************
+Generating Clock Report
+**************************
+
++---------------------+--------------+------+------+------------+-------------+
+|        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
++---------------------+--------------+------+------+------------+-------------+
+|chip_ram/c3_mcb_drp_ |              |      |      |            |             |
+|                 clk |  BUFGMUX_X2Y3| No   |  153 |  0.091     |  1.170      |
++---------------------+--------------+------+------+------------+-------------+
+|            data_clk | BUFGMUX_X2Y12| No   |   42 |  0.057     |  1.135      |
++---------------------+--------------+------+------+------------+-------------+
+|           pixel_clk |  BUFGMUX_X2Y1| No   |   44 |  0.062     |  1.134      |
++---------------------+--------------+------+------+------------+-------------+
+|           sdram_clk |  BUFGMUX_X2Y2| No   |    5 |  0.010     |  1.132      |
++---------------------+--------------+------+------+------------+-------------+
+|chip_ram/c3_sysclk_2 |              |      |      |            |             |
+|                   x |         Local|      |   36 |  0.704     |  1.116      |
++---------------------+--------------+------+------+------------+-------------+
+|chip_ram/c3_sysclk_2 |              |      |      |            |             |
+|               x_180 |         Local|      |   37 |  0.723     |  1.135      |
++---------------------+--------------+------+------+------------+-------------+
+|chip_ram/memc3_wrapp |              |      |      |            |             |
+|er_inst/mcb_ui_top_i |              |      |      |            |             |
+|nst/mcb_raw_wrapper_ |              |      |      |            |             |
+|    inst/ioi_drp_clk |         Local|      |   22 |  0.000     |  0.002      |
++---------------------+--------------+------+------+------------+-------------+
+|chip_ram/memc3_wrapp |              |      |      |            |             |
+|er_inst/mcb_ui_top_i |              |      |      |            |             |
+|nst/mcb_raw_wrapper_ |              |      |      |            |             |
+|inst/idelay_dqs_ioi_ |              |      |      |            |             |
+|                   s |         Local|      |    1 |  0.000     |  0.002      |
++---------------------+--------------+------+------+------------+-------------+
+|chip_ram/memc3_wrapp |              |      |      |            |             |
+|er_inst/mcb_ui_top_i |              |      |      |            |             |
+|nst/mcb_raw_wrapper_ |              |      |      |            |             |
+|inst/idelay_dqs_ioi_ |              |      |      |            |             |
+|                   m |         Local|      |    1 |  0.000     |  0.002      |
++---------------------+--------------+------+------+------------+-------------+
+|chip_ram/memc3_wrapp |              |      |      |            |             |
+|er_inst/mcb_ui_top_i |              |      |      |            |             |
+|nst/mcb_raw_wrapper_ |              |      |      |            |             |
+|inst/idelay_udqs_ioi |              |      |      |            |             |
+|                  _s |         Local|      |    1 |  0.000     |  0.002      |
++---------------------+--------------+------+------+------------+-------------+
+|chip_ram/memc3_wrapp |              |      |      |            |             |
+|er_inst/mcb_ui_top_i |              |      |      |            |             |
+|nst/mcb_raw_wrapper_ |              |      |      |            |             |
+|inst/idelay_udqs_ioi |              |      |      |            |             |
+|                  _m |         Local|      |    1 |  0.000     |  0.002      |
++---------------------+--------------+------+------+------------+-------------+
+
+* Net Skew is the difference between the minimum and maximum routing
+only delays for the net. Note this is different from Clock Skew which
+is reported in TRCE timing report. Clock Skew is the difference between
+the minimum and maximum path delays which includes logic delays.
+
+* The fanout is the number of component pins not the individual BEL loads,
+for example SLICE loads not FF loads.
+
+Timing Score: 0 (Setup: 0, Hold: 0, Component Switching Limit: 0)
+
+Number of Timing Constraints that were not applied: 2
+
+Asterisk (*) preceding a constraint indicates it was not met.
+   This may be due to a setup or hold violation.
+
+----------------------------------------------------------------------------------------------------------
+  Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
+                                            |             |    Slack   | Achievable | Errors |    Score   
+----------------------------------------------------------------------------------------------------------
+  TS_main_clk_clkout2 = PERIOD TIMEGRP "mai | MINPERIOD   |     7.334ns|     2.666ns|       0|           0
+  n_clk_clkout2" TS_sys_clk / 2 HIGH        |             |            |            |        |            
+    50%                                     |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  TS_sys_clk = PERIOD TIMEGRP "sys_clk" 20  | MINLOWPULSE |    15.000ns|     5.000ns|       0|           0
+  ns HIGH 50%                               |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  TS_main_clk_clkout0 = PERIOD TIMEGRP "mai | SETUP       |    15.395ns|     4.605ns|       0|           0
+  n_clk_clkout0" TS_sys_clk HIGH 50%        | HOLD        |     0.048ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+  TS_main_clk_clkout1 = PERIOD TIMEGRP "mai | SETUP       |    17.813ns|     6.004ns|       0|           0
+  n_clk_clkout1" TS_sys_clk / 0.5 HIGH      | HOLD        |     0.061ns|            |       0|           0
+      50%                                   |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+
+
+Derived Constraint Report
+Review Timing Report for more details on the following derived constraints.
+To create a Timing Report, run "trce -v 12 -fastpaths -o design_timing_report design.ncd design.pcf"
+or "Run Timing Analysis" from Timing Analyzer (timingan).
+Derived Constraints for TS_sys_clk
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|                               |   Period    |       Actual Period       |      Timing Errors        |      Paths Analyzed       |
+|           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
+|                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|TS_sys_clk                     |     20.000ns|      5.000ns|      5.332ns|            0|            0|            0|         3221|
+| TS_main_clk_clkout1           |     40.000ns|      6.004ns|          N/A|            0|            0|         1843|            0|
+| TS_main_clk_clkout0           |     20.000ns|      4.605ns|          N/A|            0|            0|         1378|            0|
+| TS_main_clk_clkout2           |     10.000ns|      2.666ns|          N/A|            0|            0|            0|            0|
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+All constraints were met.
+
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+WARNING:Par:283 - There are 2 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
+
+Total REAL time to PAR completion: 5 secs 
+Total CPU time to PAR completion: 5 secs 
+
+Peak Memory Usage:  637 MB
+
+Placer: Placement generated during map.
+Routing: Completed - No errors found.
+Timing: Completed - No errors found.
+
+Number of error messages: 0
+Number of warning messages: 4
+Number of info messages: 0
+
+Writing design to file fb.ncd
+
+
+
+PAR done!

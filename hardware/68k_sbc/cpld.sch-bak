@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 7
+Sheet 3 8
 Title "68000 SBC"
 Date "2020-11-12"
 Rev "1.2"
@@ -594,21 +594,21 @@ Text GLabel 4950 3750 0    50   Output ~ 0
 IO_SEL1
 Text GLabel 4200 3850 0    50   Output ~ 0
 STATUS
-Text GLabel 7150 3850 2    50   BiDi ~ 0
+Text GLabel 7150 3050 2    50   BiDi ~ 0
 D0
-Text GLabel 7150 3950 2    50   BiDi ~ 0
+Text GLabel 7150 3150 2    50   BiDi ~ 0
 D1
-Text GLabel 7150 4050 2    50   BiDi ~ 0
+Text GLabel 7150 3250 2    50   BiDi ~ 0
 D2
-Text GLabel 7150 4150 2    50   BiDi ~ 0
+Text GLabel 7150 3350 2    50   BiDi ~ 0
 D3
-Text GLabel 7150 4250 2    50   BiDi ~ 0
+Text GLabel 7150 3450 2    50   BiDi ~ 0
 D4
-Text GLabel 7150 4350 2    50   BiDi ~ 0
+Text GLabel 7150 3550 2    50   BiDi ~ 0
 D5
-Text GLabel 7150 4450 2    50   BiDi ~ 0
+Text GLabel 7150 3650 2    50   BiDi ~ 0
 D6
-Text GLabel 7150 4550 2    50   BiDi ~ 0
+Text GLabel 7150 3750 2    50   BiDi ~ 0
 D7
 Text GLabel 4950 3950 0    50   Input ~ 0
 A1
@@ -621,40 +621,16 @@ A4
 Text GLabel 4950 4350 0    50   Input ~ 0
 A5
 Text GLabel 4950 4450 0    50   Input ~ 0
-A6
-Text GLabel 4950 4550 0    50   Input ~ 0
-A7
-Text GLabel 4950 4650 0    50   Input ~ 0
-A8
-Text GLabel 4950 4750 0    50   Input ~ 0
-A9
-Text GLabel 4950 4850 0    50   Input ~ 0
-A10
-Text GLabel 4950 4950 0    50   Input ~ 0
-A11
-Text GLabel 7150 2650 2    50   Input ~ 0
-A12
-Text GLabel 7150 2750 2    50   Input ~ 0
-A13
-Text GLabel 7150 2850 2    50   Input ~ 0
-A14
-Text GLabel 7150 2950 2    50   Input ~ 0
-A15
-Text GLabel 7150 3050 2    50   Input ~ 0
-A16
-Text GLabel 7150 3150 2    50   Input ~ 0
-A17
-Text GLabel 7150 3250 2    50   Input ~ 0
 A18
-Text GLabel 7150 3350 2    50   Input ~ 0
+Text GLabel 4950 4550 0    50   Input ~ 0
 A19
-Text GLabel 7150 3450 2    50   Input ~ 0
+Text GLabel 4950 4650 0    50   Input ~ 0
 A20
-Text GLabel 7150 3550 2    50   Input ~ 0
+Text GLabel 4950 4750 0    50   Input ~ 0
 A21
-Text GLabel 7150 3650 2    50   Input ~ 0
+Text GLabel 4950 4850 0    50   Input ~ 0
 A22
-Text GLabel 7150 3750 2    50   Input ~ 0
+Text GLabel 4950 4950 0    50   Input ~ 0
 A23
 $Comp
 L Device:R_Pack04 RN?
@@ -775,4 +751,28 @@ Wire Wire Line
 Connection ~ 4050 5250
 Wire Wire Line
 	4050 5250 4950 5250
+Text GLabel 7150 2950 2    50   Output ~ 0
+BUS_DIR_CTRL
+Text GLabel 7150 3850 2    50   BiDi ~ 0
+D8
+Text GLabel 7150 3950 2    50   BiDi ~ 0
+D9
+Text GLabel 7150 4050 2    50   BiDi ~ 0
+D10
+Text GLabel 7150 4150 2    50   BiDi ~ 0
+D11
+Text GLabel 7150 4250 2    50   BiDi ~ 0
+D12
+Text GLabel 7150 4350 2    50   BiDi ~ 0
+D13
+Text GLabel 7150 4450 2    50   BiDi ~ 0
+D14
+Text GLabel 7150 4550 2    50   BiDi ~ 0
+D15
+Text GLabel 7150 2850 2    50   Output ~ 0
+IPL0
+Text GLabel 7150 2750 2    50   Output ~ 0
+IPL1
+Text GLabel 7150 2650 2    50   Output ~ 0
+IPL2
 $EndSCHEMATC

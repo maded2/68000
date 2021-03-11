@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "/home/eddie/work/68000/hardware/fpga/amiga_ocs_fpga/ocs.xst" -ofn "/home/eddie/work/68000/hardware/fpga/amiga_ocs_fpga/ocs.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc ocs.ucf -p xc6slx16-ftg256-2 ocs.ngc ocs.ngd  
+map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o ocs_map.ncd ocs.ngd ocs.pcf 
+par -w -intstyle ise -ol high -mt off ocs_map.ncd ocs.ncd ocs.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml ocs.twx ocs.ncd -o ocs.twr ocs.pcf -ucf ocs.ucf 
+bitgen -intstyle ise -f ocs.ut ocs.ncd 

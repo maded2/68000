@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/eddie/work/68000/hardware/fpga/amiga_ocs_fpga/ocs.ncd
+OUTFILE=/home/eddie/work/68000/hardware/fpga/amiga_ocs_fpga/ocs.bit
+FAMILY=Spartan6
+PART=xc6slx16-2ftg256
+WORKINGDIR=/home/eddie/work/68000/hardware/fpga/amiga_ocs_fpga
+LICENSE=WebPack
+USER_INFO=212003765_0_0_536

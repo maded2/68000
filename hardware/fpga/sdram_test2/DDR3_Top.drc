@@ -1,0 +1,8 @@
+Release 14.7 Drc P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Thu Mar  4 23:01:51 2021
+
+drc -z DDR3_Top.ncd DDR3_Top.pcf
+
+DRC detected 0 errors and 0 warnings.

@@ -1,4 +1,11 @@
-19109620602156744
+19116074055325916
+68k_sbc
+maded2
+
+
+0
+0
+0
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -54950,6 +54957,13 @@ solder jumper open
 5
 3
 KiCad_Libraries
+SOIC127P1032X265-20N
+
+
+0
+20
+20
+KiCad_Libraries
 SOJ-36_10.16x23.49mm_P1.27mm_sram
 SOJ, 36 Pin (http://www.issi.com/WW/pdf/61-64C5128AL.pdf), generated with kicad-footprint-generator ipc_gullwing_generator.py
 SOJ SO
@@ -84139,3 +84153,17 @@ Integrated Circuit
 0
 144
 144
+logos
+amiga
+
+
+0
+0
+0
+logos
+twitter
+
+
+0
+0
+0

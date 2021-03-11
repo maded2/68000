@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 7
+Sheet 1 8
 Title "68000 SBC"
 Date "2021-01-05"
 Rev "1.3"
@@ -681,4 +681,12 @@ Wire Wire Line
 	4550 1400 4550 4950
 Wire Wire Line
 	4550 4950 4850 4950
+$Sheet
+S 800  1750 500  250 
+U 603BDB5F
+F0 "IO" 50
+F1 "IO.sch" 50
+$EndSheet
+NoConn ~ 4000 1400
+NoConn ~ 3550 1400
 $EndSCHEMATC

@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=/home/eddie/work/68000/hardware/fpga/amiga_ocs_fpga/impact.xsl
+OUTFILE=/home/eddie/work/68000/hardware/fpga/amiga_ocs_fpga/impact.xsl
+FAMILY=Single
+PART=Single
+WORKINGDIR=/home/eddie/work/68000/hardware/fpga/amiga_ocs_fpga
+LICENSE=iMPACT
+USER_INFO=iMPACT

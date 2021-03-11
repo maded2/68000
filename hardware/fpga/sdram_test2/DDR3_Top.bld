@@ -1,0 +1,100 @@
+Release 14.7 ngdbuild P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line:
+/home/eddie/Applications/Xilinx_ISE/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild
+-intstyle ise -dd _ngo -nt timestamp -uc qm_ddr3.ucf -p xc6slx16-ftg256-2
+DDR3_Top.ngc DDR3_Top.ngd
+
+Reading NGO file "/home/eddie/work/68000/hardware/fpga/sdram_test2/DDR3_Top.ngc"
+...
+Gathering constraint information from source properties...
+Done.
+
+Annotating constraints to design from ucf file "qm_ddr3.ucf" ...
+Resolving constraint associations...
+Checking Constraint Associations...
+INFO:ConstraintSystem:178 - TNM 'sys_clk_i', used in period specification
+   'TS_sys_clk_i', was traced into PLL_ADV instance PLL_ADV. The following new
+   TNM groups and period specifications were generated at the PLL_ADV output(s):
+    
+   CLKOUT1: <TIMESPEC TS_u_pll_clk_100m_bufi = PERIOD "u_pll_clk_100m_bufi"
+   TS_sys_clk_i / 1.3 HIGH 50%>
+
+INFO:ConstraintSystem:178 - TNM 'sys_clk_i', used in period specification
+   'TS_sys_clk_i', was traced into PLL_ADV instance PLL_ADV. The following new
+   TNM groups and period specifications were generated at the PLL_ADV output(s):
+    
+   CLKOUT0: <TIMESPEC TS_u_pll_clk_50m_bufi = PERIOD "u_pll_clk_50m_bufi"
+   TS_sys_clk_i / 2.166666667 HIGH 50%>
+
+INFO:ConstraintSystem:178 - TNM 'sys_clk_i', used in period specification
+   'TS_sys_clk_i', was traced into PLL_ADV instance PLL_ADV. The following new
+   TNM groups and period specifications were generated at the PLL_ADV output(s):
+    
+   CLKOUT2: <TIMESPEC TS_u_pll_clk_ddr_bufi = PERIOD "u_pll_clk_ddr_bufi"
+   TS_sys_clk_i / 6.5 HIGH 50%>
+
+INFO:ConstraintSystem:178 - TNM 'u_pll_clk_ddr_bufi', used in period
+   specification 'TS_u_pll_clk_ddr_bufi', was traced into PLL_ADV instance
+   u_ddr3_mig/memc3_infrastructure_inst/u_pll_adv. The following new TNM groups
+   and period specifications were generated at the PLL_ADV output(s): 
+   CLKOUT3: <TIMESPEC
+   TS_u_ddr3_mig_memc3_infrastructure_inst_mcb_drp_clk_bufg_in = PERIOD
+   "u_ddr3_mig_memc3_infrastructure_inst_mcb_drp_clk_bufg_in"
+   TS_u_pll_clk_ddr_bufi / 0.25 HIGH 50%>
+
+INFO:ConstraintSystem:178 - TNM 'u_pll_clk_ddr_bufi', used in period
+   specification 'TS_u_pll_clk_ddr_bufi', was traced into PLL_ADV instance
+   u_ddr3_mig/memc3_infrastructure_inst/u_pll_adv. The following new TNM groups
+   and period specifications were generated at the PLL_ADV output(s): 
+   CLKOUT1: <TIMESPEC TS_u_ddr3_mig_memc3_infrastructure_inst_clk_2x_180 =
+   PERIOD "u_ddr3_mig_memc3_infrastructure_inst_clk_2x_180"
+   TS_u_pll_clk_ddr_bufi / 2 PHASE 0.769230769 ns HIGH 50%>
+
+INFO:ConstraintSystem:178 - TNM 'u_pll_clk_ddr_bufi', used in period
+   specification 'TS_u_pll_clk_ddr_bufi', was traced into PLL_ADV instance
+   u_ddr3_mig/memc3_infrastructure_inst/u_pll_adv. The following new TNM groups
+   and period specifications were generated at the PLL_ADV output(s): 
+   CLKOUT0: <TIMESPEC TS_u_ddr3_mig_memc3_infrastructure_inst_clk_2x_0 = PERIOD
+   "u_ddr3_mig_memc3_infrastructure_inst_clk_2x_0" TS_u_pll_clk_ddr_bufi / 2
+   HIGH 50%>
+
+INFO:ConstraintSystem:178 - TNM 'u_pll_clk_ddr_bufi', used in period
+   specification 'TS_u_pll_clk_ddr_bufi', was traced into PLL_ADV instance
+   u_ddr3_mig/memc3_infrastructure_inst/u_pll_adv. The following new TNM groups
+   and period specifications were generated at the PLL_ADV output(s): 
+   CLKOUT2: <TIMESPEC TS_u_ddr3_mig_memc3_infrastructure_inst_clk0_bufg_in =
+   PERIOD "u_ddr3_mig_memc3_infrastructure_inst_clk0_bufg_in"
+   TS_u_pll_clk_ddr_bufi / 0.125 HIGH 50%>
+
+Done...
+
+WARNING:NgdBuild:1440 - User specified non-default attribute value (2.5) was
+   detected for the CLKIN1_PERIOD attribute on PLL
+   "u_ddr3_mig/memc3_infrastructure_inst/u_pll_adv".  This does not match the
+   PERIOD constraint value (3.07692308 ns.).  The uncertainty calculation will
+   use the PERIOD constraint value.  This could result in incorrect uncertainty
+   calculated for PLL output clocks.
+Checking expanded design ...
+WARNING:NgdBuild:452 - logical net 'N313' has no driver
+WARNING:NgdBuild:452 - logical net 'N317' has no driver
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   3
+
+Total memory usage is 404924 kilobytes
+
+Writing NGD file "DDR3_Top.ngd" ...
+Total REAL time to NGDBUILD completion:  2 sec
+Total CPU time to NGDBUILD completion:   2 sec
+
+Writing NGDBUILD log file "DDR3_Top.bld"...

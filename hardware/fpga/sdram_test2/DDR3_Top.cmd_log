@@ -1,0 +1,24 @@
+xst -intstyle ise -ifn "/home/eddie/work/68000/hardware/fpga/sdram_test2/DDR3_Top.xst" -ofn "/home/eddie/work/68000/hardware/fpga/sdram_test2/DDR3_Top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc qm_ddr3.ucf -p xc6slx16-ftg256-2 DDR3_Top.ngc DDR3_Top.ngd  
+map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o DDR3_Top_map.ncd DDR3_Top.ngd DDR3_Top.pcf 
+par -w -intstyle ise -ol high -mt off DDR3_Top_map.ncd DDR3_Top.ncd DDR3_Top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml DDR3_Top.twx DDR3_Top.ncd -o DDR3_Top.twr DDR3_Top.pcf -ucf qm_ddr3.ucf 
+xst -intstyle ise -ifn "/home/eddie/work/68000/hardware/fpga/sdram_test2/DDR3_Top.xst" -ofn "/home/eddie/work/68000/hardware/fpga/sdram_test2/DDR3_Top.syr" 
+xst -intstyle ise -ifn "/home/eddie/work/68000/hardware/fpga/sdram_test2/DDR3_Top.xst" -ofn "/home/eddie/work/68000/hardware/fpga/sdram_test2/DDR3_Top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc qm_ddr3.ucf -p xc6slx16-ftg256-2 DDR3_Top.ngc DDR3_Top.ngd  
+map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o DDR3_Top_map.ncd DDR3_Top.ngd DDR3_Top.pcf 
+par -w -intstyle ise -ol high -mt off DDR3_Top_map.ncd DDR3_Top.ncd DDR3_Top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml DDR3_Top.twx DDR3_Top.ncd -o DDR3_Top.twr DDR3_Top.pcf -ucf qm_ddr3.ucf 
+bitgen -intstyle ise -f DDR3_Top.ut DDR3_Top.ncd 
+xst -intstyle ise -ifn "/home/eddie/work/68000/hardware/fpga/sdram_test2/DDR3_Top.xst" -ofn "/home/eddie/work/68000/hardware/fpga/sdram_test2/DDR3_Top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc qm_ddr3.ucf -p xc6slx16-ftg256-2 DDR3_Top.ngc DDR3_Top.ngd  
+map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o DDR3_Top_map.ncd DDR3_Top.ngd DDR3_Top.pcf 
+par -w -intstyle ise -ol high -mt off DDR3_Top_map.ncd DDR3_Top.ncd DDR3_Top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml DDR3_Top.twx DDR3_Top.ncd -o DDR3_Top.twr DDR3_Top.pcf -ucf qm_ddr3.ucf 
+bitgen -intstyle ise -f DDR3_Top.ut DDR3_Top.ncd 
+xst -intstyle ise -ifn "/home/eddie/work/68000/hardware/fpga/sdram_test2/DDR3_Top.xst" -ofn "/home/eddie/work/68000/hardware/fpga/sdram_test2/DDR3_Top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc qm_ddr3.ucf -p xc6slx16-ftg256-2 DDR3_Top.ngc DDR3_Top.ngd  
+map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o DDR3_Top_map.ncd DDR3_Top.ngd DDR3_Top.pcf 
+par -w -intstyle ise -ol high -mt off DDR3_Top_map.ncd DDR3_Top.ncd DDR3_Top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml DDR3_Top.twx DDR3_Top.ncd -o DDR3_Top.twr DDR3_Top.pcf -ucf qm_ddr3.ucf 
+bitgen -intstyle ise -f DDR3_Top.ut DDR3_Top.ncd 

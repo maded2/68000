@@ -129,3 +129,6 @@ set_location_assignment PIN_12 -to dc
 set_global_assignment -name VERILOG_FILE SPI_Master.v
 set_instance_assignment -name FAST_INPUT_REGISTER ON -to as
 set_instance_assignment -name FAST_INPUT_REGISTER ON -to clk
+set_global_assignment -name MAX7000_OPTIMIZATION_TECHNIQUE AREA
+set_global_assignment -name SYNTH_TIMING_DRIVEN_SYNTHESIS OFF
+set_global_assignment -name SIGNALTAP_FILE stp1.stp

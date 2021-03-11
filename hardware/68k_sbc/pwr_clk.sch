@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 4 7
+Sheet 4 8
 Title "68000 SBC"
 Date "2020-11-12"
 Rev "1.2"
@@ -91,34 +91,30 @@ $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 5FAA2FB3
-P 8300 3900
+P 7500 3650
 AR Path="/5FAA2FB3" Ref="#PWR?"  Part="1" 
 AR Path="/5F9C489E/5FAA2FB3" Ref="#PWR034"  Part="1" 
-F 0 "#PWR034" H 8300 3650 50  0001 C CNN
-F 1 "GND" H 8305 3727 50  0000 C CNN
-F 2 "" H 8300 3900 50  0001 C CNN
-F 3 "" H 8300 3900 50  0001 C CNN
-	1    8300 3900
+F 0 "#PWR034" H 7500 3400 50  0001 C CNN
+F 1 "GND" H 7505 3477 50  0000 C CNN
+F 2 "" H 7500 3650 50  0001 C CNN
+F 3 "" H 7500 3650 50  0001 C CNN
+	1    7500 3650
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8300 3650 8300 3900
 $Comp
 L power:VCC #PWR?
 U 1 1 5FAA45CE
-P 8300 2900
+P 7500 3050
 AR Path="/5FAA45CE" Ref="#PWR?"  Part="1" 
 AR Path="/5F9C489E/5FAA45CE" Ref="#PWR033"  Part="1" 
-F 0 "#PWR033" H 8300 2750 50  0001 C CNN
-F 1 "VCC" H 8315 3073 50  0000 C CNN
-F 2 "" H 8300 2900 50  0001 C CNN
-F 3 "" H 8300 2900 50  0001 C CNN
-	1    8300 2900
+F 0 "#PWR033" H 7500 2900 50  0001 C CNN
+F 1 "VCC" H 7515 3223 50  0000 C CNN
+F 2 "" H 7500 3050 50  0001 C CNN
+F 3 "" H 7500 3050 50  0001 C CNN
+	1    7500 3050
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8300 3050 8300 2900
-Text GLabel 6100 4000 0    50   Output ~ 0
+Text GLabel 8000 3350 2    50   Output ~ 0
 CPU_CLK
 $Comp
 L power:GND #PWR?
@@ -213,52 +209,19 @@ Wire Wire Line
 	2700 4250 3600 4250
 Connection ~ 2700 4250
 NoConn ~ 7200 3350
-NoConn ~ 6050 3350
-Connection ~ 7500 3050
-Wire Wire Line
-	7500 3050 8300 3050
-Wire Wire Line
-	6350 3050 7500 3050
-Wire Wire Line
-	7500 3650 8300 3650
 $Comp
 L Oscillator:CXO_DIP14 X2
 U 1 1 5F9FE06A
 P 7500 3350
 F 0 "X2" H 7844 3396 50  0000 L CNN
-F 1 "CXO_DIP14" H 7844 3305 50  0000 L CNN
+F 1 "CXO_DIP14" H 7850 3100 50  0000 L CNN
 F 2 "Oscillator:Oscillator_DIP-14_LargePads" H 7950 3000 50  0001 C CNN
 F 3 "http://cdn-reichelt.de/documents/datenblatt/B400/OSZI.pdf" H 7400 3350 50  0001 C CNN
 	1    7500 3350
 	1    0    0    -1  
 $EndComp
-Connection ~ 7500 3650
-Wire Wire Line
-	7800 4000 7800 3350
-Wire Wire Line
-	6100 4000 6700 4000
-Wire Wire Line
-	6650 3350 6700 3350
 Text Label 1550 3850 2    50   ~ 0
 5V
-Wire Wire Line
-	6350 3650 7500 3650
-$Comp
-L Oscillator:CXO_DIP8 X1
-U 1 1 5F9FE064
-P 6350 3350
-F 0 "X1" H 6694 3396 50  0000 L CNN
-F 1 "CXO_DIP8" H 6694 3305 50  0000 L CNN
-F 2 "Oscillator:Oscillator_DIP-8_LargePads" H 6800 3000 50  0001 C CNN
-F 3 "http://cdn-reichelt.de/documents/datenblatt/B400/OSZI.pdf" H 6250 3350 50  0001 C CNN
-	1    6350 3350
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6700 3350 6700 4000
-Connection ~ 6700 4000
-Wire Wire Line
-	6700 4000 7800 4000
 Wire Wire Line
 	4350 1650 4350 2000
 Wire Wire Line
@@ -311,4 +274,6 @@ Wire Wire Line
 Wire Wire Line
 	5100 2200 5100 2000
 Connection ~ 5100 2000
+Wire Wire Line
+	7800 3350 8000 3350
 $EndSCHEMATC

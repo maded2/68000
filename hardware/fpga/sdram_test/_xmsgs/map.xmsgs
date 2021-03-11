@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">c3_ddruser/mcb_rd_data_dg&lt;0&gt;</arg> has no load.
+</msg>
+
+<msg type="info" file="LIT" num="395" delta="new" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">3</arg> more times for the following (max. 5 shown):
+<arg fmt="%s" index="3">u_sdram/memc3_infrastructure_inst/rst0_sync_r&lt;24&gt;,
+N312,
+N316</arg>
+To see the details of these <arg fmt="%s" index="4">info</arg> messages, please use the -detail switch.
+</msg>
+
+<msg type="info" file="MapLib" num="562" delta="old" >No environment variables are currently set.
+</msg>
+
+<msg type="info" file="MapLib" num="841" delta="old" >Changing COMPENSATION attribute from <arg fmt="%s" index="1">SYSTEM_SYNCHRONOUS</arg> to <arg fmt="%s" index="2">INTERNAL</arg> for PLL_ADV <arg fmt="%s" index="3">u_pll/u_pll/PLL_ADV</arg>.
+</msg>
+
+<msg type="info" file="LIT" num="244" delta="old" >All of the single ended outputs in this design are using slew rate limited output drivers. The delay on speed critical single ended outputs can be dramatically reduced by designating them as fast outputs.
+</msg>
+
+<msg type="info" file="Pack" num="1716" delta="old" >Initializing temperature to <arg fmt="%0.3f" index="1">85.000</arg> Celsius. (default - Range: <arg fmt="%0.3f" index="2">0.000</arg> to <arg fmt="%0.3f" index="3">85.000</arg> Celsius)
+</msg>
+
+<msg type="info" file="Pack" num="1720" delta="old" >Initializing voltage to <arg fmt="%0.3f" index="1">1.140</arg> Volts. (default - Range: <arg fmt="%0.3f" index="2">1.140</arg> to <arg fmt="%0.3f" index="3">1.260</arg> Volts)
+</msg>
+
+<msg type="info" file="Map" num="215" delta="old" >The Interim Design Summary has been generated in the MAP Report (.mrp).
+</msg>
+
+<msg type="warning" file="Place" num="837" delta="old" >Partially locked IO Bus is found. 
+<arg fmt="%s" index="1"> Following components of the bus are not locked: 
+	 Comp: mcb3_dram_a&lt;14&gt;
+</arg>
+</msg>
+
+<msg type="info" file="Place" num="834" delta="old" >Only a subset of IOs are locked. Out of <arg fmt="%d" index="1">54</arg> IOs, <arg fmt="%d" index="2">49</arg> are locked and <arg fmt="%d" index="3">5</arg> are not locked. <arg fmt="%s" index="4"> The following is the list of components that are not locked.
+mcb3_dram_ck_n	  NOT LOCKED 
+mcb3_dram_ck	  NOT LOCKED 
+mcb3_dram_a&lt;14&gt;	  NOT LOCKED 
+mcb3_zio	  NOT LOCKED 
+mcb3_rzq	  NOT LOCKED 
+Rest of the IOs are LOCKED</arg> 
+</msg>
+
+<msg type="error" file="Place" num="1333" delta="old" >Following IOB&apos;s that have input/output programming are locked to the bank <arg fmt="%d" index="1">1</arg> that does not support such values
+IO Standard: <arg fmt="%s" index="2">Name = LVDS_25, VREF = NR, VCCO = 2.50, TERM = NONE, DIR = BIDIR, DRIVE_STR = NR
+</arg><arg fmt="%s" index="3">List of locked IOB&apos;s:
+	mcb3_dram_udqs
+	mcb3_dram_dqs_n
+	mcb3_dram_dqs
+	mcb3_dram_udqs_n
+
+</arg>
+</msg>
+
+<msg type="error" file="Pack" num="1654" delta="old" >The timing-driven placement phase encountered an error.
+</msg>
+
+</messages>
+

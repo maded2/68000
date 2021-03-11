@@ -1,0 +1,302 @@
+############################################################################
+# VCC AUX VOLTAGE 
+############################################################################
+CONFIG VCCAUX=3.3; # Valid values are 2.5 and 3.3
+
+############################################################################
+## Clock constraints                                                        
+############################################################################
+//global system clock
+NET "sys_clk" LOC = A10 | IOSTANDARD = LVCMOS33;
+NET "sys_clk" TNM_NET = "sys_clk";
+TIMESPEC "TS_sys_clk" = PERIOD "sys_clk"  20 ns HIGH 50 %;
+############################################################################
+
+############################################################################
+# DDR2 requires the MCB to operate in Extended performance mode with higher Vccint
+# specification to achieve maximum frequency. Therefore, the following CONFIG constraint
+# follows the corresponding GUI option setting. However, DDR3 can operate at higher 
+# frequencies with any Vcciint value by operating MCB in extended mode. Please do not
+# remove/edit the below constraint to avoid false errors.
+############################################################################
+CONFIG MCB_PERFORMANCE= EXTENDED;
+
+##################################################################################
+# Timing Ignore constraints for paths crossing the clock domain 
+##################################################################################
+NET  "chip_ram/memc?_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/selfrefresh_mcb_mode" TIG;
+NET  "chip_ram/c?_pll_lock" TIG;
+#INST "chip_ram/memc?_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/DONE_SOFTANDHARD_CAL*" TIG;
+
+#Please uncomment the below TIG if used in a design which enables self-refresh mode
+#NET "memc?_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/SELFREFRESH_MCB_REQ" TIG;
+    
+	
+	
+//reset signal
+NET "sys_rst_n" 	LOC = T8 	| IOSTANDARD = LVCMOS33 | PULLUP;
+//led_1 signal
+NET "led_1" LOC = T9 | IOSTANDARD = LVTTL;
+//led_2 signal
+NET "led_2" LOC = R9 | IOSTANDARD = LVTTL;
+
+// U8
+#NET "data<0>"      LOC = A14   | IOSTANDARD = LVTTL;
+#NET "data<1>"      LOC = C13   | IOSTANDARD = LVTTL;
+#NET "data<2>"      LOC = B12   | IOSTANDARD = LVTTL;
+#NET "data<3>"      LOC = C11   | IOSTANDARD = LVTTL;
+#NET "data<4>"      LOC = B10   | IOSTANDARD = LVTTL;
+#NET "data<5>"      LOC = C9    | IOSTANDARD = LVTTL;
+#NET "data<6>"      LOC = B8    | IOSTANDARD = LVTTL;
+#NET "data<7>"      LOC = C7    | IOSTANDARD = LVTTL;
+#NET "data<8>"      LOC = B6    | IOSTANDARD = LVTTL;
+#NET "data<9>"      LOC = B5    | IOSTANDARD = LVTTL;
+#NET "data<10>"     LOC = E10   | IOSTANDARD = LVTTL;
+#NET "data<11>"     LOC = E11   | IOSTANDARD = LVTTL;
+#NET "data<12>"     LOC = F9    | IOSTANDARD = LVTTL;
+#NET "data<13>"     LOC = C8    | IOSTANDARD = LVTTL;
+#NET "data<14>"     LOC = E7    | IOSTANDARD = LVTTL;
+#NET "data<15>"     LOC = F7    | IOSTANDARD = LVTTL;
+#NET "rw"        LOC = D6    | IOSTANDARD = LVTTL;
+NET "cpu_clk"   LOC = M7    | IOSTANDARD = LVTTL;
+#NET "rst"       LOC = N8    | IOSTANDARD = LVTTL;
+#NET "lds"       LOC = P9    | IOSTANDARD = LVTTL;
+#NET "uds"       LOC = T5    | IOSTANDARD = LVTTL;
+#NET "dtack"     LOC = T6    | IOSTANDARD = LVTTL;3
+#NET "bgack"     LOC = N9    | IOSTANDARD = LVTTL;
+#NET "vma"       LOC = L8    | IOSTANDARD = LVTTL;
+#NET "e"         LOC = L10   | IOSTANDARD = LVTTL;
+#NET "vpa"       LOC = P12   | IOSTANDARD = LVTTL;
+#NET "berr"      LOC = R9    | IOSTANDARD = LVTTL;
+
+#NET "addr<1>"      LOC = B14   | IOSTANDARD = LVTTL;
+#NET "addr<2>"      LOC = A13   | IOSTANDARD = LVTTL;
+#NET "addr<3>"      LOC = A12   | IOSTANDARD = LVTTL;
+#NET "addr<4>"      LOC = A11   | IOSTANDARD = LVTTL;
+#NET "addr<5>"      LOC = A9    | IOSTANDARD = LVTTL;
+#NET "addr<6>"      LOC = A8    | IOSTANDARD = LVTTL;
+#NET "addr<7>"      LOC = A7    | IOSTANDARD = LVTTL;
+#NET "addr<8>"      LOC = A6    | IOSTANDARD = LVTTL;
+#NET "addr<9>"      LOC = A5    | IOSTANDARD = LVTTL;
+#NET "addr<10>"     LOC = A4    | IOSTANDARD = LVTTL;
+#NET "addr<11>"     LOC = C10   | IOSTANDARD = LVTTL;
+#NET "addr<12>"     LOC = F10   | IOSTANDARD = LVTTL;
+#NET "addr<13>"     LOC = D9    | IOSTANDARD = LVTTL;
+#NET "addr<14>"     LOC = D8    | IOSTANDARD = LVTTL;
+#NET "addr<15>"     LOC = E6    | IOSTANDARD = LVTTL;
+#NET "addr<16>"     LOC = C6    | IOSTANDARD = LVTTL;
+#NET "addr<17>"     LOC = N6    | IOSTANDARD = LVTTL;
+#NET "addr<18>"     LOC = P6    | IOSTANDARD = LVTTL;
+#NET "addr<19>"     LOC = L7    | IOSTANDARD = LVTTL;
+#NET "addr<20>"     LOC = T4    | IOSTANDARD = LVTTL;
+#NET "addr<21>"     LOC = R5    | IOSTANDARD = LVTTL;
+#NET "addr<22>"     LOC = T7    | IOSTANDARD = LVTTL;
+#NET "addr<23>"     LOC = M9    | IOSTANDARD = LVTTL;
+NET "as"        LOC = M10   | IOSTANDARD = LVTTL;
+#NET "ipl<0>"    LOC = P11   | IOSTANDARD = LVTTL;
+#NET "ipl<1>"    LOC = M11   | IOSTANDARD = LVTTL;
+#NET "ipl<2>"    LOC = T9    | IOSTANDARD = LVTTL;
+
+
+
+// U7
+NET "vga_vsync"    LOC = C15   | IOSTANDARD = LVTTL;
+NET "vga_hsync"    LOC = D14   | IOSTANDARD = LVTTL;
+
+NET "vga_b[0]" LOC = E15  | IOSTANDARD = LVTTL;
+NET "vga_b[1]" LOC = F15  | IOSTANDARD = LVTTL;
+NET "vga_b[2]" LOC = G11  | IOSTANDARD = LVTTL;
+NET "vga_b[3]" LOC = F14  | IOSTANDARD = LVTTL;
+NET "vga_b[4]" LOC = G16  | IOSTANDARD = LVTTL;
+NET "vga_b[5]" LOC = H15  | IOSTANDARD = LVTTL;
+
+NET "vga_g[0]" LOC = G12  | IOSTANDARD = LVTTL;
+NET "vga_g[1]" LOC = H13  | IOSTANDARD = LVTTL;
+NET "vga_g[2]" LOC = J14  | IOSTANDARD = LVTTL;
+NET "vga_g[3]" LOC = J11  | IOSTANDARD = LVTTL;
+NET "vga_g[4]" LOC = K14  | IOSTANDARD = LVTTL;
+NET "vga_g[5]" LOC = K15  | IOSTANDARD = LVTTL;
+
+NET "vga_r[0]" LOC = L16  | IOSTANDARD = LVTTL;
+NET "vga_r[1]" LOC = K11  | IOSTANDARD = LVTTL;
+NET "vga_r[2]" LOC = M15  | IOSTANDARD = LVTTL;
+NET "vga_r[3]" LOC = N14  | IOSTANDARD = LVTTL;
+NET "vga_r[4]" LOC = M13  | IOSTANDARD = LVTTL;
+NET "vga_r[5]" LOC = L12  | IOSTANDARD = LVTTL;
+
+#NET "gpio00"    LOC = E12   | IOSTANDARD = LVTTL;
+#NET "gpio01"    LOC = B15   | IOSTANDARD = LVTTL;
+#NET "gpio02"    LOC = C15   | IOSTANDARD = LVTTL;
+#NET "gpio03"    LOC = D14   | IOSTANDARD = LVTTL;
+#NET "gpio04"    LOC = E15   | IOSTANDARD = LVTTL;
+#NET "gpio05"    LOC = F15   | IOSTANDARD = LVTTL;
+#NET "gpio06"    LOC = G11   | IOSTANDARD = LVTTL;
+#NET "gpio07"    LOC = F14   | IOSTANDARD = LVTTL;
+#NET "gpio08"    LOC = G16   | IOSTANDARD = LVTTL;
+#NET "gpio09"    LOC = H15   | IOSTANDARD = LVTTL;
+#NET "gpio10"    LOC = G12   | IOSTANDARD = LVTTL;
+#NET "gpio11"    LOC = H13   | IOSTANDARD = LVTTL;
+#NET "gpio12"    LOC = J14   | IOSTANDARD = LVTTL;
+#NET "gpio13"    LOC = J11   | IOSTANDARD = LVTTL;
+#NET "gpio14"    LOC = K14   | IOSTANDARD = LVTTL;
+#NET "gpio15"    LOC = K15   | IOSTANDARD = LVTTL;
+#NET "gpio16"    LOC = L16   | IOSTANDARD = LVTTL;
+#NET "gpio17"    LOC = K11   | IOSTANDARD = LVTTL;
+#NET "gpio18"    LOC = M15   | IOSTANDARD = LVTTL;
+#NET "gpio19"    LOC = N14   | IOSTANDARD = LVTTL;
+#NET "gpio20"    LOC = M13   | IOSTANDARD = LVTTL;
+#NET "gpio21"    LOC = L12   | IOSTANDARD = LVTTL;
+#NET "gpio26"    LOC = P15   | IOSTANDARD = LVTTL;
+#NET "gpio27"    LOC = R15   | IOSTANDARD = LVTTL;
+#NET "gpio24"    LOC = R14   | IOSTANDARD = LVTTL;
+#NET "gpio23"    LOC = T13   | IOSTANDARD = LVTTL;
+#NET "gpio22"    LOC = T12   | IOSTANDARD = LVTTL;
+#
+#NET "gpio37"    LOC = E13   | IOSTANDARD = LVTTL;
+#NET "gpio36"    LOC = B16   | IOSTANDARD = LVTTL;
+#NET "gpio35"    LOC = C16   | IOSTANDARD = LVTTL;
+#NET "gpio34"    LOC = D16   | IOSTANDARD = LVTTL;
+#NET "gpio33"    LOC = E16   | IOSTANDARD = LVTTL;
+#NET "gpio32"    LOC = F16   | IOSTANDARD = LVTTL;
+#NET "gpio31"    LOC = F12   | IOSTANDARD = LVTTL;
+#NET "gpio30"    LOC = F13   | IOSTANDARD = LVTTL;
+#NET "gpio29"    LOC = G14   | IOSTANDARD = LVTTL;
+#NET "gpio28"    LOC = H16   | IOSTANDARD = LVTTL;
+#NET "gpio27"    LOC = H11   | IOSTANDARD = LVTTL;
+#NET "gpio38"    LOC = H14   | IOSTANDARD = LVTTL;
+#NET "gpio39"    LOC = J16   | IOSTANDARD = LVTTL;
+#NET "gpio40"    LOC = J12   | IOSTANDARD = LVTTL;
+#NET "gpio41"    LOC = J13   | IOSTANDARD = LVTTL;
+#NET "gpio42"    LOC = K16   | IOSTANDARD = LVTTL;
+#NET "gpio43"    LOC = L14   | IOSTANDARD = LVTTL;
+#NET "gpio44"    LOC = K12   | IOSTANDARD = LVTTL;
+#NET "gpio45"    LOC = M16   | IOSTANDARD = LVTTL;
+#NET "gpio46"    LOC = N16   | IOSTANDARD = LVTTL;
+#NET "gpio47"    LOC = M14   | IOSTANDARD = LVTTL;
+#NET "gpio48"    LOC = L13   | IOSTANDARD = LVTTL;
+#NET "br"        LOC = P16   | IOSTANDARD = LVTTL;
+#NET "bg"        LOC = R16   | IOSTANDARD = LVTTL;
+#NET "fc<0>"     LOC = T15   | IOSTANDARD = LVTTL;
+#NET "fc<1>"     LOC = T14   | IOSTANDARD = LVTTL;
+#NET "fc<2>"     LOC = R12   | IOSTANDARD = LVTTL;
+
+
+ 
+
+############################################################################
+## Memory Controller 3                               
+## Memory Device: DDR3_SDRAM->MT41J128M16XX-125 
+## Frequency: 333.333 MHz
+## Time Period: 3000 ps
+## Supported Part Numbers: MT41J128M16HA-125
+############################################################################
+
+############################################################################
+## Clock constraints                                                        
+############################################################################
+#NET "memc3_infrastructure_inst/sys_clk_ibufg" TNM_NET = "SYS_CLK3";
+#TIMESPEC "TS_SYS_CLK3" = PERIOD "SYS_CLK3"  3  ns HIGH 50 %;
+############################################################################
+
+#NET  "calib_done"                               IOSTANDARD = LVCMOS33 ;
+#NET  "calib_done"                               LOC = "C8" ;
+
+############################################################################
+## I/O TERMINATION                                                          
+############################################################################
+NET "mcb3_dram_dq[*]"                                 IN_TERM = NONE;
+NET "mcb3_dram_dqs"                                   IN_TERM = NONE;
+NET "mcb3_dram_dqs_n"                                 IN_TERM = NONE;
+NET "mcb3_dram_udqs"                                  IN_TERM = NONE;
+NET "mcb3_dram_udqs_n"                                IN_TERM = NONE;
+
+############################################################################
+# I/O STANDARDS 
+############################################################################
+
+NET  "mcb3_dram_dq[*]"                               IOSTANDARD = SSTL15_II  | OUT_TERM = UNTUNED_50;
+NET  "mcb3_dram_a[*]"                                IOSTANDARD = SSTL15_II  | OUT_TERM = UNTUNED_50;
+NET  "mcb3_dram_ba[*]"                               IOSTANDARD = SSTL15_II  | OUT_TERM = UNTUNED_50;
+NET  "mcb3_dram_dqs"                                 IOSTANDARD = DIFF_SSTL15_II  | OUT_TERM = UNTUNED_50;
+NET  "mcb3_dram_udqs"                                IOSTANDARD = DIFF_SSTL15_II  | OUT_TERM = UNTUNED_50;
+NET  "mcb3_dram_dqs_n"                               IOSTANDARD = DIFF_SSTL15_II  | OUT_TERM = UNTUNED_50;
+NET  "mcb3_dram_udqs_n"                              IOSTANDARD = DIFF_SSTL15_II  | OUT_TERM = UNTUNED_50;
+NET  "mcb3_dram_ck"                                  IOSTANDARD = DIFF_SSTL15_II  | OUT_TERM = UNTUNED_50;
+NET  "mcb3_dram_ck_n"                                IOSTANDARD = DIFF_SSTL15_II  | OUT_TERM = UNTUNED_50;
+NET  "mcb3_dram_cke"                                 IOSTANDARD = SSTL15_II  | OUT_TERM = UNTUNED_50;
+NET  "mcb3_dram_ras_n"                               IOSTANDARD = SSTL15_II  | OUT_TERM = UNTUNED_50;
+NET  "mcb3_dram_cas_n"                               IOSTANDARD = SSTL15_II  | OUT_TERM = UNTUNED_50;
+NET  "mcb3_dram_we_n"                                IOSTANDARD = SSTL15_II  | OUT_TERM = UNTUNED_50;
+NET  "mcb3_dram_odt"                                 IOSTANDARD = SSTL15_II  | OUT_TERM = UNTUNED_50;
+NET  "mcb3_dram_reset_n"                             IOSTANDARD = LVCMOS15  ;
+NET  "mcb3_dram_dm"                                  IOSTANDARD = SSTL15_II  | OUT_TERM = UNTUNED_50;
+NET  "mcb3_dram_udm"                                 IOSTANDARD = SSTL15_II  | OUT_TERM = UNTUNED_50;
+NET  "mcb3_rzq"                                      IOSTANDARD = SSTL15_II  | OUT_TERM = UNTUNED_50;
+NET  "mcb3_zio"                                      IOSTANDARD = SSTL15_II  | OUT_TERM = UNTUNED_50;
+############################################################################
+# MCB 3
+# Pin Location Constraints for Clock, Masks, Address, and Controls
+############################################################################
+
+NET  "mcb3_dram_a[0]"                            LOC = "K5" ;
+NET  "mcb3_dram_a[10]"                           LOC = "G6" ;
+NET  "mcb3_dram_a[11]"                           LOC = "E3" ;
+NET  "mcb3_dram_a[12]"                           LOC = "F3" ;
+NET  "mcb3_dram_a[13]"                           LOC = "F6" ;
+NET  "mcb3_dram_a[1]"                            LOC = "K6" ;
+NET  "mcb3_dram_a[2]"                            LOC = "D1" ;
+NET  "mcb3_dram_a[3]"                            LOC = "L4" ;
+NET  "mcb3_dram_a[4]"                            LOC = "G5" ;
+NET  "mcb3_dram_a[5]"                            LOC = "H4" ;
+NET  "mcb3_dram_a[6]"                            LOC = "H3" ;
+NET  "mcb3_dram_a[7]"                            LOC = "D3" ;
+NET  "mcb3_dram_a[8]"                            LOC = "B2" ;
+NET  "mcb3_dram_a[9]"                            LOC = "A2" ;
+NET  "mcb3_dram_ba[0]"                           LOC = "C3" ;
+NET  "mcb3_dram_ba[1]"                           LOC = "C2" ;
+NET  "mcb3_dram_ba[2]"                           LOC = "B1" ;
+NET  "mcb3_dram_cas_n"                           LOC = "H5" ;
+NET  "mcb3_dram_ck"                              LOC = "E2" ;
+NET  "mcb3_dram_ck_n"                            LOC = "E1" ;
+NET  "mcb3_dram_cke"                             LOC = "F4" ;
+NET  "mcb3_dram_dm"                              LOC = "J4" ;
+NET  "mcb3_dram_dq[0]"                           LOC = "K2" ;
+NET  "mcb3_dram_dq[10]"                          LOC = "M2" ;
+NET  "mcb3_dram_dq[11]"                          LOC = "M1" ;
+NET  "mcb3_dram_dq[12]"                          LOC = "P2" ;
+NET  "mcb3_dram_dq[13]"                          LOC = "P1" ;
+NET  "mcb3_dram_dq[14]"                          LOC = "R2" ;
+NET  "mcb3_dram_dq[15]"                          LOC = "R1" ;
+NET  "mcb3_dram_dq[1]"                           LOC = "K1" ;
+NET  "mcb3_dram_dq[2]"                           LOC = "J3" ;
+NET  "mcb3_dram_dq[3]"                           LOC = "J1" ;
+NET  "mcb3_dram_dq[4]"                           LOC = "F2" ;
+NET  "mcb3_dram_dq[5]"                           LOC = "F1" ;
+NET  "mcb3_dram_dq[6]"                           LOC = "G3" ;
+NET  "mcb3_dram_dq[7]"                           LOC = "G1" ;
+NET  "mcb3_dram_dq[8]"                           LOC = "L3" ;
+NET  "mcb3_dram_dq[9]"                           LOC = "L1" ;
+NET  "mcb3_dram_dqs"                             LOC = "H2" ;
+NET  "mcb3_dram_dqs_n"                           LOC = "H1" ;
+NET  "mcb3_dram_odt"                             LOC = "L5" ;
+NET  "mcb3_dram_ras_n"                           LOC = "J6" ;
+NET  "mcb3_dram_reset_n"                         LOC = "E4" ;
+NET  "mcb3_dram_udm"                             LOC = "K3" ;
+NET  "mcb3_dram_udqs"                            LOC = "N3" ;
+NET  "mcb3_dram_udqs_n"                          LOC = "N1" ;
+NET  "mcb3_dram_we_n"                            LOC = "C1" ;
+
+##################################################################################
+#RZQ is required for all MCB designs.   Do not move the location #
+#of this pin for ES devices.For production devices, RZQ can be moved to any #
+#valid package pin within the MCB bank.For designs using Calibrated Input Termination, #
+#a 2R resistor should be connected between RZQand ground, where R is the desired#
+#input termination value.  Otherwise, RZQ should be left as a no-connect (NC) pin.#
+##################################################################################
+NET  "mcb3_rzq"                                  LOC = "M4" ;
+##################################################################################
+#ZIO is only required for MCB designs using Calibrated Input Termination.#
+#ZIO can be moved to any valid package pin (i.e. bonded IO) within the#
+#MCB bank but must be left as a no-connect (NC) pin.#
+##################################################################################
+NET  "mcb3_zio"                                  LOC = "M5" ;

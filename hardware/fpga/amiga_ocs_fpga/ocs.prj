@@ -1,0 +1,3 @@
+verilog work "ipcore_dir/vga_clock.v"
+verilog work "display_timings_480p.v"
+verilog work "ocs.v"

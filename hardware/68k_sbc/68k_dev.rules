@@ -11,7 +11,7 @@
     (via_costs 50)
     (plane_via_costs 5)
     (start_ripup_costs 100)
-    (start_pass_no 4821)
+    (start_pass_no 5788)
     (layer_rule F.Cu
       (active on)
       (preferred_direction vertical)
@@ -20,7 +20,7 @@
     )
     (layer_rule B.Cu
       (active on)
-      (preferred_direction horizontal)
+      (preferred_direction vertical)
       (preferred_direction_trace_costs 1.0)
       (against_preferred_direction_trace_costs 1.8)
     )
@@ -80,16 +80,22 @@
     "Net-(U6-Pad19)" "Net-(U6-Pad36)" "Net-(U7-Pad36)" "Net-(U7-Pad19)" "Net-(U8-Pad36)" "Net-(U8-Pad19)" "Net-(U9-Pad19)" "Net-(U9-Pad36)"
     "Net-(U10-Pad36)" "Net-(U10-Pad19)" "Net-(U11-Pad19)" "Net-(U11-Pad36)" "Net-(U12-Pad36)" "Net-(U12-Pad19)" "Net-(U13-Pad19)" "Net-(U13-Pad36)"
     "Net-(U14-Pad23)" "Net-(U14-Pad24)" "Net-(U14-Pad15)" "Net-(U14-Pad29)" TX RX CTS "Net-(U14-Pad33)"
-    "Net-(U14-Pad36)" "Net-(U14-Pad17)" "Net-(X1-Pad1)" "Net-(X2-Pad1)" SS1 MOSI SCLK "Net-(J3-Pad14)"
-    "Net-(J3-Pad21)" "Net-(J3-Pad22)" "Net-(J3-Pad23)" "Net-(J3-Pad24)" "Net-(J3-Pad25)" "Net-(J3-Pad26)" "Net-(J3-Pad27)" "Net-(J3-Pad28)"
-    "Net-(J3-Pad29)" "Net-(J3-Pad30)" "Net-(J3-Pad32)" "Net-(J3-Pad34)" SS2 MISO "Net-(J3-Pad16)" "Net-(J3-Pad17)"
-    "Net-(J3-Pad19)" "Net-(J3-Pad20)" "Net-(J3-Pad35)" "Net-(J3-Pad36)" "Net-(J3-Pad38)" "Net-(J3-Pad40)" "Net-(J3-Pad1)" "Net-(J3-Pad2)"
-    "Net-(J3-Pad3)" "Net-(J3-Pad4)" "Net-(J3-Pad5)" "Net-(J3-Pad6)" "Net-(J3-Pad7)" "Net-(J3-Pad8)" "Net-(J3-Pad9)" "Net-(J3-Pad10)"
-    "Net-(J3-Pad11)" "Net-(J3-Pad12)" DC "Net-(U15-Pad13)" "Net-(U15-Pad12)" "Net-(U15-Pad9)" "Net-(U15-Pad8)" "Net-(D7-Pad1)"
-    "Net-(J2-Pad4)" "Net-(J2-Pad9)" "Net-(J2-Pad13)" "Net-(J2-Pad14)" "Net-(J2-Pad15)" "Net-(J2-Pad16)" "Net-(J2-Pad17)" "Net-(J2-Pad18)"
-    "Net-(J2-Pad19)" "Net-(J2-Pad72)" "Net-(J2-Pad73)" "Net-(J2-Pad74)" "Net-(J2-Pad75)" "Net-(J2-Pad76)" "Net-(J2-Pad77)" STATUS
-    "Net-(U4-Pad36)" "Net-(U4-Pad19)" "RAM5_SEL" "Net-(U16-Pad36)" "Net-(U16-Pad19)" "Net-(U17-Pad36)" "Net-(U17-Pad19)" "RAM6_SEL"
-    "Net-(U18-Pad36)" "Net-(U18-Pad19)" "Net-(U14-Pad30)" "Net-(RN8-Pad1)" "Net-(RN2-Pad2)"
+    "Net-(U14-Pad36)" "Net-(U14-Pad17)" "Net-(X2-Pad1)" SS1 MOSI SCLK "Net-(J3-Pad14)" "Net-(J3-Pad21)"
+    "Net-(J3-Pad22)" "Net-(J3-Pad23)" "Net-(J3-Pad24)" "Net-(J3-Pad25)" "Net-(J3-Pad26)" "Net-(J3-Pad27)" "Net-(J3-Pad28)" "Net-(J3-Pad29)"
+    "Net-(J3-Pad30)" "Net-(J3-Pad32)" "Net-(J3-Pad34)" SS2 MISO "Net-(J3-Pad16)" "Net-(J3-Pad17)" "Net-(J3-Pad19)"
+    "Net-(J3-Pad20)" "Net-(J3-Pad35)" "Net-(J3-Pad36)" "Net-(J3-Pad38)" "Net-(J3-Pad40)" "Net-(J3-Pad1)" "Net-(J3-Pad2)" "Net-(J3-Pad3)"
+    "Net-(J3-Pad4)" "Net-(J3-Pad5)" "Net-(J3-Pad6)" "Net-(J3-Pad7)" "Net-(J3-Pad8)" "Net-(J3-Pad9)" "Net-(J3-Pad10)" "Net-(J3-Pad11)"
+    "Net-(J3-Pad12)" DC "Net-(D7-Pad1)" "Net-(J2-Pad4)" "Net-(J2-Pad9)" "Net-(J2-Pad13)" "Net-(J2-Pad14)" "Net-(J2-Pad15)"
+    "Net-(J2-Pad16)" "Net-(J2-Pad17)" "Net-(J2-Pad18)" "Net-(J2-Pad19)" "Net-(J2-Pad72)" "Net-(J2-Pad73)" "Net-(J2-Pad74)" "Net-(J2-Pad75)"
+    "Net-(J2-Pad76)" "Net-(J2-Pad77)" STATUS "Net-(U4-Pad36)" "Net-(U4-Pad19)" "RAM5_SEL" "Net-(U16-Pad36)" "Net-(U16-Pad19)"
+    "Net-(U17-Pad36)" "Net-(U17-Pad19)" "RAM6_SEL" "Net-(U18-Pad36)" "Net-(U18-Pad19)" "Net-(U14-Pad30)" "Net-(RN8-Pad1)" "Net-(RN2-Pad2)"
+    "BUS_CPU_CLK" "BUS_FC0" "BUS_FC1" "BUS_FC2" "BUS_BG" "BUS_D7" "BUS_D6" "BUS_D5"
+    "BUS_D4" "BUS_D3" "BUS_D2" "BUS_D1" "BUS_D0" "BUS_AS" "BUS_A16" "BUS_A15"
+    "BUS_A14" "BUS_A13" "BUS_A12" "BUS_A11" "BUS_A10" "BUS_A9" "BUS_A8" "BUS_A7"
+    "BUS_A6" "BUS_A5" "BUS_A4" "BUS_A3" "BUS_A2" "BUS_A1" "BUS_RW" "BUS_A23"
+    "BUS_A22" "BUS_A21" "BUS_A20" "BUS_A19" "BUS_A18" "BUS_A17" "BUS_UDS" "BUS_LDS"
+    "BUS_D8" "BUS_D9" "BUS_D10" "BUS_D11" "BUS_D12" "BUS_D13" "BUS_D14" "BUS_D15"
+    "BUS_DIR_CTRL" "Net-(U25-Pad13)" "Net-(U25-Pad12)" "Net-(U25-Pad9)" "Net-(U25-Pad8)"
     (clearance_class "kicad_default")
     (via_rule kicad_default)
     (rule

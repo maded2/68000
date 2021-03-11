@@ -1,0 +1,4 @@
+NET "sys_clk"      LOC="A10" | IOSTANDARD = LVCMOS33 ;
+NET "rst" 	LOC = T8 	| IOSTANDARD = LVCMOS33 | PULLDOWN;
+NET "calib_led" LOC = T9 | IOSTANDARD = LVTTL;
+NET "error_led" LOC = R9 | IOSTANDARD = LVTTL;

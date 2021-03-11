@@ -1,0 +1,93 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Fri Mar  5 07:25:40 2021
+# Process ID: 45457
+# Log file: /home/eddie/work/68000/hardware/fpga/sdram_test2/planAhead_run_2/planAhead.log
+# Journal file: /home/eddie/work/68000/hardware/fpga/sdram_test2/planAhead_run_2/planAhead.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from /home/eddie/Applications/Xilinx_ISE/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [/home/eddie/Applications/Xilinx_ISE/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [/home/eddie/Applications/Xilinx_ISE/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source /home/eddie/work/68000/hardware/fpga/sdram_test2/pa.fromNetlist.tcl
+# create_project -name sdram_test2 -dir "/home/eddie/work/68000/hardware/fpga/sdram_test2/planAhead_run_2" -part xc6slx16ftg256-2
+# set_property design_mode GateLvl [get_property srcset [current_run -impl]]
+# set_property edif_top_file "/home/eddie/work/68000/hardware/fpga/sdram_test2/DDR3_Top.ngc" [ get_property srcset [ current_run ] ]
+# add_files -norecurse { {/home/eddie/work/68000/hardware/fpga/sdram_test2} }
+# set_property target_constrs_file "qm_ddr3.ucf" [current_fileset -constrset]
+Adding file '/home/eddie/work/68000/hardware/fpga/sdram_test2/qm_ddr3.ucf' to fileset 'constrs_1'
+# add_files [list {qm_ddr3.ucf}] -fileset [get_property constrset [current_run]]
+# link_design
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+Design is defaulting to project part: xc6slx16ftg256-2
+Release 14.7 - ngc2edif P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Release 14.7 - ngc2edif P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design DDR3_Top.ngc ...
+WARNING:NetListWriters:298 - No output is written to DDR3_Top.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus
+   u_ddr3_mig/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_c
+   alib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/_n2106<8 : 1> on
+   block DDR3_Top is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   u_ddr3_mig/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_c
+   alib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/IODRPCTRLR_MEMCE
+   LL_ADDR<7 : 0> on block DDR3_Top is not reconstructed, because there are some
+   missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   u_ddr3_mig/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_c
+   alib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller
+   /memcell_addr_reg<7 : 0> on block DDR3_Top is not reconstructed, because
+   there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   u_ddr3_mig/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_c
+   alib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_mcb_contro
+   ller/memcell_addr_reg<7 : 0> on block DDR3_Top is not reconstructed, because
+   there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   u3_mcb_write_inst/u_wr_data[127]_PWR_56_o_mux_7_OUT<127 : 0> on block
+   DDR3_Top is not reconstructed, because there are some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file DDR3_Top.edif ...
+ngc2edif: Total memory usage is 97356 kilobytes
+
+Parsing EDIF File [./planAhead_run_2/sdram_test2.data/cache/DDR3_Top_ngc_a9fa450d.edif]
+Finished Parsing EDIF File [./planAhead_run_2/sdram_test2.data/cache/DDR3_Top_ngc_a9fa450d.edif]
+INFO: [Netlist 29-17] Analyzing 20 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-43] Netlist 'DDR3_Top' is not ideal for floorplanning, since the cellview 'DDR3_Top' defined in file 'DDR3_Top.ngc' contains large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+Loading clock regions from /home/eddie/Applications/Xilinx_ISE/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/spartan6lx/xc6slx16/ClockRegion.xml
+Loading clock buffers from /home/eddie/Applications/Xilinx_ISE/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/spartan6lx/xc6slx16/ClockBuffers.xml
+Loading package pin functions from /home/eddie/Applications/Xilinx_ISE/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/PinFunctions.xml...
+Loading package from /home/eddie/Applications/Xilinx_ISE/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/spartan6lx/xc6slx16/ftg256/Package.xml
+Loading io standards from /home/eddie/Applications/Xilinx_ISE/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan6/IOStandards.xml
+Loading device configuration modes from /home/eddie/Applications/Xilinx_ISE/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/ConfigModes.xml
+Loading list of drcs for the architecture : /home/eddie/Applications/Xilinx_ISE/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan6/drc.xml
+Parsing UCF File [/home/eddie/work/68000/hardware/fpga/sdram_test2/qm_ddr3.ucf]
+Finished Parsing UCF File [/home/eddie/work/68000/hardware/fpga/sdram_test2/qm_ddr3.ucf]
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 20 instances were transformed.
+  IOBUF => IOBUF (OBUFT, IBUF): 18 instances
+  IOBUFDS => IOBUFDS (IBUFDS, OBUFTDS): 2 instances
+
+Phase 0 | Netlist Checksum: fe163efe
+exit
+ERROR: [#UNDEF] *** Exception: ui.h.b: Found deleted key in HTclEventBroker. Verify if the classes listed here call cleanup()
+HTclEvent: DEBUG_CORE_CONFIG_CHANGE   Classes: ui.views.aR 
+HTclEvent: DEBUG_PORT_CONFIG_CHANGE   Classes: ui.views.aR 
+HTclEvent: SIGNAL_MODIFY   Classes: ui.views.aR 
+HTclEvent: SIGNAL_BUS_MODIFY   Classes: ui.views.aR 
+ (See /home/eddie/work/68000/hardware/fpga/sdram_test2/planAhead_pid45457.debug)
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting PlanAhead at Fri Mar  5 07:25:57 2021...
+INFO: [Common 17-83] Releasing license: PlanAhead

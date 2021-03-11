@@ -4,24 +4,24 @@
 void drawRects()
 {
     clearDisplay();
-    drawRect(10, 10, 100, 100, BLUE);
-    millis();
+    drawRect(10, 10, 117, 117, BLUE);
+    for (int i = 0; i < 500; i++)
+        millis();
 
-    // for (int i = 0; i < 100000; i++);   // wait a bit
-    drawRect(10, 10, 100, 100, RED);
-    millis();
+    drawRect(10, 10, 117, 117, RED);
+    for (int i = 0; i < 500; i++)
+        millis();
 
-    // for (int i = 0; i < 100000; i++);   // wait a bit
-    drawRect(10, 10, 100, 100, GREEN);
-    millis();
+    drawRect(10, 10, 117, 117, GREEN);
+    for (int i = 0; i < 500; i++)
+        millis();
 
-    // for (int i = 0; i < 100000; i++);   // wait a bit
-    drawRect(10, 10, 100, 100, WHITE);
-    millis();
+    drawRect(10, 10, 117, 117, WHITE);
+    for (int i = 0; i < 500; i++)
+        millis();
 
-    // for (int i = 0; i < 100000; i++);   // wait a bit
-    drawRect(10, 10, 100, 100, YELLOW);
-    millis();
+    drawRect(10, 10, 117, 117, YELLOW);
+    for (int i = 0; i < 500; i++)
+        millis();
 
-    // for (int i = 0; i < 100000; i++);   // wait a bit
 }

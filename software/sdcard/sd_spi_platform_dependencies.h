@@ -27,6 +27,8 @@
 extern "C" {
 #endif
 
+#include "sys.h"
+#include <stdio.h>
 #include <stdint.h>
 
 #if !defined(INPUT)

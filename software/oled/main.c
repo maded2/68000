@@ -17,27 +17,29 @@ int main()
 
 	initSSD1351();
 
-	clearDisplay();
 	oledsetcursor(0, 0);
 	for (int j=0;; j++)
 	{
+		clearDisplay();
 		drawRects();
 
+		clearDisplay();
     	oleddrawbitmap(pic);
+
+		for (int i = 0; i < 5000; i++)
+			millis();
 
 		// drawMandelbrot();
 
-		for (int k=0;k<20; k++) {
+		for (int k=0;k<10; k++) {
 			sprintf(txtBuffer, "Hello %x\r\n", k);
 			oledprints(txtBuffer);
 			// printf(welcome);
 			// for (int i = 0; i < 1000; i++); // wait a bit
-			oledprints("   Hello World\r\n");
+			oledprints("  Hello World\r\n");
 			// for (int i = 0; i < 1000; i++); // wait a bit
 			oledprints("    Hello World\r\n");
 			// for (int i = 0; i < 1000; i++); // wait a bit
-			for (int j=0; j< 1000; j++)
-				millis();
 		}
 	}
 }

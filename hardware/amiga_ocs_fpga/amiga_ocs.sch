@@ -13,10 +13,8 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text GLabel 9700 2050 0    50   Input ~ 0
+Text GLabel 7850 3450 0    50   Input ~ 0
 AS
-Text GLabel 2350 2300 0    50   Input ~ 0
-CPU_CLK
 $Comp
 L power:GND #PWR08
 U 1 1 5FA2E7A9
@@ -48,8 +46,6 @@ Wire Wire Line
 Wire Wire Line
 	5100 5900 4500 5900
 Wire Wire Line
-	4000 5900 4500 5900
-Wire Wire Line
 	5100 4000 4450 4000
 Wire Wire Line
 	5100 5700 4300 5700
@@ -57,7 +53,7 @@ Wire Wire Line
 	5100 1200 4250 1200
 Wire Wire Line
 	4250 1200 4250 750 
-Text GLabel 9700 3850 0    50   Input ~ 0
+Text GLabel 7850 3550 0    50   Input ~ 0
 RW
 Text GLabel 7850 3350 0    50   Input ~ 0
 UDS
@@ -90,51 +86,51 @@ NoConn ~ 5100 3900
 NoConn ~ 5100 3100
 NoConn ~ 5100 3000
 NoConn ~ 5100 5800
-Text GLabel 9700 3950 0    50   Input ~ 0
-A1
 Text GLabel 7850 1350 0    50   Input ~ 0
-A2
+A1
 Text GLabel 7850 1450 0    50   Input ~ 0
-A3
+A2
 Text GLabel 7850 1550 0    50   Input ~ 0
-A4
+A3
 Text GLabel 7850 1650 0    50   Input ~ 0
-A5
+A4
 Text GLabel 7850 1750 0    50   Input ~ 0
-A6
+A5
 Text GLabel 7850 1850 0    50   Input ~ 0
-A7
+A6
 Text GLabel 7850 1950 0    50   Input ~ 0
-A8
+A7
 Text GLabel 7850 2050 0    50   Input ~ 0
-A9
+A8
 Text GLabel 9700 1350 0    50   Input ~ 0
-A10
+A9
 Text GLabel 9700 1450 0    50   Input ~ 0
-A11
+A10
 Text GLabel 9700 1550 0    50   Input ~ 0
-A12
+A11
 Text GLabel 9700 1650 0    50   Input ~ 0
-A13
+A12
 Text GLabel 9700 1750 0    50   Input ~ 0
-A14
+A13
 Text GLabel 9700 1850 0    50   Input ~ 0
-A15
+A14
 Text GLabel 9700 1950 0    50   Input ~ 0
+A15
+Text GLabel 9700 2050 0    50   Input ~ 0
 A16
-Text GLabel 7850 3450 0    50   Input ~ 0
-A17
 Text GLabel 9700 3250 0    50   Input ~ 0
-A18
+A17
 Text GLabel 9700 3350 0    50   Input ~ 0
-A19
+A18
 Text GLabel 9700 3450 0    50   Input ~ 0
-A20
+A19
 Text GLabel 9700 3550 0    50   Input ~ 0
-A21
+A20
 Text GLabel 9700 3650 0    50   Input ~ 0
-A22
+A21
 Text GLabel 9700 3750 0    50   Input ~ 0
+A22
+Text GLabel 9700 3850 0    50   Input ~ 0
 A23
 Text GLabel 7850 5150 0    50   BiDi ~ 0
 D8
@@ -173,7 +169,7 @@ L 68k_dev:Passive_Bus_ISA_16bit J1
 U 1 1 60632F6E
 P 5800 3500
 F 0 "J1" H 5800 6267 50  0000 C CNN
-F 1 "Passive_Bus_ISA_16bit" H 5800 6176 50  0000 C CNN
+F 1 "PassiveBUS_Bus_ISA_16bit" H 5800 6176 50  0000 C CNN
 F 2 "Connector_PCBEdge:BUS_AT" H 5800 3550 50  0001 C CNN
 F 3 "https://en.wikipedia.org/wiki/Industry_Standard_Architecture" H 5800 3550 50  0001 C CNN
 	1    5800 3500
@@ -188,7 +184,7 @@ NoConn ~ 5100 2100
 $Sheet
 S 1200 1200 600  350 
 U 5FBA0FFD
-F0 "fpga_headers" 50
+F0 "fpgaBUS_headers" 50
 F1 "fpga_headers.sch" 50
 $EndSheet
 NoConn ~ 5100 1400
@@ -504,7 +500,6 @@ NoConn ~ 5100 2500
 NoConn ~ 5100 2600
 NoConn ~ 5100 2700
 NoConn ~ 5100 2800
-NoConn ~ 8650 3550
 NoConn ~ 8650 3650
 NoConn ~ 8650 3750
 NoConn ~ 8650 3850
@@ -513,7 +508,6 @@ NoConn ~ 7850 3950
 NoConn ~ 7850 3850
 NoConn ~ 7850 3750
 NoConn ~ 7850 3650
-NoConn ~ 7850 3550
 Wire Wire Line
 	8150 2850 7850 2850
 Wire Wire Line
@@ -654,241 +648,241 @@ F 3 "" H 8350 4750 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 Text GLabel 5100 1100 0    50   BiDi ~ 0
-WIRE2_1
+BUS_RST
 Text GLabel 5100 2900 0    50   BiDi ~ 0
-WIRE2_2
+BUS_CPU_CLK
 Text GLabel 5100 3200 0    50   BiDi ~ 0
-WIRE2_3
+BUS_FC0
 Text GLabel 5100 3300 0    50   BiDi ~ 0
-WIRE2_4
+BUS_FC1
 Text GLabel 5100 3400 0    50   BiDi ~ 0
-WIRE2_5
+BUS_FC2
 Text GLabel 5100 3500 0    50   BiDi ~ 0
-WIRE2_6
+BUS_BGACK
 Text GLabel 5100 3600 0    50   BiDi ~ 0
-WIRE2_7
+BUS_BG
 Text GLabel 5100 3700 0    50   BiDi ~ 0
-WIRE2_8
+BUS_BR
 Text GLabel 3150 2200 2    50   BiDi ~ 0
-WIRE2_1
+BUS_RST
 Text GLabel 3150 2300 2    50   BiDi ~ 0
-WIRE2_2
+BUS_CPU_CLK
 Text GLabel 3150 2400 2    50   BiDi ~ 0
-WIRE2_3
+BUS_FC0
 Text GLabel 3150 2500 2    50   BiDi ~ 0
-WIRE2_4
+BUS_FC1
 Text GLabel 3150 2600 2    50   BiDi ~ 0
-WIRE2_5
+BUS_FC2
 Text GLabel 3150 2700 2    50   BiDi ~ 0
-WIRE2_6
+BUS_BGACK
 Text GLabel 3150 2800 2    50   BiDi ~ 0
-WIRE2_7
+BUS_BG
 Text GLabel 3150 2900 2    50   BiDi ~ 0
-WIRE2_8
+BUS_BR
 Text GLabel 5100 4300 0    50   BiDi ~ 0
-WIRE1_1
+BUS_VMA
 Text GLabel 5100 4400 0    50   BiDi ~ 0
-WIRE1_2
+BUS_E
 Text GLabel 5100 4500 0    50   BiDi ~ 0
-WIRE1_3
+BUS_VPA
 Text GLabel 5100 4600 0    50   BiDi ~ 0
-WIRE1_4
+BUS_IPL0
 Text GLabel 5100 4700 0    50   BiDi ~ 0
-WIRE1_5
+BUS_IPL1
 Text GLabel 5100 4800 0    50   BiDi ~ 0
-WIRE1_6
+BUS_IPL2
 Text GLabel 5100 4900 0    50   BiDi ~ 0
-WIRE1_7
+BUS_DTACK
 Text GLabel 5100 5000 0    50   BiDi ~ 0
-WIRE1_8
+BUS_BERR
 Text GLabel 3200 4200 2    50   BiDi ~ 0
-WIRE1_1
+BUS_VMA
 Text GLabel 3200 4300 2    50   BiDi ~ 0
-WIRE1_2
+BUS_E
 Text GLabel 3200 4400 2    50   BiDi ~ 0
-WIRE1_3
+BUS_VPA
 Text GLabel 3200 4500 2    50   BiDi ~ 0
-WIRE1_4
+BUS_IPL0
 Text GLabel 3200 4600 2    50   BiDi ~ 0
-WIRE1_5
+BUS_IPL1
 Text GLabel 3200 4700 2    50   BiDi ~ 0
-WIRE1_6
+BUS_IPL2
 Text GLabel 3200 4800 2    50   BiDi ~ 0
-WIRE1_7
+BUS_DTACK
 Text GLabel 3200 4900 2    50   BiDi ~ 0
-WIRE1_8
-Text GLabel 10500 2050 2    50   BiDi ~ 0
-WIRE7_1
-Text GLabel 10500 1950 2    50   BiDi ~ 0
-WIRE7_2
-Text GLabel 10500 1850 2    50   BiDi ~ 0
-WIRE7_3
-Text GLabel 10500 1750 2    50   BiDi ~ 0
-WIRE7_4
-Text GLabel 10500 1650 2    50   BiDi ~ 0
-WIRE7_5
-Text GLabel 10500 1550 2    50   BiDi ~ 0
-WIRE7_6
-Text GLabel 10500 1450 2    50   BiDi ~ 0
-WIRE7_7
-Text GLabel 10500 1350 2    50   BiDi ~ 0
-WIRE7_8
-Text GLabel 6500 2000 2    50   BiDi ~ 0
-WIRE7_1
-Text GLabel 6500 2400 2    50   BiDi ~ 0
-WIRE7_2
-Text GLabel 6500 2500 2    50   BiDi ~ 0
-WIRE7_3
-Text GLabel 6500 2600 2    50   BiDi ~ 0
-WIRE7_4
-Text GLabel 6500 2700 2    50   BiDi ~ 0
-WIRE7_5
-Text GLabel 6500 2800 2    50   BiDi ~ 0
-WIRE7_6
-Text GLabel 6500 2900 2    50   BiDi ~ 0
-WIRE7_7
-Text GLabel 6500 3000 2    50   BiDi ~ 0
-WIRE7_8
-Text GLabel 10500 5850 2    50   BiDi ~ 0
-WIRE3_1
-Text GLabel 10500 5750 2    50   BiDi ~ 0
-WIRE3_2
-Text GLabel 10500 5650 2    50   BiDi ~ 0
-WIRE3_3
-Text GLabel 10500 5550 2    50   BiDi ~ 0
-WIRE3_4
-Text GLabel 10500 5450 2    50   BiDi ~ 0
-WIRE3_5
-Text GLabel 10500 5350 2    50   BiDi ~ 0
-WIRE3_6
-Text GLabel 10500 5250 2    50   BiDi ~ 0
-WIRE3_7
-Text GLabel 10500 5150 2    50   BiDi ~ 0
-WIRE3_8
-Text GLabel 6500 1100 2    50   BiDi ~ 0
-WIRE3_1
-Text GLabel 6500 1200 2    50   BiDi ~ 0
-WIRE3_2
-Text GLabel 6500 1300 2    50   BiDi ~ 0
-WIRE3_3
-Text GLabel 6500 1400 2    50   BiDi ~ 0
-WIRE3_4
-Text GLabel 6500 1500 2    50   BiDi ~ 0
-WIRE3_5
-Text GLabel 6500 1600 2    50   BiDi ~ 0
-WIRE3_6
-Text GLabel 6500 1700 2    50   BiDi ~ 0
-WIRE3_7
-Text GLabel 6500 1800 2    50   BiDi ~ 0
-WIRE3_8
-Text GLabel 8650 2050 2    50   BiDi ~ 0
-WIRE5_1
-Text GLabel 8650 1950 2    50   BiDi ~ 0
-WIRE5_2
-Text GLabel 8650 1850 2    50   BiDi ~ 0
-WIRE5_3
-Text GLabel 8650 1750 2    50   BiDi ~ 0
-WIRE5_4
-Text GLabel 8650 1650 2    50   BiDi ~ 0
-WIRE5_5
-Text GLabel 8650 1550 2    50   BiDi ~ 0
-WIRE5_6
-Text GLabel 8650 1450 2    50   BiDi ~ 0
-WIRE5_7
-Text GLabel 8650 1350 2    50   BiDi ~ 0
-WIRE5_8
-Text GLabel 6500 3100 2    50   BiDi ~ 0
-WIRE5_1
-Text GLabel 6500 3200 2    50   BiDi ~ 0
-WIRE5_2
-Text GLabel 6500 3300 2    50   BiDi ~ 0
-WIRE5_3
-Text GLabel 6500 3400 2    50   BiDi ~ 0
-WIRE5_4
-Text GLabel 6500 3500 2    50   BiDi ~ 0
-WIRE5_5
-Text GLabel 6500 3600 2    50   BiDi ~ 0
-WIRE5_6
-Text GLabel 6500 3700 2    50   BiDi ~ 0
-WIRE5_7
-Text GLabel 6500 3800 2    50   BiDi ~ 0
-WIRE5_8
+BUS_BERR
 Text GLabel 8650 3450 2    50   BiDi ~ 0
-WIRE6_1
-Text GLabel 8650 3350 2    50   BiDi ~ 0
-WIRE6_2
-Text GLabel 8650 3250 2    50   BiDi ~ 0
-WIRE6_3
-Text GLabel 10500 3950 2    50   BiDi ~ 0
-WIRE8_1
-Text GLabel 10500 3850 2    50   BiDi ~ 0
-WIRE8_2
-Text GLabel 10500 3750 2    50   BiDi ~ 0
-WIRE8_3
-Text GLabel 10500 3650 2    50   BiDi ~ 0
-WIRE8_4
-Text GLabel 10500 3550 2    50   BiDi ~ 0
-WIRE8_5
-Text GLabel 10500 3450 2    50   BiDi ~ 0
-WIRE8_6
-Text GLabel 10500 3350 2    50   BiDi ~ 0
-WIRE8_7
+BUS_AS
+Text GLabel 10500 2050 2    50   BiDi ~ 0
+BUS_A16
+Text GLabel 10500 1950 2    50   BiDi ~ 0
+BUS_A15
+Text GLabel 10500 1850 2    50   BiDi ~ 0
+BUS_A14
+Text GLabel 10500 1750 2    50   BiDi ~ 0
+BUS_A13
+Text GLabel 10500 1650 2    50   BiDi ~ 0
+BUS_A12
+Text GLabel 10500 1550 2    50   BiDi ~ 0
+BUS_A11
+Text GLabel 10500 1450 2    50   BiDi ~ 0
+BUS_A10
+Text GLabel 6500 2000 2    50   BiDi ~ 0
+BUS_AS
+Text GLabel 6500 2400 2    50   BiDi ~ 0
+BUS_A16
+Text GLabel 6500 2500 2    50   BiDi ~ 0
+BUS_A15
+Text GLabel 6500 2600 2    50   BiDi ~ 0
+BUS_A14
+Text GLabel 6500 2700 2    50   BiDi ~ 0
+BUS_A13
+Text GLabel 6500 2800 2    50   BiDi ~ 0
+BUS_A12
+Text GLabel 6500 2900 2    50   BiDi ~ 0
+BUS_A11
+Text GLabel 6500 3000 2    50   BiDi ~ 0
+BUS_A10
+Text GLabel 10500 5850 2    50   BiDi ~ 0
+BUS_D7
+Text GLabel 10500 5750 2    50   BiDi ~ 0
+BUS_D6
+Text GLabel 10500 5650 2    50   BiDi ~ 0
+BUS_D5
+Text GLabel 10500 5550 2    50   BiDi ~ 0
+BUS_D4
+Text GLabel 10500 5450 2    50   BiDi ~ 0
+BUS_D3
+Text GLabel 10500 5350 2    50   BiDi ~ 0
+BUS_D2
+Text GLabel 10500 5250 2    50   BiDi ~ 0
+BUS_D1
+Text GLabel 10500 5150 2    50   BiDi ~ 0
+BUS_D0
+Text GLabel 6500 1100 2    50   BiDi ~ 0
+BUS_D7
+Text GLabel 6500 1200 2    50   BiDi ~ 0
+BUS_D6
+Text GLabel 6500 1300 2    50   BiDi ~ 0
+BUS_D5
+Text GLabel 6500 1400 2    50   BiDi ~ 0
+BUS_D4
+Text GLabel 6500 1500 2    50   BiDi ~ 0
+BUS_D3
+Text GLabel 6500 1600 2    50   BiDi ~ 0
+BUS_D2
+Text GLabel 6500 1700 2    50   BiDi ~ 0
+BUS_D1
+Text GLabel 6500 1800 2    50   BiDi ~ 0
+BUS_D0
+Text GLabel 10500 1350 2    50   BiDi ~ 0
+BUS_A9
+Text GLabel 8650 2050 2    50   BiDi ~ 0
+BUS_A8
+Text GLabel 8650 1950 2    50   BiDi ~ 0
+BUS_A7
+Text GLabel 8650 1850 2    50   BiDi ~ 0
+BUS_A6
+Text GLabel 8650 1750 2    50   BiDi ~ 0
+BUS_A5
+Text GLabel 8650 1650 2    50   BiDi ~ 0
+BUS_A4
+Text GLabel 8650 1550 2    50   BiDi ~ 0
+BUS_A3
+Text GLabel 8650 1450 2    50   BiDi ~ 0
+BUS_A2
+Text GLabel 6500 3100 2    50   BiDi ~ 0
+BUS_A9
+Text GLabel 6500 3200 2    50   BiDi ~ 0
+BUS_A8
+Text GLabel 6500 3300 2    50   BiDi ~ 0
+BUS_A7
+Text GLabel 6500 3400 2    50   BiDi ~ 0
+BUS_A6
+Text GLabel 6500 3500 2    50   BiDi ~ 0
+BUS_A5
+Text GLabel 6500 3600 2    50   BiDi ~ 0
+BUS_A4
+Text GLabel 6500 3700 2    50   BiDi ~ 0
+BUS_A3
+Text GLabel 6500 3800 2    50   BiDi ~ 0
+BUS_A2
 Text GLabel 10500 3250 2    50   BiDi ~ 0
-WIRE8_8
+BUS_A17
+Text GLabel 8650 3350 2    50   BiDi ~ 0
+BUS_UDS
+Text GLabel 8650 3250 2    50   BiDi ~ 0
+BUS_LDS
+Text GLabel 8650 1350 2    50   BiDi ~ 0
+BUS_A1
+Text GLabel 8650 3550 2    50   BiDi ~ 0
+BUS_RW
+Text GLabel 10500 3850 2    50   BiDi ~ 0
+BUS_A23
+Text GLabel 10500 3750 2    50   BiDi ~ 0
+BUS_A22
+Text GLabel 10500 3650 2    50   BiDi ~ 0
+BUS_A21
+Text GLabel 10500 3550 2    50   BiDi ~ 0
+BUS_A20
+Text GLabel 10500 3450 2    50   BiDi ~ 0
+BUS_A19
+Text GLabel 10500 3350 2    50   BiDi ~ 0
+BUS_A18
 Text GLabel 6500 4900 2    50   BiDi ~ 0
-WIRE6_1
+BUS_A17
 Text GLabel 6500 5000 2    50   BiDi ~ 0
-WIRE6_2
+BUS_UDS
 Text GLabel 6500 5100 2    50   BiDi ~ 0
-WIRE6_3
+BUS_LDS
 Text GLabel 6500 3900 2    50   BiDi ~ 0
-WIRE8_1
+BUS_A1
 Text GLabel 6500 4200 2    50   BiDi ~ 0
-WIRE8_2
+BUS_RW
 Text GLabel 6500 4300 2    50   BiDi ~ 0
-WIRE8_3
+BUS_A23
 Text GLabel 6500 4400 2    50   BiDi ~ 0
-WIRE8_4
+BUS_A22
 Text GLabel 6500 4500 2    50   BiDi ~ 0
-WIRE8_5
+BUS_A21
 Text GLabel 6500 4600 2    50   BiDi ~ 0
-WIRE8_6
+BUS_A20
 Text GLabel 6500 4700 2    50   BiDi ~ 0
-WIRE8_7
+BUS_A19
 Text GLabel 6500 4800 2    50   BiDi ~ 0
-WIRE8_8
-Text GLabel 8650 5850 2    50   BiDi ~ 0
-WIRE4_1
-Text GLabel 8650 5750 2    50   BiDi ~ 0
-WIRE4_2
-Text GLabel 8650 5650 2    50   BiDi ~ 0
-WIRE4_3
-Text GLabel 8650 5550 2    50   BiDi ~ 0
-WIRE4_4
-Text GLabel 8650 5450 2    50   BiDi ~ 0
-WIRE4_5
-Text GLabel 8650 5350 2    50   BiDi ~ 0
-WIRE4_6
-Text GLabel 8650 5250 2    50   BiDi ~ 0
-WIRE4_7
+BUS_A18
 Text GLabel 8650 5150 2    50   BiDi ~ 0
-WIRE4_8
+BUS_D8
+Text GLabel 8650 5250 2    50   BiDi ~ 0
+BUS_D9
+Text GLabel 8650 5350 2    50   BiDi ~ 0
+BUS_D10
+Text GLabel 8650 5450 2    50   BiDi ~ 0
+BUS_D11
+Text GLabel 8650 5550 2    50   BiDi ~ 0
+BUS_D12
+Text GLabel 8650 5650 2    50   BiDi ~ 0
+BUS_D13
+Text GLabel 8650 5750 2    50   BiDi ~ 0
+BUS_D14
+Text GLabel 8650 5850 2    50   BiDi ~ 0
+BUS_D15
 Text GLabel 6500 5200 2    50   BiDi ~ 0
-WIRE4_1
+BUS_D8
 Text GLabel 6500 5300 2    50   BiDi ~ 0
-WIRE4_2
+BUS_D9
 Text GLabel 6500 5400 2    50   BiDi ~ 0
-WIRE4_3
+BUS_D10
 Text GLabel 6500 5500 2    50   BiDi ~ 0
-WIRE4_4
+BUS_D11
 Text GLabel 6500 5600 2    50   BiDi ~ 0
-WIRE4_5
+BUS_D12
 Text GLabel 6500 5700 2    50   BiDi ~ 0
-WIRE4_6
+BUS_D13
 Text GLabel 6500 5800 2    50   BiDi ~ 0
-WIRE4_7
+BUS_D14
 Text GLabel 6500 5900 2    50   BiDi ~ 0
-WIRE4_8
+BUS_D15
 $Comp
 L power:+5V #PWR0124
 U 1 1 60680510
@@ -933,7 +927,6 @@ F 3 "" H 2850 1800 50  0001 C CNN
 	1    2850 1800
 	1    0    0    -1  
 $EndComp
-Connection ~ 4500 5900
 $Comp
 L Device:C C9
 U 1 1 60250344
@@ -1274,4 +1267,6 @@ F 3 "" H 1900 7050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 1900 7050
+Text GLabel 2350 2300 0    50   Input ~ 0
+CPU_CLK
 $EndSCHEMATC

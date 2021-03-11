@@ -1,0 +1,123 @@
+Release 14.7 - ngc2edif P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design fb.ngc ...
+WARNING:NetListWriters:298 - No output is written to fb.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus
+   u_mcb/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.
+   mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/_n2106<8 : 1> on
+   block fb is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   u_mcb/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.
+   mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/IODRPCTRLR_MEMCELL_AD
+   DR<7 : 0> on block fb is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   u_mcb/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.
+   mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/memc
+   ell_addr_reg<7 : 0> on block fb is not reconstructed, because there are some
+   missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   u_mcb/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.
+   mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_mcb_controller/
+   memcell_addr_reg<7 : 0> on block fb is not reconstructed, because there are
+   some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file fb.edif ...
+ngc2edif: Total memory usage is 96660 kilobytes
+
+Release 14.7 - ngc2edif P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design fb_fifo.ngc ...
+WARNING:NetListWriters:298 - No output is written to fb_fifo.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file fb_fifo.edif ...
+ngc2edif: Total memory usage is 92888 kilobytes
+
+Release 14.7 - ngc2edif P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design fb.ngc ...
+WARNING:NetListWriters:298 - No output is written to fb.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus
+   u_sdram/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_cali
+   b.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/_n2104<8 : 1> on
+   block fb is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   u_sdram/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_cali
+   b.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/IODRPCTRLR_MEMCELL_
+   ADDR<7 : 0> on block fb is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   u_sdram/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_cali
+   b.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/me
+   mcell_addr_reg<7 : 0> on block fb is not reconstructed, because there are
+   some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   u_sdram/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_cali
+   b.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_mcb_controlle
+   r/memcell_addr_reg<7 : 0> on block fb is not reconstructed, because there are
+   some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file fb.edif ...
+ngc2edif: Total memory usage is 96732 kilobytes
+
+Release 14.7 - ngc2edif P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design fb_fifo.ngc ...
+WARNING:NetListWriters:298 - No output is written to fb_fifo.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file fb_fifo.edif ...
+ngc2edif: Total memory usage is 92888 kilobytes
+
+Release 14.7 - ngc2edif P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design fb.ngc ...
+WARNING:NetListWriters:298 - No output is written to fb.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus
+   chip_ram/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_cal
+   ib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/_n2103<8 : 1> on
+   block fb is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   chip_ram/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_cal
+   ib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/IODRPCTRLR_MEMCELL
+   _ADDR<7 : 0> on block fb is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   chip_ram/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_cal
+   ib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/m
+   emcell_addr_reg<7 : 0> on block fb is not reconstructed, because there are
+   some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   chip_ram/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_cal
+   ib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_mcb_controll
+   er/memcell_addr_reg<7 : 0> on block fb is not reconstructed, because there
+   are some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file fb.edif ...
+ngc2edif: Total memory usage is 96364 kilobytes
+
+Release 14.7 - ngc2edif P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design fb_fifo.ngc ...
+WARNING:NetListWriters:298 - No output is written to fb_fifo.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file fb_fifo.edif ...
+ngc2edif: Total memory usage is 92980 kilobytes
+

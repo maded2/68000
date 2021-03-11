@@ -1,0 +1,51 @@
+xst -intstyle ise -ifn "/home/eddie/work/68000/hardware/fpga/framebuffer/fb.xst" -ofn "/home/eddie/work/68000/hardware/fpga/framebuffer/fb.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc fb.ucf -p xc6slx16-ftg256-2 fb.ngc fb.ngd  
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc fb.ucf -p xc6slx16-ftg256-2 fb.ngc fb.ngd  
+map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o fb_map.ncd fb.ngd fb.pcf 
+par -w -intstyle ise -ol high -mt off fb_map.ncd fb.ncd fb.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml fb.twx fb.ncd -o fb.twr fb.pcf -ucf fb.ucf 
+bitgen -intstyle ise -f fb.ut fb.ncd 
+xst -intstyle ise -ifn "/home/eddie/work/68000/hardware/fpga/framebuffer/fb.xst" -ofn "/home/eddie/work/68000/hardware/fpga/framebuffer/fb.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc fb.ucf -p xc6slx16-ftg256-2 fb.ngc fb.ngd  
+map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o fb_map.ncd fb.ngd fb.pcf 
+par -w -intstyle ise -ol high -mt off fb_map.ncd fb.ncd fb.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml fb.twx fb.ncd -o fb.twr fb.pcf -ucf fb.ucf 
+bitgen -intstyle ise -f fb.ut fb.ncd 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc fb.ucf -p xc6slx16-ftg256-2 fb.ngc fb.ngd  
+map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o fb_map.ncd fb.ngd fb.pcf 
+par -w -intstyle ise -ol high -mt off fb_map.ncd fb.ncd fb.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml fb.twx fb.ncd -o fb.twr fb.pcf -ucf fb.ucf 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc fb.ucf -p xc6slx16-ftg256-2 fb.ngc fb.ngd  
+map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o fb_map.ncd fb.ngd fb.pcf 
+par -w -intstyle ise -ol high -mt off fb_map.ncd fb.ncd fb.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml fb.twx fb.ncd -o fb.twr fb.pcf -ucf fb.ucf 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc fb.ucf -p xc6slx16-ftg256-2 fb.ngc fb.ngd  
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc fb.ucf -p xc6slx16-ftg256-2 fb.ngc fb.ngd  
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc fb.ucf -p xc6slx16-ftg256-2 fb.ngc fb.ngd  
+map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o fb_map.ncd fb.ngd fb.pcf 
+par -w -intstyle ise -ol high -mt off fb_map.ncd fb.ncd fb.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml fb.twx fb.ncd -o fb.twr fb.pcf -ucf fb.ucf 
+bitgen -intstyle ise -f fb.ut fb.ncd 
+xst -intstyle ise -ifn "/home/eddie/work/68000/hardware/fpga/framebuffer/fb.xst" -ofn "/home/eddie/work/68000/hardware/fpga/framebuffer/fb.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc fb.ucf -p xc6slx16-ftg256-2 fb.ngc fb.ngd  
+map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o fb_map.ncd fb.ngd fb.pcf 
+par -w -intstyle ise -ol high -mt off fb_map.ncd fb.ncd fb.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml fb.twx fb.ncd -o fb.twr fb.pcf -ucf fb.ucf 
+xst -intstyle ise -ifn "/home/eddie/work/68000/hardware/fpga/framebuffer/fb.xst" -ofn "/home/eddie/work/68000/hardware/fpga/framebuffer/fb.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc fb.ucf -p xc6slx16-ftg256-2 fb.ngc fb.ngd  
+map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o fb_map.ncd fb.ngd fb.pcf 
+par -w -intstyle ise -ol high -mt off fb_map.ncd fb.ncd fb.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml fb.twx fb.ncd -o fb.twr fb.pcf -ucf fb.ucf 
+bitgen -intstyle ise -f fb.ut fb.ncd 
+xst -intstyle ise -ifn "/home/eddie/work/68000/hardware/fpga/framebuffer/fb.xst" -ofn "/home/eddie/work/68000/hardware/fpga/framebuffer/fb.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc fb.ucf -p xc6slx16-ftg256-2 fb.ngc fb.ngd  
+map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o fb_map.ncd fb.ngd fb.pcf 
+par -w -intstyle ise -ol high -mt off fb_map.ncd fb.ncd fb.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml fb.twx fb.ncd -o fb.twr fb.pcf -ucf fb.ucf 
+bitgen -intstyle ise -f fb.ut fb.ncd 
+xst -intstyle ise -ifn "/home/eddie/work/68000/hardware/fpga/framebuffer/fb.xst" -ofn "/home/eddie/work/68000/hardware/fpga/framebuffer/fb.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc fb.ucf -p xc6slx16-ftg256-2 fb.ngc fb.ngd  
+map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o fb_map.ncd fb.ngd fb.pcf 
+par -w -intstyle ise -ol high -mt off fb_map.ncd fb.ncd fb.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml fb.twx fb.ncd -o fb.twr fb.pcf -ucf fb.ucf 
+bitgen -intstyle ise -f fb.ut fb.ncd 

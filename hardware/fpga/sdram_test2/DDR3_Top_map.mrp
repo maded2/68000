@@ -1,0 +1,790 @@
+Release 14.7 Map P.20131013 (lin64)
+Xilinx Mapping Report File for Design 'DDR3_Top'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol
+high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off
+-pr off -lc off -power off -o DDR3_Top_map.ncd DDR3_Top.ngd DDR3_Top.pcf 
+Target Device  : xc6slx16
+Target Package : ftg256
+Target Speed   : -2
+Mapper Version : spartan6 -- $Revision: 1.55 $
+Mapped Date    : Thu Mar  4 23:01:22 2021
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:    2
+Slice Logic Utilization:
+  Number of Slice Registers:                   523 out of  18,224    2%
+    Number used as Flip Flops:                 523
+    Number used as Latches:                      0
+    Number used as Latch-thrus:                  0
+    Number used as AND/OR logics:                0
+  Number of Slice LUTs:                        794 out of   9,112    8%
+    Number used as logic:                      785 out of   9,112    8%
+      Number using O6 output only:             515
+      Number using O5 output only:             112
+      Number using O5 and O6:                  158
+      Number used as ROM:                        0
+    Number used as Memory:                       0 out of   2,176    0%
+    Number used exclusively as route-thrus:      9
+      Number with same-slice register load:      1
+      Number with same-slice carry load:         8
+      Number with other load:                    0
+
+Slice Logic Distribution:
+  Number of occupied Slices:                   298 out of   2,278   13%
+  Number of MUXCYs used:                       188 out of   4,556    4%
+  Number of LUT Flip Flop pairs used:          898
+    Number with an unused Flip Flop:           423 out of     898   47%
+    Number with an unused LUT:                 104 out of     898   11%
+    Number of fully used LUT-FF pairs:         371 out of     898   41%
+    Number of unique control sets:              46
+    Number of slice register sites lost
+      to control set restrictions:             181 out of  18,224    1%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                        55 out of     186   29%
+    Number of LOCed IOBs:                       54 out of      55   98%
+
+Specific Feature Utilization:
+  Number of RAMB16BWERs:                         0 out of      32    0%
+  Number of RAMB8BWERs:                          0 out of      64    0%
+  Number of BUFIO2/BUFIO2_2CLKs:                 1 out of      32    3%
+    Number used as BUFIO2s:                      1
+    Number used as BUFIO2_2CLKs:                 0
+  Number of BUFIO2FB/BUFIO2FB_2CLKs:             0 out of      32    0%
+  Number of BUFG/BUFGMUXs:                       4 out of      16   25%
+    Number used as BUFGs:                        0
+    Number used as BUFGMUX:                      4
+  Number of DCM/DCM_CLKGENs:                     0 out of       4    0%
+  Number of ILOGIC2/ISERDES2s:                   0 out of     248    0%
+  Number of IODELAY2/IODRP2/IODRP2_MCBs:        24 out of     248    9%
+    Number used as IODELAY2s:                    0
+    Number used as IODRP2s:                      2
+    Number used as IODRP2_MCBs:                 22
+  Number of OLOGIC2/OSERDES2s:                  48 out of     248   19%
+    Number used as OLOGIC2s:                     0
+    Number used as OSERDES2s:                   48
+  Number of BSCANs:                              0 out of       4    0%
+  Number of BUFHs:                               0 out of     128    0%
+  Number of BUFPLLs:                             0 out of       8    0%
+  Number of BUFPLL_MCBs:                         1 out of       4   25%
+  Number of DSP48A1s:                            0 out of      32    0%
+  Number of ICAPs:                               0 out of       1    0%
+  Number of MCBs:                                1 out of       2   50%
+  Number of PCILOGICSEs:                         0 out of       2    0%
+  Number of PLL_ADVs:                            2 out of       2  100%
+  Number of PMVs:                                0 out of       1    0%
+  Number of STARTUPs:                            0 out of       1    0%
+  Number of SUSPEND_SYNCs:                       0 out of       1    0%
+
+Average Fanout of Non-Clock Nets:                3.67
+
+Peak Memory Usage:  701 MB
+Total REAL time to MAP completion:  9 secs 
+Total CPU time to MAP completion:   9 secs 
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Timing Report
+Section 11 - Configuration String Information
+Section 12 - Control Set Information
+Section 13 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:MapLib:41 - All members of TNM group
+   "u_ddr3_mig_memc3_infrastructure_inst_clk0_bufg_in" have been optimized out
+   of the design.
+WARNING:MapLib:50 - The period specification
+   "TS_u_ddr3_mig_memc3_infrastructure_inst_clk0_bufg_in" has been discarded
+   because the group "u_ddr3_mig_memc3_infrastructure_inst_clk0_bufg_in" has
+   been optimized away.
+
+Section 3 - Informational
+-------------------------
+INFO:LIT:243 - Logical network
+   u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r<24> has no load.
+INFO:LIT:395 - The above info message is repeated 2 more times for the following
+   (max. 5 shown):
+   N313,
+   N317
+   To see the details of these info messages, please use the -detail switch.
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:MapLib:841 - Changing COMPENSATION attribute from SYSTEM_SYNCHRONOUS to
+   INTERNAL for PLL_ADV u_pll/u_pll/PLL_ADV.
+INFO:LIT:244 - All of the single ended outputs in this design are using slew
+   rate limited output drivers. The delay on speed critical single ended outputs
+   can be dramatically reduced by designating them as fast outputs.
+INFO:Pack:1716 - Initializing temperature to 85.000 Celsius. (default - Range:
+   0.000 to 85.000 Celsius)
+INFO:Pack:1720 - Initializing voltage to 1.140 Volts. (default - Range: 1.140 to
+   1.260 Volts)
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+INFO:Pack:1650 - Map created a placed design.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+ 106 block(s) removed
+   2 block(s) optimized away
+ 235 signal(s) removed
+
+Section 5 - Removed Logic
+-------------------------
+
+The trimmed logic report below shows the logic removed from your design due to
+sourceless or loadless signals, and VCC or ground connections.  If the removal
+of a signal or symbol results in the subsequent removal of an additional signal
+or symbol, the message explaining that second removal will be indented.  This
+indentation will be repeated as a chain of related logic is removed.
+
+To quickly locate the original cause for the removal of a chain of logic, look
+above the place where that logic is listed in the trimming report, then locate
+the lines that are least indented (begin at the leftmost edge).
+
+The signal "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r<24>" is loadless
+and has been removed.
+ Loadless block "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r_24" (FF)
+removed.
+  The signal "u_ddr3_mig/memc3_infrastructure_inst/clk0_bufg" is loadless and has
+been removed.
+   Loadless block "u_ddr3_mig/memc3_infrastructure_inst/U_BUFG_CLK0" (CKBUF)
+removed.
+    The signal "u_ddr3_mig/memc3_infrastructure_inst/clk0_bufg_in" is loadless and
+has been removed.
+  The signal "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r<23>" is loadless
+and has been removed.
+   Loadless block "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r_23" (FF)
+removed.
+    The signal "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r<22>" is loadless
+and has been removed.
+     Loadless block "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r_22" (FF)
+removed.
+      The signal "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r<21>" is loadless
+and has been removed.
+       Loadless block "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r_21" (FF)
+removed.
+        The signal "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r<20>" is loadless
+and has been removed.
+         Loadless block "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r_20" (FF)
+removed.
+          The signal "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r<19>" is loadless
+and has been removed.
+           Loadless block "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r_19" (FF)
+removed.
+            The signal "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r<18>" is loadless
+and has been removed.
+             Loadless block "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r_18" (FF)
+removed.
+              The signal "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r<17>" is loadless
+and has been removed.
+               Loadless block "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r_17" (FF)
+removed.
+                The signal "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r<16>" is loadless
+and has been removed.
+                 Loadless block "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r_16" (FF)
+removed.
+                  The signal "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r<15>" is loadless
+and has been removed.
+                   Loadless block "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r_15" (FF)
+removed.
+                    The signal "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r<14>" is loadless
+and has been removed.
+                     Loadless block "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r_14" (FF)
+removed.
+                      The signal "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r<13>" is loadless
+and has been removed.
+                       Loadless block "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r_13" (FF)
+removed.
+                        The signal "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r<12>" is loadless
+and has been removed.
+                         Loadless block "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r_12" (FF)
+removed.
+                          The signal "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r<11>" is loadless
+and has been removed.
+                           Loadless block "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r_11" (FF)
+removed.
+                            The signal "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r<10>" is loadless
+and has been removed.
+                             Loadless block "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r_10" (FF)
+removed.
+                              The signal "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r<9>" is loadless and
+has been removed.
+                               Loadless block "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r_9" (FF)
+removed.
+                                The signal "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r<8>" is loadless and
+has been removed.
+                                 Loadless block "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r_8" (FF)
+removed.
+                                  The signal "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r<7>" is loadless and
+has been removed.
+                                   Loadless block "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r_7" (FF)
+removed.
+                                    The signal "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r<6>" is loadless and
+has been removed.
+                                     Loadless block "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r_6" (FF)
+removed.
+                                      The signal "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r<5>" is loadless and
+has been removed.
+                                       Loadless block "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r_5" (FF)
+removed.
+                                        The signal "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r<4>" is loadless and
+has been removed.
+                                         Loadless block "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r_4" (FF)
+removed.
+                                          The signal "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r<3>" is loadless and
+has been removed.
+                                           Loadless block "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r_3" (FF)
+removed.
+                                            The signal "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r<2>" is loadless and
+has been removed.
+                                             Loadless block "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r_2" (FF)
+removed.
+                                              The signal "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r<1>" is loadless and
+has been removed.
+                                               Loadless block "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r_1" (FF)
+removed.
+                                                The signal "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r<0>" is loadless and
+has been removed.
+                                                 Loadless block "u_ddr3_mig/memc3_infrastructure_inst/rst0_sync_r_0" (FF)
+removed.
+*The signal "u_ddr3_mig/memc3_infrastructure_inst/rst_tmp" is loadless and has
+been removed.
+* Loadless block "u_ddr3_mig/memc3_infrastructure_inst/rst_tmp1" (ROM) removed.
+*  The signal "u_ddr3_mig/memc3_infrastructure_inst/syn_clk0_powerup_pll_locked" is
+loadless and has been removed.
+*   Loadless block
+"u_ddr3_mig/memc3_infrastructure_inst/syn_clk0_powerup_pll_locked" (FF) removed.
+
+The trimmed logic reported below is either:
+   1. part of a cycle
+   2. part of disabled logic
+   3. a side-effect of other trimmed logic
+
+The signal "mcb3_rd_data<127>" is unused and has been removed.
+The signal "mcb3_rd_data<126>" is unused and has been removed.
+The signal "mcb3_rd_data<125>" is unused and has been removed.
+The signal "mcb3_rd_data<124>" is unused and has been removed.
+The signal "mcb3_rd_data<123>" is unused and has been removed.
+The signal "mcb3_rd_data<122>" is unused and has been removed.
+The signal "mcb3_rd_data<121>" is unused and has been removed.
+The signal "mcb3_rd_data<120>" is unused and has been removed.
+The signal "mcb3_rd_data<119>" is unused and has been removed.
+The signal "mcb3_rd_data<118>" is unused and has been removed.
+The signal "mcb3_rd_data<117>" is unused and has been removed.
+The signal "mcb3_rd_data<116>" is unused and has been removed.
+The signal "mcb3_rd_data<115>" is unused and has been removed.
+The signal "mcb3_rd_data<114>" is unused and has been removed.
+The signal "mcb3_rd_data<113>" is unused and has been removed.
+The signal "mcb3_rd_data<112>" is unused and has been removed.
+The signal "mcb3_rd_data<111>" is unused and has been removed.
+The signal "mcb3_rd_data<110>" is unused and has been removed.
+The signal "mcb3_rd_data<109>" is unused and has been removed.
+The signal "mcb3_rd_data<108>" is unused and has been removed.
+The signal "mcb3_rd_data<107>" is unused and has been removed.
+The signal "mcb3_rd_data<106>" is unused and has been removed.
+The signal "mcb3_rd_data<105>" is unused and has been removed.
+The signal "mcb3_rd_data<104>" is unused and has been removed.
+The signal "mcb3_rd_data<103>" is unused and has been removed.
+The signal "mcb3_rd_data<102>" is unused and has been removed.
+The signal "mcb3_rd_data<101>" is unused and has been removed.
+The signal "mcb3_rd_data<100>" is unused and has been removed.
+The signal "mcb3_rd_data<99>" is unused and has been removed.
+The signal "mcb3_rd_data<98>" is unused and has been removed.
+The signal "mcb3_rd_data<97>" is unused and has been removed.
+The signal "mcb3_rd_data<96>" is unused and has been removed.
+The signal "mcb3_rd_data<95>" is unused and has been removed.
+The signal "mcb3_rd_data<94>" is unused and has been removed.
+The signal "mcb3_rd_data<93>" is unused and has been removed.
+The signal "mcb3_rd_data<92>" is unused and has been removed.
+The signal "mcb3_rd_data<91>" is unused and has been removed.
+The signal "mcb3_rd_data<90>" is unused and has been removed.
+The signal "mcb3_rd_data<89>" is unused and has been removed.
+The signal "mcb3_rd_data<88>" is unused and has been removed.
+The signal "mcb3_rd_data<87>" is unused and has been removed.
+The signal "mcb3_rd_data<86>" is unused and has been removed.
+The signal "mcb3_rd_data<85>" is unused and has been removed.
+The signal "mcb3_rd_data<84>" is unused and has been removed.
+The signal "mcb3_rd_data<83>" is unused and has been removed.
+The signal "mcb3_rd_data<82>" is unused and has been removed.
+The signal "mcb3_rd_data<81>" is unused and has been removed.
+The signal "mcb3_rd_data<80>" is unused and has been removed.
+The signal "mcb3_rd_data<79>" is unused and has been removed.
+The signal "mcb3_rd_data<78>" is unused and has been removed.
+The signal "mcb3_rd_data<77>" is unused and has been removed.
+The signal "mcb3_rd_data<76>" is unused and has been removed.
+The signal "mcb3_rd_data<75>" is unused and has been removed.
+The signal "mcb3_rd_data<74>" is unused and has been removed.
+The signal "mcb3_rd_data<73>" is unused and has been removed.
+The signal "mcb3_rd_data<72>" is unused and has been removed.
+The signal "mcb3_rd_data<71>" is unused and has been removed.
+The signal "mcb3_rd_data<70>" is unused and has been removed.
+The signal "mcb3_rd_data<69>" is unused and has been removed.
+The signal "mcb3_rd_data<68>" is unused and has been removed.
+The signal "mcb3_rd_data<67>" is unused and has been removed.
+The signal "mcb3_rd_data<66>" is unused and has been removed.
+The signal "mcb3_rd_data<65>" is unused and has been removed.
+The signal "mcb3_rd_data<64>" is unused and has been removed.
+The signal "mcb3_rd_data<63>" is unused and has been removed.
+The signal "mcb3_rd_data<62>" is unused and has been removed.
+The signal "mcb3_rd_data<61>" is unused and has been removed.
+The signal "mcb3_rd_data<60>" is unused and has been removed.
+The signal "mcb3_rd_data<59>" is unused and has been removed.
+The signal "mcb3_rd_data<58>" is unused and has been removed.
+The signal "mcb3_rd_data<57>" is unused and has been removed.
+The signal "mcb3_rd_data<56>" is unused and has been removed.
+The signal "mcb3_rd_data<55>" is unused and has been removed.
+The signal "mcb3_rd_data<54>" is unused and has been removed.
+The signal "mcb3_rd_data<53>" is unused and has been removed.
+The signal "mcb3_rd_data<52>" is unused and has been removed.
+The signal "mcb3_rd_data<51>" is unused and has been removed.
+The signal "mcb3_rd_data<50>" is unused and has been removed.
+The signal "mcb3_rd_data<49>" is unused and has been removed.
+The signal "mcb3_rd_data<48>" is unused and has been removed.
+The signal "mcb3_rd_data<47>" is unused and has been removed.
+The signal "mcb3_rd_data<46>" is unused and has been removed.
+The signal "mcb3_rd_data<45>" is unused and has been removed.
+The signal "mcb3_rd_data<44>" is unused and has been removed.
+The signal "mcb3_rd_data<43>" is unused and has been removed.
+The signal "mcb3_rd_data<42>" is unused and has been removed.
+The signal "mcb3_rd_data<41>" is unused and has been removed.
+The signal "mcb3_rd_data<40>" is unused and has been removed.
+The signal "mcb3_rd_data<39>" is unused and has been removed.
+The signal "mcb3_rd_data<38>" is unused and has been removed.
+The signal "mcb3_rd_data<37>" is unused and has been removed.
+The signal "mcb3_rd_data<36>" is unused and has been removed.
+The signal "mcb3_rd_data<35>" is unused and has been removed.
+The signal "mcb3_rd_data<34>" is unused and has been removed.
+The signal "mcb3_rd_data<33>" is unused and has been removed.
+The signal "mcb3_rd_data<32>" is unused and has been removed.
+The signal "mcb3_rd_data<31>" is unused and has been removed.
+The signal "mcb3_rd_data<30>" is unused and has been removed.
+The signal "mcb3_rd_data<29>" is unused and has been removed.
+The signal "mcb3_rd_data<28>" is unused and has been removed.
+The signal "mcb3_rd_data<27>" is unused and has been removed.
+The signal "mcb3_rd_data<26>" is unused and has been removed.
+The signal "mcb3_rd_data<25>" is unused and has been removed.
+The signal "mcb3_rd_data<24>" is unused and has been removed.
+The signal "mcb3_rd_data<23>" is unused and has been removed.
+The signal "mcb3_rd_data<22>" is unused and has been removed.
+The signal "mcb3_rd_data<21>" is unused and has been removed.
+The signal "mcb3_rd_data<20>" is unused and has been removed.
+The signal "mcb3_rd_data<19>" is unused and has been removed.
+The signal "mcb3_rd_data<18>" is unused and has been removed.
+The signal "mcb3_rd_data<17>" is unused and has been removed.
+The signal "mcb3_rd_data<16>" is unused and has been removed.
+The signal "mcb3_rd_data<15>" is unused and has been removed.
+The signal "mcb3_rd_data<14>" is unused and has been removed.
+The signal "mcb3_rd_data<13>" is unused and has been removed.
+The signal "mcb3_rd_data<12>" is unused and has been removed.
+The signal "mcb3_rd_data<11>" is unused and has been removed.
+The signal "mcb3_rd_data<10>" is unused and has been removed.
+The signal "mcb3_rd_data<9>" is unused and has been removed.
+The signal "mcb3_rd_data<8>" is unused and has been removed.
+The signal "c3_ddruser/mcb_rd_data_dg<7>" is unused and has been removed.
+The signal "c3_ddruser/mcb_rd_data_dg<6>" is unused and has been removed.
+The signal "c3_ddruser/mcb_rd_data_dg<5>" is unused and has been removed.
+The signal "c3_ddruser/mcb_rd_data_dg<4>" is unused and has been removed.
+The signal "c3_ddruser/mcb_rd_data_dg<3>" is unused and has been removed.
+The signal "c3_ddruser/mcb_rd_data_dg<2>" is unused and has been removed.
+The signal "c3_ddruser/mcb_rd_data_dg<1>" is unused and has been removed.
+The signal "c3_ddruser/mcb_rd_data_dg<0>" is unused and has been removed.
+The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o" is unused and
+has been removed.
+ Unused block "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<21>"
+(MUX) removed.
+  The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<20>"
+is unused and has been removed.
+   Unused block "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<20>"
+(MUX) removed.
+    The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<19>"
+is unused and has been removed.
+     Unused block "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<19>"
+(MUX) removed.
+      The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<18>"
+is unused and has been removed.
+       Unused block "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<18>"
+(MUX) removed.
+        The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<17>"
+is unused and has been removed.
+         Unused block "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<17>"
+(MUX) removed.
+          The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<16>"
+is unused and has been removed.
+           Unused block "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<16>"
+(MUX) removed.
+            The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<15>"
+is unused and has been removed.
+             Unused block "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<15>"
+(MUX) removed.
+              The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<14>"
+is unused and has been removed.
+               Unused block "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<14>"
+(MUX) removed.
+                The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<13>"
+is unused and has been removed.
+                 Unused block "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<13>"
+(MUX) removed.
+                  The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<12>"
+is unused and has been removed.
+                   Unused block "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<12>"
+(MUX) removed.
+                    The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<11>"
+is unused and has been removed.
+                     Unused block "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<11>"
+(MUX) removed.
+                      The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<10>"
+is unused and has been removed.
+                       Unused block "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<10>"
+(MUX) removed.
+                        The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<9>" is
+unused and has been removed.
+                         Unused block "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<9>"
+(MUX) removed.
+                          The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<8>" is
+unused and has been removed.
+                           Unused block "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<8>"
+(MUX) removed.
+                            The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<7>" is
+unused and has been removed.
+                             Unused block "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<7>"
+(MUX) removed.
+                              The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<6>" is
+unused and has been removed.
+                               Unused block "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<6>"
+(MUX) removed.
+                                The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<5>" is
+unused and has been removed.
+                                 Unused block "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<5>"
+(MUX) removed.
+                                  The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<4>" is
+unused and has been removed.
+                                   Unused block "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<4>"
+(MUX) removed.
+                                    The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<3>" is
+unused and has been removed.
+                                     Unused block "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<3>"
+(MUX) removed.
+                                      The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<2>" is
+unused and has been removed.
+                                       Unused block "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<2>"
+(MUX) removed.
+                                        The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<1>" is
+unused and has been removed.
+                                         Unused block "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<1>"
+(MUX) removed.
+                                          The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<0>" is
+unused and has been removed.
+                                           Unused block "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_cy<0>"
+(MUX) removed.
+                                            The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<0>"
+is unused and has been removed.
+                                             Unused block "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<0>"
+(ROM) removed.
+                                          The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<1>"
+is unused and has been removed.
+                                           Unused block "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<1>"
+(ROM) removed.
+                                        The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<2>"
+is unused and has been removed.
+                                         Unused block "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<2>"
+(ROM) removed.
+                                      The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<3>"
+is unused and has been removed.
+                                       Unused block "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<3>"
+(ROM) removed.
+                                    The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<4>"
+is unused and has been removed.
+                                     Unused block "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<4>"
+(ROM) removed.
+                                  The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<5>"
+is unused and has been removed.
+                                   Unused block "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<5>"
+(ROM) removed.
+                                The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<6>"
+is unused and has been removed.
+                                 Unused block "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<6>"
+(ROM) removed.
+                              The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<7>"
+is unused and has been removed.
+                               Unused block "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<7>"
+(ROM) removed.
+                            The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<8>"
+is unused and has been removed.
+                             Unused block "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<8>"
+(ROM) removed.
+                          The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<9>"
+is unused and has been removed.
+                           Unused block "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<9>"
+(ROM) removed.
+                        The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<10>"
+is unused and has been removed.
+                         Unused block
+"u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<10>" (ROM)
+removed.
+                      The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<11>"
+is unused and has been removed.
+                       Unused block
+"u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<11>" (ROM)
+removed.
+                    The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<12>"
+is unused and has been removed.
+                     Unused block
+"u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<12>" (ROM)
+removed.
+                  The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<13>"
+is unused and has been removed.
+                   Unused block
+"u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<13>" (ROM)
+removed.
+                The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<14>"
+is unused and has been removed.
+                 Unused block
+"u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<14>" (ROM)
+removed.
+              The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<15>"
+is unused and has been removed.
+               Unused block
+"u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<15>" (ROM)
+removed.
+            The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<16>"
+is unused and has been removed.
+             Unused block
+"u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<16>" (ROM)
+removed.
+          The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<17>"
+is unused and has been removed.
+           Unused block
+"u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<17>" (ROM)
+removed.
+        The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<18>"
+is unused and has been removed.
+         Unused block
+"u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<18>" (ROM)
+removed.
+      The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<19>"
+is unused and has been removed.
+       Unused block
+"u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<19>" (ROM)
+removed.
+    The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<20>"
+is unused and has been removed.
+     Unused block
+"u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<20>" (ROM)
+removed.
+  The signal "u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<21>"
+is unused and has been removed.
+   Unused block
+"u3_mcb_read_inst/u_rd_data[127]_PWR_55_o_equal_6_o<127>_wg_lut<21>" (ROM)
+removed.
+The signal "u3_mcb_read_inst/_n0102" is unused and has been removed.
+ Unused block "u3_mcb_read_inst/_n010228" (ROM) removed.
+  The signal "u3_mcb_read_inst/s" is unused and has been removed.
+   Unused block "u3_mcb_read_inst/s" (SFF) removed.
+    The signal "u3_mcb_read_inst/s_glue_set" is unused and has been removed.
+     Unused block "u3_mcb_read_inst/s_glue_set" (ROM) removed.
+      The signal "u3_mcb_read_inst/_n0155_inv" is unused and has been removed.
+       Unused block "u3_mcb_read_inst/_n0155_inv1" (ROM) removed.
+  The signal "u3_mcb_read_inst/_n010217" is unused and has been removed.
+   Unused block "u3_mcb_read_inst/_n010217" (ROM) removed.
+    The signal "u3_mcb_read_inst/_n010213" is unused and has been removed.
+     Unused block "u3_mcb_read_inst/_n010213" (ROM) removed.
+    The signal "u3_mcb_read_inst/_n010214" is unused and has been removed.
+     Unused block "u3_mcb_read_inst/_n010214" (ROM) removed.
+    The signal "u3_mcb_read_inst/_n010215" is unused and has been removed.
+     Unused block "u3_mcb_read_inst/_n010215" (ROM) removed.
+    The signal "u3_mcb_read_inst/_n010216" is unused and has been removed.
+     Unused block "u3_mcb_read_inst/_n010216" (ROM) removed.
+    The signal "u3_mcb_read_inst/_n010212" is unused and has been removed.
+     Unused block "u3_mcb_read_inst/_n010212" (ROM) removed.
+      The signal "u3_mcb_read_inst/_n01028" is unused and has been removed.
+       Unused block "u3_mcb_read_inst/_n01028" (ROM) removed.
+      The signal "u3_mcb_read_inst/_n01029" is unused and has been removed.
+       Unused block "u3_mcb_read_inst/_n01029" (ROM) removed.
+      The signal "u3_mcb_read_inst/_n010210" is unused and has been removed.
+       Unused block "u3_mcb_read_inst/_n010210" (ROM) removed.
+      The signal "u3_mcb_read_inst/_n010211" is unused and has been removed.
+       Unused block "u3_mcb_read_inst/_n010211" (ROM) removed.
+  The signal "u3_mcb_read_inst/_n010227" is unused and has been removed.
+   Unused block "u3_mcb_read_inst/_n010227" (ROM) removed.
+    The signal "u3_mcb_read_inst/_n010223" is unused and has been removed.
+     Unused block "u3_mcb_read_inst/_n010223" (ROM) removed.
+    The signal "u3_mcb_read_inst/_n010224" is unused and has been removed.
+     Unused block "u3_mcb_read_inst/_n010224" (ROM) removed.
+    The signal "u3_mcb_read_inst/_n010225" is unused and has been removed.
+     Unused block "u3_mcb_read_inst/_n010225" (ROM) removed.
+    The signal "u3_mcb_read_inst/_n010226" is unused and has been removed.
+     Unused block "u3_mcb_read_inst/_n010226" (ROM) removed.
+    The signal "u3_mcb_read_inst/_n010222" is unused and has been removed.
+     Unused block "u3_mcb_read_inst/_n010222" (ROM) removed.
+      The signal "u3_mcb_read_inst/_n010218" is unused and has been removed.
+       Unused block "u3_mcb_read_inst/_n010218" (ROM) removed.
+      The signal "u3_mcb_read_inst/_n010219" is unused and has been removed.
+       Unused block "u3_mcb_read_inst/_n010219" (ROM) removed.
+      The signal "u3_mcb_read_inst/_n010220" is unused and has been removed.
+       Unused block "u3_mcb_read_inst/_n010220" (ROM) removed.
+      The signal "u3_mcb_read_inst/_n010221" is unused and has been removed.
+       Unused block "u3_mcb_read_inst/_n010221" (ROM) removed.
+  The signal "u3_mcb_read_inst/_n01027" is unused and has been removed.
+   Unused block "u3_mcb_read_inst/_n01027" (ROM) removed.
+    The signal "u3_mcb_read_inst/_n01021" is unused and has been removed.
+     Unused block "u3_mcb_read_inst/_n01021" (ROM) removed.
+    The signal "u3_mcb_read_inst/_n01022" is unused and has been removed.
+     Unused block "u3_mcb_read_inst/_n01022" (ROM) removed.
+    The signal "u3_mcb_read_inst/_n01023" is unused and has been removed.
+     Unused block "u3_mcb_read_inst/_n01023" (ROM) removed.
+    The signal "u3_mcb_read_inst/_n01024" is unused and has been removed.
+     Unused block "u3_mcb_read_inst/_n01024" (ROM) removed.
+    The signal "u3_mcb_read_inst/_n01025" is unused and has been removed.
+     Unused block "u3_mcb_read_inst/_n01025" (ROM) removed.
+    The signal "u3_mcb_read_inst/_n01026" is unused and has been removed.
+     Unused block "u3_mcb_read_inst/_n01026" (ROM) removed.
+The signal "u3_mcb_read_inst/read_error_dg" is unused and has been removed.
+ Unused block "u3_mcb_read_inst/read_error" (SFF) removed.
+  The signal "u3_mcb_read_inst/read_error_glue_set" is unused and has been
+removed.
+   Unused block "u3_mcb_read_inst/read_error_glue_set" (ROM) removed.
+    The signal "N282" is unused and has been removed.
+     Unused block "u3_mcb_read_inst/read_error_glue_set_SW0" (ROM) removed.
+
+Optimized Block(s):
+TYPE 		BLOCK
+GND 		XST_GND
+VCC 		XST_VCC
+
+To enable printing of redundant blocks removed and signals merged, set the
+detailed map report option and rerun map.
+
+Section 6 - IOB Properties
+--------------------------
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
+|                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| calib_done                         | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| led_1                              | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| led_2                              | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| mcb3_dram_a<0>                     | IOB              | OUTPUT    | SSTL15_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_a<1>                     | IOB              | OUTPUT    | SSTL15_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_a<2>                     | IOB              | OUTPUT    | SSTL15_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_a<3>                     | IOB              | OUTPUT    | SSTL15_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_a<4>                     | IOB              | OUTPUT    | SSTL15_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_a<5>                     | IOB              | OUTPUT    | SSTL15_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_a<6>                     | IOB              | OUTPUT    | SSTL15_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_a<7>                     | IOB              | OUTPUT    | SSTL15_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_a<8>                     | IOB              | OUTPUT    | SSTL15_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_a<9>                     | IOB              | OUTPUT    | SSTL15_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_a<10>                    | IOB              | OUTPUT    | SSTL15_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_a<11>                    | IOB              | OUTPUT    | SSTL15_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_a<12>                    | IOB              | OUTPUT    | SSTL15_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_a<13>                    | IOB              | OUTPUT    | SSTL15_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_a<14>                    | IOB              | OUTPUT    | SSTL15_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_ba<0>                    | IOB              | OUTPUT    | SSTL15_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_ba<1>                    | IOB              | OUTPUT    | SSTL15_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_ba<2>                    | IOB              | OUTPUT    | SSTL15_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_cas_n                    | IOB              | OUTPUT    | SSTL15_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_ck                       | IOB              | OUTPUT    | DIFF_SSTL15_II       |       |          |      | OSERDES      |          |          |
+| mcb3_dram_ck_n                     | IOB              | OUTPUT    | DIFF_SSTL15_II       |       |          |      | OSERDES      |          |          |
+| mcb3_dram_cke                      | IOB              | OUTPUT    | SSTL15_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_dm                       | IOB              | OUTPUT    | SSTL15_II            |       |          |      |              |          |          |
+| mcb3_dram_dq<0>                    | IOB              | BIDIR     | SSTL15_II            |       |          |      |              |          |          |
+| mcb3_dram_dq<1>                    | IOB              | BIDIR     | SSTL15_II            |       |          |      |              |          |          |
+| mcb3_dram_dq<2>                    | IOB              | BIDIR     | SSTL15_II            |       |          |      |              |          |          |
+| mcb3_dram_dq<3>                    | IOB              | BIDIR     | SSTL15_II            |       |          |      |              |          |          |
+| mcb3_dram_dq<4>                    | IOB              | BIDIR     | SSTL15_II            |       |          |      |              |          |          |
+| mcb3_dram_dq<5>                    | IOB              | BIDIR     | SSTL15_II            |       |          |      |              |          |          |
+| mcb3_dram_dq<6>                    | IOB              | BIDIR     | SSTL15_II            |       |          |      |              |          |          |
+| mcb3_dram_dq<7>                    | IOB              | BIDIR     | SSTL15_II            |       |          |      |              |          |          |
+| mcb3_dram_dq<8>                    | IOB              | BIDIR     | SSTL15_II            |       |          |      |              |          |          |
+| mcb3_dram_dq<9>                    | IOB              | BIDIR     | SSTL15_II            |       |          |      |              |          |          |
+| mcb3_dram_dq<10>                   | IOB              | BIDIR     | SSTL15_II            |       |          |      |              |          |          |
+| mcb3_dram_dq<11>                   | IOB              | BIDIR     | SSTL15_II            |       |          |      |              |          |          |
+| mcb3_dram_dq<12>                   | IOB              | BIDIR     | SSTL15_II            |       |          |      |              |          |          |
+| mcb3_dram_dq<13>                   | IOB              | BIDIR     | SSTL15_II            |       |          |      |              |          |          |
+| mcb3_dram_dq<14>                   | IOB              | BIDIR     | SSTL15_II            |       |          |      |              |          |          |
+| mcb3_dram_dq<15>                   | IOB              | BIDIR     | SSTL15_II            |       |          |      |              |          |          |
+| mcb3_dram_dqs                      | IOB              | BIDIR     | DIFF_SSTL15_II       |       |          |      |              | PULLDOWN |          |
+| mcb3_dram_dqs_n                    | IOB              | BIDIR     | DIFF_SSTL15_II       |       |          |      |              | PULLUP   |          |
+| mcb3_dram_odt                      | IOB              | OUTPUT    | SSTL15_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_ras_n                    | IOB              | OUTPUT    | SSTL15_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_reset_n                  | IOB              | OUTPUT    | LVCMOS15             |       | 12       | SLOW | OSERDES      |          |          |
+| mcb3_dram_udm                      | IOB              | OUTPUT    | SSTL15_II            |       |          |      |              |          |          |
+| mcb3_dram_udqs                     | IOB              | BIDIR     | DIFF_SSTL15_II       |       |          |      |              | PULLDOWN |          |
+| mcb3_dram_udqs_n                   | IOB              | BIDIR     | DIFF_SSTL15_II       |       |          |      |              | PULLUP   |          |
+| mcb3_dram_we_n                     | IOB              | OUTPUT    | SSTL15_II            |       |          |      | OSERDES      |          |          |
+| mcb3_rzq                           | IOB              | BIDIR     | SSTL15_II            |       |          |      |              |          | DEFAULT  |
+| mcb3_zio                           | IOB              | BIDIR     | SSTL15_II            |       |          |      |              |          | DEFAULT  |
+| sys_clk_i                          | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| sys_rst_i                          | IOB              | INPUT     | LVCMOS33             |       |          |      |              | PULLUP   |          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Timing Report
+--------------------------
+A logic-level (pre-route) timing report can be generated by using Xilinx static
+timing analysis tools, Timing Analyzer (GUI) or TRCE (command line), with the
+mapped NCD and PCF files. Please note that this timing report will be generated
+using estimated delay information. For accurate numbers, please generate a
+timing report with the post Place and Route NCD file.
+
+For more information about the Timing Analyzer, consult the Xilinx Timing
+Analyzer Reference Manual; for more information about TRCE, consult the Xilinx
+Command Line Tools User Guide "TRACE" chapter.
+
+Section 11 - Configuration String Details
+-----------------------------------------
+Use the "-detail" map option to print out Configuration Strings
+
+Section 12 - Control Set Information
+------------------------------------
+Use the "-detail" map option to print out Control Set Information.
+
+Section 13 - Utilization by Hierarchy
+-------------------------------------
+Use the "-detail" map option to print out the Utilization by Hierarchy section.

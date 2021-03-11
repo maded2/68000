@@ -1,0 +1,68 @@
+Release 14.7 - ngc2edif P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design DDR3_Top.ngc ...
+WARNING:NetListWriters:298 - No output is written to DDR3_Top.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus
+   u_ddr3_mig/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_c
+   alib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/_n2106<8 : 1> on
+   block DDR3_Top is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   u_ddr3_mig/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_c
+   alib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/IODRPCTRLR_MEMCE
+   LL_ADDR<7 : 0> on block DDR3_Top is not reconstructed, because there are some
+   missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   u_ddr3_mig/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_c
+   alib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller
+   /memcell_addr_reg<7 : 0> on block DDR3_Top is not reconstructed, because
+   there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   u_ddr3_mig/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_c
+   alib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_mcb_contro
+   ller/memcell_addr_reg<7 : 0> on block DDR3_Top is not reconstructed, because
+   there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   u3_mcb_write_inst/u_wr_data[127]_PWR_56_o_mux_7_OUT<127 : 0> on block
+   DDR3_Top is not reconstructed, because there are some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file DDR3_Top.edif ...
+ngc2edif: Total memory usage is 97352 kilobytes
+
+Release 14.7 - ngc2edif P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design DDR3_Top.ngc ...
+WARNING:NetListWriters:298 - No output is written to DDR3_Top.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus
+   u_ddr3_mig/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_c
+   alib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/_n2106<8 : 1> on
+   block DDR3_Top is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   u_ddr3_mig/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_c
+   alib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/IODRPCTRLR_MEMCE
+   LL_ADDR<7 : 0> on block DDR3_Top is not reconstructed, because there are some
+   missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   u_ddr3_mig/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_c
+   alib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller
+   /memcell_addr_reg<7 : 0> on block DDR3_Top is not reconstructed, because
+   there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   u_ddr3_mig/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_c
+   alib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_mcb_contro
+   ller/memcell_addr_reg<7 : 0> on block DDR3_Top is not reconstructed, because
+   there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   u3_mcb_write_inst/u_wr_data[127]_PWR_56_o_mux_7_OUT<127 : 0> on block
+   DDR3_Top is not reconstructed, because there are some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file DDR3_Top.edif ...
+ngc2edif: Total memory usage is 97356 kilobytes
+

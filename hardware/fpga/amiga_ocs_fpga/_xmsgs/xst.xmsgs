@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/eddie/work/68000/hardware/fpga/amiga_ocs_fpga/ipcore_dir/vga_clock.v" Line 121: Assignment to <arg fmt="%s" index="1">clkout2_unused</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/eddie/work/68000/hardware/fpga/amiga_ocs_fpga/ipcore_dir/vga_clock.v" Line 122: Assignment to <arg fmt="%s" index="1">clkout3_unused</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/eddie/work/68000/hardware/fpga/amiga_ocs_fpga/ipcore_dir/vga_clock.v" Line 123: Assignment to <arg fmt="%s" index="1">clkout4_unused</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/eddie/work/68000/hardware/fpga/amiga_ocs_fpga/ipcore_dir/vga_clock.v" Line 124: Assignment to <arg fmt="%s" index="1">clkout5_unused</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"/home/eddie/work/68000/hardware/fpga/amiga_ocs_fpga/display_timings_480p.v" Line 51: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"/home/eddie/work/68000/hardware/fpga/amiga_ocs_fpga/display_timings_480p.v" Line 53: Result of <arg fmt="%d" index="1">11</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/eddie/work/68000/hardware/fpga/amiga_ocs_fpga/ocs.v" Line 96: Assignment to <arg fmt="%s" index="1">sx</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/eddie/work/68000/hardware/fpga/amiga_ocs_fpga/ocs.v" Line 97: Assignment to <arg fmt="%s" index="1">sy</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/eddie/work/68000/hardware/fpga/amiga_ocs_fpga/ocs.v" Line 104: Assignment to <arg fmt="%s" index="1">rd_en</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">cpu_clk</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">as</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/eddie/work/68000/hardware/fpga/amiga_ocs_fpga/ocs.v</arg>&quot; line <arg fmt="%s" index="2">93</arg>: Output port &lt;<arg fmt="%s" index="3">sx</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">timings_640x480</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/eddie/work/68000/hardware/fpga/amiga_ocs_fpga/ocs.v</arg>&quot; line <arg fmt="%s" index="2">93</arg>: Output port &lt;<arg fmt="%s" index="3">sy</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">timings_640x480</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">count1_25</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">ocs</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">count1_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">ocs</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">count1_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">ocs</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">count1_28</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">ocs</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">count1_29</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">ocs</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">count1_30</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">ocs</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">count1_31</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">ocs</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">count2_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">ocs</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">count2_28</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">ocs</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">count2_29</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">ocs</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">count2_30</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">ocs</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">count2_31</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">ocs</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="1901" delta="new" >Instance <arg fmt="%s" index="1">vgaclk/pll_base_inst</arg> in unit <arg fmt="%s" index="2">vgaclk/pll_base_inst</arg> of type <arg fmt="%s" index="3">PLL_BASE</arg> has been replaced by <arg fmt="%s" index="4">PLL_ADV</arg>
+</msg>
+
+</messages>
+
